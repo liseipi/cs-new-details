@@ -1,0 +1,78 @@
+/*!
+ * # Semantic UI 2.4.2 - Sticky
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            Sticky
+*******************************/
+
+.sticky {
+  position: static;
+  -webkit-transition: none;
+  transition: none;
+  z-index: 800;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+
+/* Bound */
+.sticky.bound {
+  position: absolute;
+  left: auto;
+  right: auto;
+}
+
+/* Fixed */
+.sticky.fixed {
+  position: fixed;
+  left: auto;
+  right: auto;
+}
+
+/* Bound/Fixed Position */
+.sticky.bound.top,
+.sticky.fixed.top {
+  top: 0px;
+  bottom: auto;
+}
+.sticky.bound.bottom,
+.sticky.fixed.bottom {
+  top: auto;
+  bottom: 0px;
+}
+
+
+/*******************************
+            Types
+*******************************/
+
+.native.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+
+/*******************************
+         Site Overrides
+*******************************/
+

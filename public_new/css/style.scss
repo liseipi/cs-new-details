@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+//@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900';
+//@import "//at.alicdn.com/t/font_1601286_mli1hom6vy.css";
+
+@import "common";
+@import "../js/libs/bootstrap/scss/bootstrap-reboot";
+@import "fonts";
+@import "base";
+@import "ui";
+@import "header";
+@import "footer";
+
+@import "page/details";
+
+//*:not(path):not(g) {
+//  color:                    hsla(210, 100%, 100%, 0.9) !important;
+//  background:               hsla(210, 100%,  50%, 0.5) !important;
+//  outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+//
+//  box-shadow: none !important;
+//}
