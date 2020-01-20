@@ -446,42 +446,42 @@
         </nav> <!-- navbar main end.// -->
     </header>
 
-    <section class="container-body position-relative" data-sticky-container style="position:relative; max-width: 1000px; margin: 0 auto;">
+    <section id="details-page" class="container-body position-relative" data-sticky-container
+             style="position:relative; max-width: 1000px; margin: 0 auto;">
         <aside class="newsletter-left d-none d-xl-block">
-            <div class="sticky" data-sticky>
+            <div data-sticky>
                 <div class="card rounded-0 d-inline-block">
-                    <img src="public_new/images/subscribe.jpg" width="95" alt="Subscribe">
+                    <img class="lozad" data-src="public_new/images/subscribe.jpg" width="95" alt="Subscribe">
                     <div class="border-top p-1">
                         <input class="form-control form-control-sm mb-1 subscribe-txt" type="text" placeholder="You Email">
                         <button class="btn btn-success btn-sm btn-block subscribe-btn" type="button">Subscribe</button>
                     </div>
                 </div>
             </div>
+
         </aside>
-        <aside class="promotion-today-right d-none d-xl-block">
-            <div class="sticky" data-sticky>
-                <div class="card rounded-0 d-inline-block">
-                    <a href="#">
-                        <img src="public_new/images/promotion-today.png" width="86" alt="">
-                        <img src="https://img.crazysales.com.au/products_pictures/86/172/172029_1249067_F.jpg" width="86" alt="">
-                        <div class="product-price text-center font-weight-bolder py-1">
-                            $24.99
-                        </div>
-                        <div class="product-was-price text-dark text-center font-weight-bolder py-1">
-                            <del>Was:$79.95</del>
-                        </div>
-                        <div class="product-was-name text-muted text-center">5W Solar Powered Fountain Water Pump for Outdoor Garden Pond Pool
-                        </div>
-                        <div class="timeLeft text-center py-2">
-                            <strong class="text-dark font-weight-bolder">Time Left</strong>
-                            <div class="badge badge-pill badge-danger time">19:29:46</div>
-                        </div>
-                        <div class="in-show text-center py-3">
-                            <strong>Buy Now</strong>
-                            <p>Don't Miss Out</p>
-                        </div>
-                    </a>
-                </div>
+        <aside class="promotion-today-right d-none d-xl-block" data-sticky>
+            <div class="card rounded-0 d-inline-block">
+                <a href="#">
+                    <img class="lozad" data-src="public_new/images/promotion-today.png" width="86" alt="">
+                    <img class="lozad" data-src="https://img.crazysales.com.au/products_pictures/86/172/172029_1249067_F.jpg" width="86" alt="">
+                    <div class="product-price text-center font-weight-bolder py-1">
+                        $24.99
+                    </div>
+                    <div class="product-was-price text-dark text-center font-weight-bolder py-1">
+                        <del>Was:$79.95</del>
+                    </div>
+                    <div class="product-was-name text-muted text-center">5W Solar Powered Fountain Water Pump for Outdoor Garden Pond Pool
+                    </div>
+                    <div class="timeLeft text-center py-2">
+                        <strong class="text-dark font-weight-bolder">Time Left</strong>
+                        <div class="badge badge-pill badge-danger time">19:29:46</div>
+                    </div>
+                    <div class="in-show text-center py-3">
+                        <strong>Buy Now</strong>
+                        <p>Don't Miss Out</p>
+                    </div>
+                </a>
             </div>
         </aside>
 
@@ -593,15 +593,21 @@
                             <div class="form-row">
                                 <div class="form-group col-md flex-grow-0">
                                     <label>Quantity</label>
-                                    <div class="input-group mb-3 input-spinner">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-light" type="button" id="button-plus"> +</button>
-                                        </div>
-                                        <input type="text" class="form-control" value="1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-light" type="button" id="button-minus"> −</button>
-                                        </div>
+                                    <div class="input-group mb-1 input-spinner">
+                                        <!--                                        <div class="input-group-prepend">-->
+                                        <!--                                            <button class="btn btn-light" type="button" id="button-plus">-</button>-->
+                                        <!--                                        </div>-->
+                                        <!--                                        <input type="text" class="form-control" value="1">-->
+                                        <!--                                        <div class="input-group-append">-->
+                                        <!--                                            <button class="btn btn-light" type="button" id="button-minus">+</button>-->
+                                        <!--                                        </div>-->
+                                        <select class="form-control mr-1 text-center" style="text-align-last:center;">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
                                     </div>
+
                                 </div> <!-- col.// -->
                                 <div class="form-group col-md">
                                     <div class="txt">Status</div>
@@ -609,24 +615,6 @@
                                         <span class="badge badge-success rounded py-0">&nbsp;</span> In stock
                                     </div>
                                 </div>
-                                <!--                            <div class="form-group col-md">-->
-                                <!--                                <label>Select size</label>-->
-                                <!--                                <div class="mt-1">-->
-                                <!--                                    <label class="custom-control custom-radio custom-control-inline">-->
-                                <!--                                        <input type="radio" name="select_size" checked="" class="custom-control-input">-->
-                                <!--                                        <div class="custom-control-label">Small</div>-->
-                                <!--                                    </label>-->
-                                <!--                                    <label class="custom-control custom-radio custom-control-inline">-->
-                                <!--                                        <input type="radio" name="select_size" class="custom-control-input">-->
-                                <!--                                        <div class="custom-control-label">Medium</div>-->
-                                <!--                                    </label>-->
-                                <!--                                    <label class="custom-control custom-radio custom-control-inline">-->
-                                <!--                                        <input type="radio" name="select_size" class="custom-control-input">-->
-                                <!--                                        <div class="custom-control-label">Large</div>-->
-                                <!--                                    </label>-->
-                                <!--                                </div>-->
-                                <!--                            </div>-->
-                                <!-- col.// -->
                             </div> <!-- row.// -->
                             <a href="#" class="btn  btn-success"> Buy now </a>
                             <a href="#" class="btn  btn-outline-success">
@@ -639,8 +627,7 @@
                                 <div class="d-flex flex-row no-gutters mb-2">
                                     <span class="col-sm-3 d-flex align-items-center">Payments</span>
                                     <div class="label-rating text-muted flex-grow-1">
-                                        <img class="align-middle" src="public_new/images/payments.png" height="28"
-                                             alt="payments">
+                                        <img class="lozad align-middle" data-src="public_new/images/payments.png" height="28" alt="payments">
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row no-gutters">
@@ -731,272 +718,22 @@
                         <div class="owl-carousel owl-theme viewed_slider owl-loaded owl-drag">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
-                                    <div class="owl-item">
+                                    <div class="owl-item" v-for="(pGoods, pIndex) in pickedData" :key="pIndex">
                                         <figure class="card card-product-grid">
                                             <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
+                                                <img class="lozad" :data-src="pGoods.thumbnail">
                                             </a>
                                             <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
+                                                <a href="#" class="title line-clamp">{{pGoods.name}}</a>
                                                 <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
+                                                    <var class="price">${{pGoods.price}}</var>
+                                                    <del class="was-price">${{pGoods.wasPrice}}</del>
                                                 </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/780/78067_540317_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="owl-item">
-                                        <figure class="card card-product-grid">
-                                            <a href="#" class="img-wrap">
-                                                <img src="https://img.crazysales.com.au/products_pictures/200/819/81925_540287_F.jpg">
-                                            </a>
-                                            <figcaption class="info-wrap">
-                                                <a href="#" class="title">6 Tiers Hairdresser Hair Salon Spa</a>
-                                                <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">$169.95</var>
-                                                    <span class="badge badge-warning text-light"> <i
-                                                            class="csiconfont csicon-star"></i> 3.8</span>
+                                                <div class="mt-1 d-flex justify-content-between align-items-center">
+                                                    <span class="text-success">
+                                                        <i class="csiconfont csicon-star mr-1"></i>({{pGoods.reviews}})
+                                                    </span>
+                                                    <span class="badge badge-warning text-light py-1">Save {{pGoods.save}}%</span>
                                                 </div>
                                             </figcaption>
                                         </figure>
@@ -1204,207 +941,48 @@
                 <div class="col-md-3 pl-2">
                     <div class="right-body">
                         <div class="right-top">
-                            <div class="adpic mb-2">
+                            <div class="right-ad-img mb-2">
                                 <a href="javascript:void(0)" rel="nofollow">
-                                    <img nopin="nopin" alt="" width="100%"
-                                         src="//img.crazysales.com.au/images/testimoanl-button.gif">
+                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/testimoanl-button.gif" alt="testimoanl">
                                 </a>
                             </div>
-                            <div class="adpic mb-2">
+                            <div class="right-ad-img mb-2">
                                 <a href="/clearance" rel="nofollow">
-                                    <img nopin="nopin" alt="" width="100%"
-                                         src="//img.crazysales.com.au/images/clearance-banner.jpg">
+                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/clearance-banner.jpg" alt="clearance">
                                 </a>
                             </div>
-                            <div class="adpic">
-                                <ins class="adsbygoogle"
-                                     data-ad-client="ca-pub-8352043502333695" data-ad-slot="4651508651"
-                                     data-adsbygoogle-status="done">
-                                    <ins id="aswift_0_expand"
-                                         style="display:inline-table;border:none; margin:0;padding:0;position:relative;visibility:visible;background-color:transparent;">
-                                        <ins id="aswift_0_anchor"
-                                             style="display:block;border:none;margin:0;padding:0;position:relative;visibility:visible;background-color:transparent;">
-                                            <iframe width="100%" height="400" frameborder="0" marginwidth="0"
-                                                    marginheight="0" vspace="0" hspace="0" allowtransparency="true"
-                                                    scrolling="no" allowfullscreen="true"
-                                                    onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}"
-                                                    id="aswift_0" name="aswift_0"
-                                                    style="left:0;position:absolute;top:0;border:0px;width:100%;height:400px;"></iframe>
-                                        </ins>
-                                    </ins>
-                                </ins>
+                            <div class="right-ad-img">
+
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
                             </div>
                         </div>
-                        <div class="card sticky" data-sticky-detail>
+                        <div class="card" data-sticky-detail>
                             <div class="right_hot_product px-2 pb-2">
                                 <div class="h6 my-2 bg-brand-color text-light text-center py-2 mb-3">New Arrivals &amp; Hot</div>
-                                <div class="product-list">
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap">
-                                                <img class="rounded"
-                                                     src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg">
-                                            </a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mb-2 line-clamp text-muted">Electric Massage Chair Linen Fabric
-                                                    Recliner</a>
-                                                <div class="d-flex">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6 brand-color">$299.00</span>
-                                                        <span class="badge badge-warning text-light"> <i class="csiconfont csicon-star"></i> 3.8</span>
+                                <div class="product-list pb-2">
+                                    <div class="product-item" v-for="(pGoods, pIndex) in newHotData" :key="pIndex">
+                                        <div class="row no-gutters">
+                                            <aside class="col-sm-5">
+                                                <a href="#" class="img-wrap">
+                                                    <img class="lozad rounded" :data-src="pGoods.thumbnail">
+                                                </a>
+                                            </aside> <!-- col.// -->
+                                            <div class="col-sm-7">
+                                                <div class="ml-2">
+                                                    <a href="#" class="title mb-2 line-clamp text-muted">{{pGoods.name}}</a>
+                                                    <div class="price-wrap">
+                                                        <span class="price h6 brand-color">${{pGoods.price}}</span>
+                                                    </div> <!-- price-dewrap // -->
+                                                    <div class="review-wrap">
+                                                        <span class="text-warning"><i
+                                                                class="csiconfont csicon-star"></i> ({{pGoods.reviews}})</span>
                                                     </div> <!-- price-dewrap // -->
                                                 </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap">
-                                                <img class="rounded"
-                                                     src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg">
-                                            </a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mb-2 line-clamp text-muted">Electric Massage Chair Linen Fabric
-                                                    Recliner</a>
-                                                <div class="d-flex">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6 brand-color">$299.00</span>
-                                                        <span class="badge badge-warning text-light"> <i class="csiconfont csicon-star"></i> 3.8</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap">
-                                                <img class="rounded"
-                                                     src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg">
-                                            </a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mb-2 line-clamp text-dark">Electric Massage Chair Linen Fabric
-                                                    Recliner</a>
-                                                <div class="d-flex">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6 brand-color">$299.00</span>
-                                                        <span class="badge badge-warning text-light"> <i class="csiconfont csicon-star"></i> 3.8</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap"><img class="rounded"
-                                                                              src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg"></a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mt-2">GoPro HERO7 Camera</a>
-                                                <div class="d-flex mb-3">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6">$299.00</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap"><img class="rounded"
-                                                                              src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg"></a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mt-2">GoPro HERO7 Camera</a>
-                                                <div class="d-flex mb-3">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6">$299.00</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap"><img class="rounded"
-                                                                              src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg"></a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mt-2">GoPro HERO7 Camera</a>
-                                                <div class="d-flex mb-3">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6">$299.00</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap"><img class="rounded"
-                                                                              src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg"></a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mt-2">GoPro HERO7 Camera</a>
-                                                <div class="d-flex mb-3">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6">$299.00</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap"><img class="rounded"
-                                                                              src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg"></a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mt-2">GoPro HERO7 Camera</a>
-                                                <div class="d-flex mb-3">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6">$299.00</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
-                                    </div>
-                                    <hr>
-                                    <div class="row no-gutters">
-                                        <aside class="col-sm-5">
-                                            <a href="#" class="img-wrap"><img class="rounded"
-                                                                              src="https://img.crazysales.com.au/products_pictures/160/176/176341_1298145_F.jpg"></a>
-                                        </aside> <!-- col.// -->
-                                        <div class="col-sm-7">
-                                            <div class="ml-2">
-                                                <a href="#" class="title mt-2">GoPro HERO7 Camera</a>
-                                                <div class="d-flex mb-3">
-                                                    <div class="price-wrap mr-4">
-                                                        <span class="price h6">$299.00</span>
-                                                    </div> <!-- price-dewrap // -->
-                                                </div>
-                                            </div>
-                                        </div> <!-- col.// -->
+                                            </div> <!-- col.// -->
+                                        </div>
+                                        <hr class="my-2 py-0" v-show="pIndex+1!=newHotData.length">
                                     </div>
                                 </div>
                             </div>
@@ -1923,7 +1501,7 @@
                     <div class="px-4">
                         <div>Crazysales accepts a range of payment options including PayPal, BPAY, Visa, Mastercard.
                         </div>
-                        <div class="py-3"><img src="public_new/images/payments.png" height="35" alt="">
+                        <div class="py-3"><img class="lozad" data-src="public_new/images/payments.png" height="35" alt="">
                         </div>
                         <div>Rest assured as all payments are processed using the latest SSL encryption technology!
                         </div>
@@ -1945,7 +1523,7 @@
                             </li>
                         </ul>
                         <div class="">
-                            <img src="public_new/images/add-ons-aust-post-eparcel.png" height="45" alt="">
+                            <img class="lozad" data-src="public_new/images/add-ons-aust-post-eparcel.png" height="45" alt="">
                         </div>
                     </div>
                 </div>
@@ -2003,7 +1581,7 @@
                 <div class="row">
                     <aside class="col-md-4">
                         <article class="mr-3">
-                            <img src="public_new/images/logo-white.svg" width="200" class="logo-footer">
+                            <img class="lozad logo-footer" data-src="public_new/images/logo-white.svg" width="200">
                             <p class="mt-3 about-txt">where you will find crazy deals & everyday discounts on the top
                                 selection of today's online products!
                                 As one of the largest Australian online department stores, we're 100% Australian owned and
@@ -2075,10 +1653,10 @@
 
                         <h6 class="title mt-3">Our app</h6>
                         <a href="#" class="d-block mb-2">
-                            <img src="public_new/images/appstore.png" height="35">
+                            <img class="lozad" data-src="public_new/images/appstore.png" height="35">
                         </a>
                         <a href="#" class="d-block mb-2">
-                            <img src="public_new/images/playmarket.png" height="35">
+                            <img class="lozad" data-src="public_new/images/playmarket.png" height="35">
                         </a>
                     </aside>
                 </div>
@@ -2094,36 +1672,29 @@
                                 66 166 623 169 | PO BOX 1016 Springvale, VIC 3171, Australia</a>
                             </div>
                             <div class="logos col-md ml-md-auto text-md-right mt-2 mt-md-0">
-                                <img src="public_new/images/cards-alt.png" height="36" alt="">
+                                <img class="lozad" src="public_new/images/cards-alt.png" height="36" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <ul class="mt-3 list-inline">
-                    <li class="list-inline-item"><img class="lazy" src="//img.crazysales.com.au/images/bottom_pic01.jpg"
-                                                      data-original="//img.crazysales.com.au/images/bottom_pic01.jpg"
-                                                      width="70" height="80"
-                                                      style="display: inline;"></li>
-                    <li class="list-inline-item"><img class="lazy" src="//img.crazysales.com.au/images/bottom_pic02.jpg"
-                                                      data-original="//img.crazysales.com.au/images/bottom_pic02.jpg"
-                                                      width="69" height="78"
-                                                      style="display: inline;"></li>
-                    <li class="list-inline-item"><img class="lazy" src="//img.crazysales.com.au/images/bottom_pic03.jpg"
-                                                      data-original="//img.crazysales.com.au/images/bottom_pic03.jpg"
-                                                      width="69" height="80"
-                                                      style="display: inline;"></li>
-                    <li class="list-inline-item"><img class="lazy" src="//img.crazysales.com.au/images/bottom_pic04.jpg"
-                                                      data-original="//img.crazysales.com.au/images/bottom_pic04.jpg"
-                                                      width="65" height="80"
-                                                      style="display: inline;"></li>
-                    <li class="list-inline-item"><img class="lazy" src="//img.crazysales.com.au/images/bottom_pic05.jpg"
-                                                      data-original="//img.crazysales.com.au/images/bottom_pic05.jpg"
-                                                      width="90" height="50"
-                                                      style="display: inline;"></li>
                     <li class="list-inline-item">
-                        <img class="lazy" src="//img.crazysales.com.au/images/bottom_pic07.jpg"
-                             data-original="//img.crazysales.com.au/images/bottom_pic07.jpg" width="100" height="65"
-                             oncontextmenu="return false;" style="display: inline;">
+                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic01.jpg" width="70" height="80">
+                    </li>
+                    <li class="list-inline-item">
+                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic02.jpg" width="70" height="80">
+                    </li>
+                    <li class="list-inline-item">
+                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic03.jpg" width="70" height="80">
+                    </li>
+                    <li class="list-inline-item">
+                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic04.jpg" width="65" height="80">
+                    </li>
+                    <li class="list-inline-item">
+                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic05.jpg" width="90" height="50">
+                    </li>
+                    <li class="list-inline-item">
+                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic07.jpg" width="100" height="65">
                     </li>
                 </ul>
             </div>

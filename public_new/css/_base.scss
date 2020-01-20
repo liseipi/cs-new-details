@@ -93,6 +93,29 @@ input {
   }
 }
 
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  .pace-progress {
+    background: $brand-color;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 3px;
+  }
+}
+
+.pace-inactive {
+  display: none;
+}
+
 $btn-scroll-top-size: 2.2rem;
 $spacer: 1rem !default;
 $btn-scroll-top-transition: right 400ms cubic-bezier(.68, -.55, .265, 1.55), opacity .3s, background-color .25s ease-in-out !default;

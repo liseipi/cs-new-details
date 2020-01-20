@@ -8,9 +8,12 @@ require.config({
         'owlcarousel': './libs/owlcarousel/owl.carousel.min',
         'simplebar': './libs/simplebar/simplebar.min',
         'smoothscroll': './libs/smooth-scroll/smooth-scroll.polyfills.min',
-        'sticky': './libs/sticky/sticky',
+        'hcsticky': './libs/hc-sticky/hc-sticky',
         'lozad': './libs/lozad/lozad.min',
+        'vue': './vue',
+        'pace': './libs/pace/pace.min',
         'sharethis': 'https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop',
+
 
 
     },
@@ -29,22 +32,18 @@ require.config({
         simplebar: {
             deps: ['css!./libs/simplebar/simplebar.min.css']
         },
-        sticky: {
-            deps: ['css!./libs/sticky/sticky.css', 'jquery']
+        pace: {
+            deps: ['css!./libs/pace/pace-theme-minimal.css']
         },
     }
 });
 
-require(['bootstrap', 'lozad',  'smoothscroll', 'sticky', 'simplebar'], function (bs, lozad, SmoothScroll, simplebar) {
-    //加载进度条
-    // pace.start({
-    //     document: false
-    // });
+require(['bootstrap', 'lozad',  'smoothscroll', 'simplebar', 'pace', 'hcsticky'], function (bs, lozad, SmoothScroll, simplebar, pace) {
 
-    //图片lozad
-    // var observer = lozad();
-    // observer.observe();
-
+    // Page loading progress
+    pace.start({
+        document: false
+    });
 
     !function (c) {
         var e = {
@@ -85,13 +84,15 @@ require(['bootstrap', 'lozad',  'smoothscroll', 'sticky', 'simplebar'], function
             },
             coupletFloating: function () {
                 if ($('[data-sticky]').length) {
-                    $('[data-sticky]').sticky({
-                        context: '[data-sticky-container]',
-                        offset: 5
-                    });
+                    var elements = document.querySelectorAll('[data-sticky]');
+                    for (var i = 0; i < elements.length; i++) {
+                        new hcSticky(elements[i], {
+                            stickTo: '[data-sticky-container]'
+                        });
+                    }
                 }
 
-                $('.subscribe-txt, .subscribe-btn').on('click', function () {
+                $('.newsletter-left').on('click', function () {
                     var t = document.querySelector(".newsletter_input");
                     if (null != t) {
                         document.querySelector(".newsletter_input").focus();
@@ -101,9 +102,12 @@ require(['bootstrap', 'lozad',  'smoothscroll', 'sticky', 'simplebar'], function
             },
             lozadResources: function () {
 
-                const el = document.querySelector('img.lozad');
-                const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
+                const observer = lozad();
                 observer.observe();
+
+                // const el = document.querySelector('img.lozad');
+                // const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
+                // observer.observe();
 
                 // var el = document.querySelector('.lozad');
                 // var observer = lozad(el);

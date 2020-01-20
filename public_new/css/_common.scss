@@ -1,9 +1,9 @@
 $brand-color: #d50b18 !important;
 
 @mixin line-clamp($num:2) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
   -webkit-line-clamp: $num;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical !important;
 }

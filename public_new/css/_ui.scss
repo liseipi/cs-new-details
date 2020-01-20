@@ -1208,13 +1208,20 @@ a[class*='card']:hover .title {
 
 .price {
   font-weight: 600;
-  color: #212529;
+  //color: #212529;
+  color: $brand-color;
 }
 
 .price-old {
   color: #969696;
   margin-left: 3px;
   font-size: 85%;
+}
+
+.was-price{
+  font-weight: 400;
+  color: #6c757d;
+  font-size: 12px;
 }
 
 .icon-control {
