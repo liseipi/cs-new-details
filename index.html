@@ -524,12 +524,12 @@
             <div class="card mt-3">
                 <div class="row no-gutters">
                     <aside class="col-md-6">
-                        <article class="gallery-wrap">
+                        <article class="gallery-wrap" v-if="galleryData.length>0">
                             <div class="img-big-wrap">
                                 <div class="position-relative">
                                     <img class="lozad cz-image-zoom" width="100%"
-                                         data-src="https://img.crazysales.com.au/products_pictures/200/200437_1523713_F.jpg"
-                                         data-zoom="https://img.crazysales.com.au/products_pictures/200/200437_1523713_HD.jpg">
+                                         :data-src="galleryData[0].dataOrigin"
+                                         :data-zoom="galleryData[0].dataOriginZoom">
                                     <div class="cz-image-zoom-pane"></div>
                                 </div>
                             </div> <!-- slider-product.// -->

@@ -283,7 +283,7 @@ require(['../config'], function () {
             data: {
                 pickedData: pickedData,
                 newHotData: newHotData,
-                galleryData: galleryData
+                galleryData: galleryData.slice(0, 10)
             }
         });
 
