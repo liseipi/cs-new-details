@@ -526,25 +526,20 @@
                     <aside class="col-md-6">
                         <article class="gallery-wrap">
                             <div class="img-big-wrap">
-                                <div><a href="#"><img width="100%"
-                                                      src="https://img.crazysales.com.au/products_pictures/200/200437_1523709_HD.jpg"></a>
+                                <div class="position-relative">
+                                    <img class="lozad cz-image-zoom" width="100%"
+                                         data-src="https://img.crazysales.com.au/products_pictures/200/200437_1523713_F.jpg"
+                                         data-zoom="https://img.crazysales.com.au/products_pictures/200/200437_1523713_HD.jpg">
+                                    <div class="cz-image-zoom-pane"></div>
                                 </div>
                             </div> <!-- slider-product.// -->
                             <div class="thumbs-wrap">
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523709_T.jpg"></a>
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523713_T.jpg"></a>
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523711_T.jpg"></a>
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523711_T.jpg"></a>
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523711_T.jpg"></a>
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523711_T.jpg"></a>
-                                <a href="" class="item-thumb"> <img
-                                        src="https://img.crazysales.com.au/products_pictures/200/200437_1523711_T.jpg"></a>
+                                <a href="javascript:;" class="item-thumb" v-for="(gImage, gIndex) in galleryData" :key="gIndex">
+                                    <img class="lozad"
+                                        :data-src="gImage.thumbnail"
+                                        :data-origin="gImage.dataOrigin"
+                                        :data-origin-zoom="gImage.dataOriginZoom">
+                                </a>
                             </div> <!-- slider-nav.// -->
                         </article> <!-- gallery-wrap .end// -->
                     </aside>

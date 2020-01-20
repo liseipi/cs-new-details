@@ -12,6 +12,7 @@ require.config({
         'lozad': './libs/lozad/lozad.min',
         'vue': './vue',
         'pace': './libs/pace/pace.min',
+        'drift': './libs/drift-zoom/Drift.min',
         'sharethis': 'https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop',
 
 

@@ -1,5 +1,5 @@
 require(['../config'], function () {
-    require(['vue', 'owlcarousel', 'lozad', 'hcsticky', 'sharethis'], function (Vue, owlCarousel, lozad) {
+    require(['vue', 'owlcarousel', 'lozad', 'drift', 'hcsticky', 'sharethis'], function (Vue, owlCarousel, lozad, drift) {
 
         var pickedData = [
             {
@@ -155,7 +155,7 @@ require(['../config'], function () {
                 reviews: 0
             }
         ];
-        var newHotData=[
+        var newHotData = [
             {
                 name: 'Bestway Inflatable Flocked Airbed Camping Mattress Air',
                 thumbnail: 'https://img.crazysales.com.au/products_pictures/205/201/201865_1541459_F.jpg',
@@ -221,20 +221,85 @@ require(['../config'], function () {
                 reviews: 186
             },
         ];
+        var galleryData = [
+            {
+                thumbnail: 'https://img.crazysales.com.au/products_pictures/200/200437_1523713_T.jpg',
+                dataOrigin: 'https://img.crazysales.com.au/products_pictures/200/200437_1523713_F.jpg',
+                dataOriginZoom: 'https://img.crazysales.com.au/products_pictures/200/200437_1523713_HD.jpg',
+            },
+            {
+                thumbnail: 'https://img.crazysales.com.au/products_pictures/200/200437_1523697_T.jpg',
+                dataOrigin: 'https://img.crazysales.com.au/products_pictures/200/200437_1523697_F.jpg',
+                dataOriginZoom: 'https://img.crazysales.com.au/products_pictures/200/200437_1523697_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/2004/200437_1526699_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/2004/200437_1526699_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/2004/200437_1526699_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523711_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523711_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523711_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523709_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523709_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523709_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523707_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523707_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523707_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523705_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523705_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523705_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523703_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523703_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523703_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523701_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523701_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523701_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523699_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523699_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523699_HD.jpg',
+            },
+            {
+                thumbnail: '//img.crazysales.com.au/products_pictures/2004/200437_1526701_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/2004/200437_1526701_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/2004/200437_1526701_HD.jpg',
+            },
+        ];
         var app = new Vue({
             el: '#details-page',
             data: {
                 pickedData: pickedData,
-                newHotData: newHotData
+                newHotData: newHotData,
+                galleryData: galleryData
             }
         });
 
         !function (c) {
             var e = {
                 init: function () {
+                    e.lozadResources();
                     e.initViewedSlider();
                     e.rightProductFloating();
-                    e.lozadResources();
+                    e.initGallerySlider();
+                    e.showOriginImage();
+                    e.imageZoom();
+                },
+                lozadResources: function () {
+                    const observer = lozad();
+                    observer.observe();
                 },
                 initViewedSlider: function () {
                     if ($('.viewed_slider').length) {
@@ -275,10 +340,25 @@ require(['../config'], function () {
                         });
                     }
                 },
-                lozadResources: function () {
-                    const observer = lozad();
-                    observer.observe();
-                }
+                initGallerySlider: function () {
+
+                },
+                showOriginImage: function () {
+                    if ($('.item-thumb').length) {
+                        $('.item-thumb img').mouseenter(function () {
+                            var originImage = $(this).data('origin');
+                            var originZoomImage = $(this).data('origin-zoom');
+                            $('.cz-image-zoom').attr({'src': originImage, 'data-zoom': originZoomImage});
+                        });
+                    }
+                },
+                imageZoom: function () {
+                    for (var e = document.querySelectorAll(".cz-image-zoom"), t = 0; t < e.length; t++) {
+                        new Drift(e[t], {
+                            paneContainer: e[t].parentElement.querySelector(".cz-image-zoom-pane")
+                        });
+                    }
+                },
             };
             e.init();
         }(jQuery);
