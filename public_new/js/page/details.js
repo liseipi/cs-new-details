@@ -1,5 +1,5 @@
 require(['../config'], function () {
-    require(['vue', 'owlcarousel', 'lozad', 'drift', 'hcsticky', 'sharethis'], function (Vue, owlCarousel, lozad, drift) {
+    require(['vue', 'owlcarousel', 'lozad', 'drift', 'hcsticky'], function (Vue, owlCarousel, lozad, drift) {
 
         var pickedData = [
             {
@@ -283,7 +283,8 @@ require(['../config'], function () {
             data: {
                 pickedData: pickedData,
                 newHotData: newHotData,
-                galleryData: galleryData.slice(0, 10)
+                // galleryData: galleryData.slice(0, 10),
+                galleryData: galleryData,
             }
         });
 
@@ -349,6 +350,9 @@ require(['../config'], function () {
                             var originImage = $(this).data('origin');
                             var originZoomImage = $(this).data('origin-zoom');
                             $('.cz-image-zoom').attr({'src': originImage, 'data-zoom': originZoomImage});
+
+                            $(this).parent().siblings().removeClass('active')
+                            $(this).parent().addClass('active');
                         });
                     }
                 },
@@ -362,6 +366,17 @@ require(['../config'], function () {
             };
             e.init();
         }(jQuery);
+
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+            });
+            $(document).on('click', '.close-popover', function () {
+                $('[data-toggle="popover"]').popover('hide');
+            });
+        });
+
+        requirejs(['sharethis']);
 
     });
 });

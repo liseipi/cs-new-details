@@ -1218,7 +1218,7 @@ a[class*='card']:hover .title {
   font-size: 85%;
 }
 
-.was-price{
+.was-price {
   font-weight: 400;
   color: #6c757d;
   font-size: 12px;
@@ -1483,56 +1483,158 @@ a[class*='card']:hover .title {
 }
 
 /* ================== PAGE DETAILS ==================  */
-.gallery-wrap .img-big-wrap {
-  margin-bottom: 10px;
-  //border-radius: 0.37rem;
-  overflow: hidden;
-  background-color: #fff;
+.gallery-wrap {
+  .img-big-wrap {
+    margin-bottom: 10px;
+    //border-radius: 0.37rem;
+    overflow: hidden;
+    background-color: #fff;
+
+    a {
+      text-align: center;
+      display: block;
+    }
+
+    img {
+      //height: 450px;
+      //width: auto;
+      display: inline-block;
+      cursor: -webkit-zoom-in;
+      cursor: zoom-in;
+    }
+  }
+
+  .thumbs-wrap {
+    text-align: center;
+    //margin-bottom: 20px;
+    height: 170px;
+
+    //.item-thumb {
+    //  width: 80px;
+    //  height: 80px;
+    //  border: 1px solid #ddd;
+    //  border-radius: 6px;
+    //  margin: 3px;
+    //  display: inline-block;
+    //  overflow: hidden;
+    //
+    //  img {
+    //    max-width: 100%;
+    //    max-height: 100%;
+    //    -o-object-fit: cover;
+    //    object-fit: cover;
+    //    border-radius: 4px;
+    //    cursor: -webkit-zoom-in;
+    //    cursor: zoom-in;
+    //
+    //    &:hover {
+    //      -webkit-filter: brightness(1.1);
+    //      filter: brightness(1.1);
+    //      cursor: -webkit-zoom-in;
+    //      cursor: zoom-in;
+    //    }
+    //  }
+    //}
+
+    .item-thumb {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 3px;
+      transition: border-color 0.2s ease-in-out;
+      border: 1px solid #e3e9ef;
+      border-radius: 6px;
+      text-decoration: none !important;
+      //overflow: hidden;
+
+      > img {
+        display: block;
+        width: 100%;
+        transition: opacity .2s ease-in-out;
+        opacity: .6;
+        border-radius: 4px;
+      }
+
+      .item-thumb-text {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        padding: .25rem;
+        transform: translateY(-50%);
+        color: #4b566b;
+        font-size: .875rem;
+        text-align: center;
+
+        > i {
+          display: block;
+          margin-bottom: .25rem;
+          font-size: 1.5em;
+        }
+      }
+
+      &:hover {
+        border-color: #c9d5e0;
+
+        > img {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        border-color: #fe696a;
+
+        > img {
+          opacity: 1;
+        }
+      }
+    }
+
+  }
 }
 
-.gallery-wrap .img-big-wrap a {
-  text-align: center;
-  display: block;
+@include media-breakpoint-down(xs) {
+  .gallery-wrap .thumbs-wrap {
+    height: 172px;
+  }
+
+  .gallery-wrap .thumbs-wrap .item-thumb {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.gallery-wrap .img-big-wrap img {
-  //height: 450px;
-  //width: auto;
-  display: inline-block;
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
+@include media-breakpoint-only(sm) {
+   .gallery-wrap .thumbs-wrap {
+     height: 172px;
+   }
+
+   .gallery-wrap .thumbs-wrap .item-thumb {
+     width: 80px;
+     height: 80px;
+   }
+ }
+
+@include media-breakpoint-only(lg) {
+  .gallery-wrap .thumbs-wrap {
+    height: 190px;
+  }
+
+  .gallery-wrap .thumbs-wrap .item-thumb {
+    width: 87px;
+    height: 87px;
+  }
 }
 
-.gallery-wrap .thumbs-wrap {
-  text-align: center;
-  margin-bottom: 20px;
-}
+@include media-breakpoint-up(lg) {
+  .gallery-wrap .thumbs-wrap {
+    height: 194px;
+  }
 
-.gallery-wrap .thumbs-wrap .item-thumb {
-  width: 80px;
-  height: 80px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin: 3px;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.gallery-wrap .thumbs-wrap img {
-  max-width: 100%;
-  max-height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
-}
-
-.gallery-wrap .thumbs-wrap img:hover {
-  -webkit-filter: brightness(1.1);
-  filter: brightness(1.1);
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
+  .gallery-wrap .thumbs-wrap .item-thumb {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .item-option-select {

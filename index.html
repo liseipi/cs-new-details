@@ -533,15 +533,26 @@
                                     <div class="cz-image-zoom-pane"></div>
                                 </div>
                             </div> <!-- slider-product.// -->
-                            <div class="thumbs-wrap">
-                                <a href="javascript:;" class="item-thumb" v-for="(gImage, gIndex) in galleryData" :key="gIndex">
-                                    <img class="lozad"
-                                        :data-src="gImage.thumbnail"
-                                        :data-origin="gImage.dataOrigin"
-                                        :data-origin-zoom="gImage.dataOriginZoom">
-                                </a>
-                            </div> <!-- slider-nav.// -->
+                            <div class="thumbs-wrap mx-1" data-simplebar data-simplebar-auto-hide="false">
+                                <div class="d-flex flex-wrap justify-content-start">
+                                    <a href="javascript:;" class="item-thumb" :class="{active: gIndex==0}"
+                                       v-for="(gImage, gIndex) in galleryData" :key="gIndex">
+                                        <img class="lozad"
+                                             :data-src="gImage.thumbnail"
+                                             :data-origin="gImage.dataOrigin"
+                                             :data-origin-zoom="gImage.dataOriginZoom">
+                                    </a>
+                                </div>
+                            </div>
                         </article> <!-- gallery-wrap .end// -->
+                        <hr>
+                        <div class="px-3">
+                            <div class="font-weight-normal">Secure Transaction</div>
+                            <!-- https://seal.websecurity.norton.com/getseal?at=0&sealid=1&dn=www.websecurity.digicert.com&lang=en&tpt=transparent-->
+                            <div class="mt-1">
+                                <img class="lozad" data-src="public_new/images/getseal.gif" alt="web security digicert">
+                            </div>
+                        </div>
                     </aside>
                     <main class="col-md-6 border-left">
                         <article class="content-body">
@@ -573,8 +584,10 @@
                             </div> <!-- price-detail-wrap .// -->
                             <div class="mb-2">
                                 4 Payments <span class="text-danger ml-2 mr-2">$24.99</span> with
-                                <img class="lozad btn btn-light btn-sm rounded-1 payments-icon ml-2" data-src="public_new/images/afterpay_logo.svg" height="22" alt="afterpay_logo">
-                                <img class="lozad btn btn-light btn-sm rounded-1" data-src="public_new/images/primary.svg" height="22" alt="primary">
+                                <img class="lozad btn btn-light btn-sm rounded-1 payments-icon ml-2"
+                                     data-src="public_new/images/afterpay_logo.svg" height="22" alt="afterpay_logo">
+                                <img class="lozad btn btn-light btn-sm rounded-1" data-src="public_new/images/primary.svg" height="22"
+                                     alt="primary">
                             </div>
                             <dl class="row no-gutters">
                                 <dt class="col-sm-3">SKU</dt>
@@ -588,29 +601,29 @@
                                 <div class="col">
                                     <label>Size</label>
                                     <select class="form-control">
-                                        <option> XL </option>
-                                        <option> MD </option>
-                                        <option> XS </option>
+                                        <option> XL</option>
+                                        <option> MD</option>
+                                        <option> XS</option>
                                     </select>
                                 </div>
                                 <div class="col">
                                     <label>Color</label>
                                     <select class="form-control">
-                                        <option> Red </option>
-                                        <option> Blue </option>
+                                        <option> Red</option>
+                                        <option> Blue</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-row mt-3">
-                                <div class="col-2">
+                                <div class="col-3">
                                     <select class="form-control">
-                                        <option> 1 </option>
-                                        <option> 2 </option>
-                                        <option> 3 </option>
+                                        <option> 1</option>
+                                        <option> 2</option>
+                                        <option> 3</option>
                                     </select>
                                 </div> <!-- col.// -->
                                 <div class="col">
-                                    <a href="#" class="btn btn-success btn-block">
+                                    <a href="#" class="btn btn-danger btn-block">
                                         Add to cart
                                         <i class="csiconfont csicon-cart_add csicon-large"></i>
                                     </a>
@@ -629,17 +642,120 @@
                                 </div>
                             </div>
                             <div class="my-4">
+                                <div class="py-1">Enter postcode and suburb to recalculate.</div>
+                                <div class="form-row">
+                                    <div class="col-3">
+                                        <input class="form-control" type="text" value="2000">
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control">
+                                            <option> Red</option>
+                                            <option> Blue</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="card mt-2">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between border-bottom pb-2">
+                                            <div>
+                                                <div class="font-weight-semibold text-dark">Delivery & Handling</div>
+                                                <!--                                                <div class="font-size-sm text-muted">txt</div>-->
+                                            </div>
+                                            <div>$12.5</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between border-bottom py-2">
+                                            <div>
+                                                <div class="font-weight-semibold text-dark">Shipping Carrier</div>
+                                            </div>
+                                            <div><a class="btn-link text-decoration" href="#">FastWay</a></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between border-bottom py-2">
+                                            <div>
+                                                <div class="font-weight-semibold text-dark">ETA</div>
+                                            </div>
+                                            <div>2 - 3 working days</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between border-bottom py-2">
+                                            <div>
+                                                <div class="font-weight-semibold text-dark show-info"
+                                                     data-toggle="popover"
+                                                     data-placement="top"
+                                                     title="Express Postage <a href='javascript:;' class='close close-popover ml-3' aria-label='close'><span aria-hidden='true'>&times;</span></a>"
+                                                     data-content="<p class='border-bottom py-1 my-1'>Postage: $18.00</p><p class='border-bottom py-1 my-1'>Quantity: 1</p><p class='border-bottom py-1 my-1'>PostCode: 2000</p><p class='py-1 my-1'>ETA: 1 - 2 working days</p>">
+                                                    Express Post Available
+                                                    <svg class="bi bi-info" width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                              d="M10 17a7 7 0 100-14 7 7 0 000 14zm8-7a8 8 0 11-16 0 8 8 0 0116 0z"
+                                                              clip-rule="evenodd"></path>
+                                                        <path d="M10.93 8.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533l1.002-4.705z"></path>
+                                                        <circle cx="10" cy="6.5" r="1"></circle>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <a target="_blank"
+                                                   href="https://auspost.com.au/business/shipping/domestic-shipping/express-post">
+                                                    <img class="lozad" data-src="public_new/images/Australia_Post_Express_Logo.png" width="120"
+                                                         alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between pt-2">
+                                            <div>
+                                                <div class="font-weight-semibold text-dark show-info"
+                                                     data-toggle="popover"
+                                                     data-placement="bottom"
+                                                     title="Delivery <a href='javascript:;' class='close close-popover ml-3' aria-label='close'><span aria-hidden='true'>&times;</span></a>"
+                                                     data-content="<p class='py-1 my-1'>1. Standard or express delivery <br> 2. Specific date or day of the week delivery (Monday to Friday)<br> 3. Morning (7am-12pm) or afternoon (12pm -5pm) delivery windows<br> 4. Customer collection option</p>"
+                                                >
+                                                    Delivery Choices Available
+                                                    <svg class="bi bi-info" width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                              d="M10 17a7 7 0 100-14 7 7 0 000 14zm8-7a8 8 0 11-16 0 8 8 0 0116 0z"
+                                                              clip-rule="evenodd"></path>
+                                                        <path d="M10.93 8.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533l1.002-4.705z"></path>
+                                                        <circle cx="10" cy="6.5" r="1"></circle>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                <hr>
                                 <div class="accordion accordion-md" id="accordionExample">
                                     <div class="card">
-                                        <div class="card-header" id="headingOne">
-                                            <h2 class="my-0">
-                                                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Shipping options <span class="accordion-indicator"><i data-feather="chevron-up"></i></span>
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-block text-left position-relative collapsed" type="button"
+                                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                                        aria-controls="collapseTwo">
+                                                    Find Postage <span class="accordion-indicator"><svg class="bi bi-chevron-down" width="1em"
+                                                                                                        height="1em" viewBox="0 0 20 20"
+                                                                                                        fill="currentColor"
+                                                                                                        xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.646 6.646a.5.5 0 01.708 0L10 12.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z"
+        clip-rule="evenodd"></path>
+</svg></span>
                                                 </button>
                                             </h2>
                                         </div>
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                            <div class="card-body font-size-sm">
+                                        <div id="collapseTwo" class="p-2 collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="py-1">Enter postcode and suburb to recalculate.</div>
+                                            <div class="form-row">
+                                                <div class="col-3">
+                                                    <input class="form-control" type="text" value="2000">
+                                                </div>
+                                                <div class="col">
+                                                    <select class="form-control">
+                                                        <option> Red</option>
+                                                        <option> Blue</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="card-body card mt-2 p-2">
                                                 <div class="d-flex justify-content-between border-bottom pb-2">
                                                     <div>
                                                         <div class="font-weight-semibold text-dark">Courier</div>
@@ -679,6 +795,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                -->
                             </div>
                             <div class="mt-2">
                                 <div class="d-flex flex-row no-gutters">
@@ -994,12 +1111,14 @@
                         <div class="right-top">
                             <div class="right-ad-img mb-2">
                                 <a href="javascript:void(0)" rel="nofollow">
-                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/testimoanl-button.gif" alt="testimoanl">
+                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/testimoanl-button.gif"
+                                         alt="testimoanl">
                                 </a>
                             </div>
                             <div class="right-ad-img mb-2">
                                 <a href="/clearance" rel="nofollow">
-                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/clearance-banner.jpg" alt="clearance">
+                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/clearance-banner.jpg"
+                                         alt="clearance">
                                 </a>
                             </div>
                             <div class="right-ad-img">

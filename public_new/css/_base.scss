@@ -28,6 +28,10 @@ input {
   background-color: $brand-color;
 }
 
+.text-decoration {
+  text-decoration: underline !important;
+}
+
 .custom-select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -185,9 +189,9 @@ $btn-scroll-top-hover-color: $white !default;
 }
 
 // # simplebar
-.simplebar-content {
-  padding-right: 1rem !important
-}
+//.simplebar-content {
+//  padding-right: 1rem !important
+//}
 
 .simplebar-track {
   transition: opacity .25s ease-in-out;
