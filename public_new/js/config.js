@@ -13,8 +13,8 @@ require.config({
         'vue': './vue',
         'pace': './libs/pace/pace.min',
         'drift': './libs/drift-zoom/Drift.min',
+        'holder': './holder',
         'sharethis': 'https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop',
-
 
 
     },
@@ -39,12 +39,25 @@ require.config({
     }
 });
 
-require(['bootstrap', 'lozad',  'smoothscroll', 'simplebar', 'pace', 'hcsticky'], function (bs, lozad, SmoothScroll, simplebar, pace) {
+require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'hcsticky'], function (bs, lozad, SmoothScroll, simplebar, pace) {
 
     // Page loading progress
     pace.start({
         document: false
     });
+
+    // Holder.run({
+    //     domain: "img.crazysales",
+    //     dataAttr: 'holder-src',
+    //     themes: {
+    //         "simple": {
+    //             bg: "#fff",
+    //             fg: "#000",
+    //             size: 12
+    //         }
+    //     },
+    //     images: document.querySelector('img.holder')
+    // });
 
     !function (c) {
         var e = {
@@ -102,17 +115,8 @@ require(['bootstrap', 'lozad',  'smoothscroll', 'simplebar', 'pace', 'hcsticky']
 
             },
             lozadResources: function () {
-
                 const observer = lozad();
                 observer.observe();
-
-                // const el = document.querySelector('img.lozad');
-                // const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
-                // observer.observe();
-
-                // var el = document.querySelector('.lozad');
-                // var observer = lozad(el);
-                // observer.observe();
             }
         };
         e.init();

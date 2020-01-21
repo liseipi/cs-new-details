@@ -451,7 +451,7 @@
         <aside class="newsletter-left d-none d-xl-block">
             <div data-sticky>
                 <div class="card rounded-0 d-inline-block">
-                    <img class="lozad" data-src="public_new/images/subscribe.jpg" width="95" alt="Subscribe">
+                    <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/subscribe.jpg" width="95" height="215" alt="Subscribe">
                     <div class="border-top p-1">
                         <input class="form-control form-control-sm mb-1 subscribe-txt" type="text" placeholder="You Email">
                         <button class="btn btn-success btn-sm btn-block subscribe-btn" type="button">Subscribe</button>
@@ -463,8 +463,8 @@
         <aside class="promotion-today-right d-none d-xl-block" data-sticky>
             <div class="card rounded-0 d-inline-block">
                 <a href="#">
-                    <img class="lozad" data-src="public_new/images/promotion-today.png" width="86" alt="">
-                    <img class="lozad" data-src="https://img.crazysales.com.au/products_pictures/86/172/172029_1249067_F.jpg" width="86" alt="">
+                    <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/promotion-today.png" width="86" height="85" alt="">
+                    <img class="lozad" src="public_new/svg/holder.svg" data-src="https://img.crazysales.com.au/products_pictures/86/172/172029_1249067_F.jpg" width="86" height="86" alt="goods-img">
                     <div class="product-price text-center font-weight-bolder py-1">
                         $24.99
                     </div>
@@ -527,7 +527,10 @@
                         <article class="gallery-wrap" v-if="galleryData.length>0">
                             <div class="img-big-wrap">
                                 <div class="position-relative">
-                                    <img class="lozad cz-image-zoom" width="100%"
+                                    <img class="lozad cz-image-zoom"
+                                         width="100%"
+                                         height="100%"
+                                         src="public_new/svg/holder.svg"
                                          :data-src="galleryData[0].dataOrigin"
                                          :data-zoom="galleryData[0].dataOriginZoom">
                                     <div class="cz-image-zoom-pane"></div>
@@ -538,6 +541,9 @@
                                     <a href="javascript:;" class="item-thumb" :class="{active: gIndex==0}"
                                        v-for="(gImage, gIndex) in galleryData" :key="gIndex">
                                         <img class="lozad"
+                                             width="100%"
+                                             height="100%"
+                                             src="public_new/svg/holder.svg"
                                              :data-src="gImage.thumbnail"
                                              :data-origin="gImage.dataOrigin"
                                              :data-origin-zoom="gImage.dataOriginZoom">
@@ -550,7 +556,7 @@
                             <div class="font-weight-normal">Secure Transaction</div>
                             <!-- https://seal.websecurity.norton.com/getseal?at=0&sealid=1&dn=www.websecurity.digicert.com&lang=en&tpt=transparent-->
                             <div class="mt-1">
-                                <img class="lozad" data-src="public_new/images/getseal.gif" alt="web security digicert">
+                                <img class="lozad" width="115" height="82" src="public_new/svg/holder.svg" data-src="public_new/images/getseal.gif" alt="web security digicert">
                             </div>
                         </div>
                     </aside>
@@ -585,9 +591,8 @@
                             <div class="mb-2">
                                 4 Payments <span class="text-danger ml-2 mr-2">$24.99</span> with
                                 <img class="lozad btn btn-light btn-sm rounded-1 payments-icon ml-2"
-                                     data-src="public_new/images/afterpay_logo.svg" height="22" alt="afterpay_logo">
-                                <img class="lozad btn btn-light btn-sm rounded-1" data-src="public_new/images/primary.svg" height="22"
-                                     alt="primary">
+                                     src="public_new/svg/holder.svg" data-src="public_new/images/afterpay_logo.svg" width="61" height="22" alt="afterpay_logo">
+                                <img class="lozad btn btn-light btn-sm rounded-1" src="public_new/svg/holder.svg" data-src="public_new/images/primary.svg" width="51" height="22" alt="primary">
                             </div>
                             <dl class="row no-gutters">
                                 <dt class="col-sm-3">SKU</dt>
