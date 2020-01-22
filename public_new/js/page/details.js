@@ -283,8 +283,118 @@ require(['../config'], function () {
             data: {
                 pickedData: pickedData,
                 newHotData: newHotData,
-                // galleryData: galleryData.slice(0, 10),
-                galleryData: galleryData,
+                galleryData: galleryData,   // galleryData.slice(0, 10),
+                status: {
+                    isLoadingSuburb: false,
+                    isLoadingPostage: false,
+                },
+                productID: 200437,
+                placeID: 2000,
+                quantity: 1,
+                suburbID: 997,
+                suburbData: [],
+                postageData: {
+                    courierName: "-",
+                    express_postage: 0,
+                    express_dTime: "-",
+                    dTime: "-",
+                    postage: 0,
+                    error: ""
+                },
+            },
+            methods: {
+                ajaxSearchSuburb: function () {
+                    this.status.isLoadingSuburb = true;
+                    $.ajax({
+                        url: '/Shipping/ajaxSearchSuburb',
+                        type: 'POST',
+                        data: {
+                            post_code: this.placeID
+                        },
+                        success: function (result) {
+                            // console.log(result);
+                            app.status.isLoadingSuburb = false;
+                            if (result.flag) {
+                                if (result.data instanceof Array) {
+                                    if (result.data.length > 0) {
+                                        app.suburbData = result.data;
+                                        app.suburbID = result.data[0].subID;
+                                    } else {
+                                        app.suburbData.splice(0);
+                                        app.suburbID = null;
+                                    }
+                                } else {
+                                    app.suburbData.splice(0);
+                                    app.suburbID = null;
+                                }
+                            } else {
+                                app.suburbData.splice(0);
+                                app.suburbID = null;
+                            }
+                            // app.$forceUpdate();
+                        },
+                        error: function (e) {
+                            app.status.isLoadingSuburb = false;
+                            console.log(e);
+                        }
+                    });
+                },
+                ajaxProductPostage: function () {
+                    this.status.isLoadingPostage = true;
+                    $.ajax({
+                        url: '/Shipping/ajaxProductPostage',
+                        type: 'POST',
+                        data: {
+                            productID: this.productID,
+                            quantity: this.quantity,
+                            placeID: this.placeID,
+                            suburbID: this.suburbID,
+                        },
+                        success: function (result) {
+                            // console.log(result);
+                            app.status.isLoadingPostage = false;
+                            if (result instanceof Object) {
+                                app.postageData = result;
+                            } else {
+                                app.postageData = {
+                                    courierName: "-",
+                                    express_postage: 0,
+                                    express_dTime: "-",
+                                    dTime: "-",
+                                    postage: 0,
+                                    error: ""
+                                };
+                            }
+                        },
+                        error: function (e) {
+                            app.status.isLoadingPostage = false;
+                            console.log(e);
+                        }
+                    });
+                }
+            },
+            watch: {
+                placeID: function (val, originVal) {
+                    if (parseInt(val) != parseInt(originVal)) {
+                        if (val.length == 4) {
+                            this.ajaxSearchSuburb();
+                        }
+                    }
+                },
+                quantity: function (val, originVal) {
+                    if (parseInt(val) != parseInt(originVal)) {
+                        this.ajaxProductPostage();
+                    }
+                },
+                suburbID: function (val, originVal) {
+                    if (parseInt(val) != parseInt(originVal)) {
+                        this.ajaxProductPostage();
+                    }
+                },
+            },
+            mounted: function () {
+                this.ajaxSearchSuburb();
+                // this.ajaxProductPostage();
             }
         });
 
@@ -370,6 +480,9 @@ require(['../config'], function () {
         $(function () {
             $('[data-toggle="popover"]').popover({
                 html: true,
+                content: function () {
+                    return "<p class='border-bottom py-1 my-1'>Postage: $" + (app.postageData.express_postage || '-') + "</p><p class='border-bottom py-1 my-1'>Quantity: " + app.postageData.quantity + "</p><p class='border-bottom py-1 my-1'>PostCode: " + app.postageData.placeID + "</p><p class='py-1 my-1'>ETA: " + app.postageData.express_dTime + "</p>";
+                }
             });
             $(document).on('click', '.close-popover', function () {
                 $('[data-toggle="popover"]').popover('hide');

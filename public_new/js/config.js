@@ -1,7 +1,7 @@
 require.config({
     baseUrl: 'public_new/js/',
     paths: {
-        'css': 'css',
+        'css': './css',
         'jquery': './jquery-3.4.1.min',
         'popper': './popper.min',
         'bootstrap': './libs/bootstrap/js/bootstrap.min',
@@ -10,7 +10,7 @@ require.config({
         'smoothscroll': './libs/smooth-scroll/smooth-scroll.polyfills.min',
         'hcsticky': './libs/hc-sticky/hc-sticky',
         'lozad': './libs/lozad/lozad.min',
-        'vue': './vue',
+        'vue': './vue@2.6.11',
         'pace': './libs/pace/pace.min',
         'drift': './libs/drift-zoom/Drift.min',
         'holder': './holder',
@@ -20,6 +20,7 @@ require.config({
     },
     map: {
         '*': {
+            'css': 'css',
             'popper.js': 'popper'
         }
     },
