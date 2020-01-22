@@ -29,13 +29,8 @@ require.config({
             deps: ['jquery', 'popper']
         },
         owlcarousel: {
-            deps: ['css!./libs/owlcarousel/assets/owl.carousel.min.css', 'css!./libs/owlcarousel/assets/owl.theme.default.min.css', 'jquery']
-        },
-        simplebar: {
-            deps: ['css!./libs/simplebar/simplebar.min.css']
-        },
-        pace: {
-            deps: ['css!./libs/pace/pace-theme-minimal.css']
+            // deps: ['css!./libs/owlcarousel/assets/owl.carousel.min.css', 'css!./libs/owlcarousel/assets/owl.theme.default.min.css', 'jquery'],
+            deps: ['jquery']
         },
     }
 });

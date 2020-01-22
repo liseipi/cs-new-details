@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEQ,+DAAoD,CACpD,oEAAyD,CACzD,mDAAwC,CACxC,mDAAwC",
+"sources": ["plugins.scss"],
+"names": [],
+"file": "plugins.css"
+}
