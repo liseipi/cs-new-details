@@ -2,6 +2,19 @@
   padding: 5px;
 }
 
+.nav-goods-sticky {
+  display: none;
+  width: 100%;
+  z-index: 800;
+  top: 0;
+  background-color: #fff;
+
+  h6 {
+    @include line-clamp(1);
+    height: 20px;
+  }
+}
+
 .product_fav {
   display: inline-block;
   width: 36px;
@@ -159,7 +172,7 @@
   color: $brand-color;
 }
 
-.close-popover{
+.close-popover {
   margin-top: -2px;
 }
 

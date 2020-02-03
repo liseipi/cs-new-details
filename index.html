@@ -443,6 +443,48 @@
         </nav> <!-- navbar main end.// -->
     </header>
 
+    <aside class="position-fixed shadow nav-goods-sticky">
+        <div class="container" style="position:relative; max-width: 1000px; min-width: 720px; margin: 0 auto;">
+            <div class="row py-2">
+                <div class="col-8">
+                    <div class="media">
+                        <img class="rounded mr-3" src="https://img.crazysales.com.au/products_pictures/200/200437_1523713_T.jpg" width="60" height="60"
+                             alt="...">
+                        <div class="media-body">
+                            <h6 class="mt-0 ">HOMASA Foot Massager Reflexology with Acupuncture Air Compression</h6>
+                            <div class="rating-wrap">
+                                <ul class="rating-stars">
+                                    <li class="stars-active" style="width: 80%;"><i class="csiconfont csicon-star"></i> <i
+                                            class="csiconfont csicon-star"></i> <i class="csiconfont csicon-star"></i> <i
+                                            class="csiconfont csicon-star"></i> <i class="csiconfont csicon-star"></i></li>
+                                    <li><i class="csiconfont csicon-star"></i> <i class="csiconfont csicon-star"></i> <i
+                                            class="csiconfont csicon-star"></i> <i class="csiconfont csicon-star"></i> <i
+                                            class="csiconfont csicon-star"></i></li>
+                                </ul>
+                                <small class="label-rating text-muted">132 reviews</small>
+                                <var class="price h6 ml-2">$89.99</var>
+                                <del class="ml-2">Was: $59.95</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex h-100 align-items-center">
+                        <select class="form-control d-inline-block mr-2" style="width: 100px;">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                        <a href="#" class="btn btn-danger btn-block">
+                            Add to cart
+                            <i class="csiconfont csicon-cart_add csicon-large"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
     <section id="details-page" class="container-body position-relative" data-sticky-container
              style="position:relative; max-width: 1000px; min-width: 720px; margin: 0 auto;">
         <aside class="newsletter-left d-none d-xl-block">
@@ -461,7 +503,8 @@
             <div class="card rounded-0 d-inline-block">
                 <a href="#">
                     <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/promotion-today.png" width="86" height="85" alt="">
-                    <img class="lozad" src="public_new/svg/holder.svg" data-src="https://img.crazysales.com.au/products_pictures/86/172/172029_1249067_F.jpg" width="86" height="86" alt="goods-img">
+                    <img class="lozad" src="public_new/svg/holder.svg"
+                         data-src="https://img.crazysales.com.au/products_pictures/86/172/172029_1249067_F.jpg" width="86" height="86" alt="goods-img">
                     <div class="product-price text-center font-weight-bolder py-1">
                         $24.99
                     </div>
@@ -552,7 +595,8 @@
                             <div class="font-weight-normal">Secure Transaction</div>
                             <!-- https://seal.websecurity.norton.com/getseal?at=0&sealid=1&dn=www.websecurity.digicert.com&lang=en&tpt=transparent-->
                             <div class="mt-1">
-                                <img class="lozad" width="115" height="82" src="public_new/svg/holder.svg" data-src="public_new/images/getseal.gif" alt="web security digicert">
+                                <img class="lozad" src="public_new/svg/holder.svg"
+                                     data-src="public_new/images/getseal.gif" width="115" height="82" alt="web security digicert">
                             </div>
                         </div>
                     </aside>
@@ -587,8 +631,10 @@
                             <div class="mb-2">
                                 4 Payments <span class="text-danger ml-2 mr-2">$24.99</span> with
                                 <img class="lozad btn btn-light btn-sm rounded-1 payments-icon ml-2"
-                                     src="public_new/svg/holder.svg" data-src="public_new/images/afterpay_logo.svg" width="61" height="22" alt="afterpay_logo">
-                                <img class="lozad btn btn-light btn-sm rounded-1" src="public_new/svg/holder.svg" data-src="public_new/images/primary.svg" width="51" height="22" alt="primary">
+                                     src="public_new/svg/holder.svg" data-src="public_new/images/afterpay_logo.svg" width="61" height="22"
+                                     alt="afterpay_logo">
+                                <img class="lozad btn btn-light btn-sm rounded-1" src="public_new/svg/holder.svg" data-src="public_new/images/primary.svg"
+                                     width="51" height="22" alt="primary">
                             </div>
                             <dl class="row no-gutters">
                                 <dt class="col-sm-3">SKU</dt>
@@ -638,7 +684,8 @@
                                 <div class="d-flex flex-row no-gutters mb-2">
                                     <span class="col-sm-3 d-flex align-items-center">Payments</span>
                                     <div class="label-rating text-muted flex-grow-1">
-                                        <img class="lozad align-middle" data-src="public_new/images/payments.png" height="28" alt="payments">
+                                        <img class="lozad align-middle" src="public_new/svg/holder.svg" data-src="public_new/images/payments.png"
+                                             width="167" height="28" alt="payments">
                                     </div>
                                 </div>
                             </div>
@@ -650,7 +697,8 @@
                                     </div>
                                     <div class="col">
                                         <select class="form-control" v-model="suburbID">
-                                            <option v-for="(iSuburb, iIndex) in suburbData" :key="iIndex" :value="iSuburb.subID">{{iSuburb.sub_name}}</option>
+                                            <option v-for="(iSuburb, iIndex) in suburbData" :key="iIndex" :value="iSuburb.subID">{{iSuburb.sub_name}}
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="col-auto" v-show="status.isLoadingSuburb">
@@ -680,7 +728,8 @@
                                                 <div class="font-weight-semibold text-dark">Shipping Carrier</div>
                                             </div>
                                             <div>
-                                                <a class="btn-link text-decoration" target="_blank" href="https://www.crazysales.com.au/article/DeliveryBrand">{{postageData.courierName}}</a>
+                                                <a class="btn-link text-decoration" target="_blank"
+                                                   href="https://www.crazysales.com.au/article/DeliveryBrand">{{postageData.courierName}}</a>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between border-bottom py-2">
@@ -710,8 +759,8 @@
                                             <div>
                                                 <a target="_blank"
                                                    href="https://auspost.com.au/business/shipping/domestic-shipping/express-post">
-                                                    <img class="lozad" data-src="public_new/images/Australia_Post_Express_Logo.png" width="120"
-                                                         alt="">
+                                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                                         data-src="public_new/images/Australia_Post_Express_Logo.png" width="120" height="27" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -823,6 +872,7 @@
                     </main> <!-- col.// -->
                 </div> <!-- row.// -->
             </div><!-- /goods info-->
+
             <div class="row no-gutters mt-3 char-main">
                 <div class="col-lg-2 col-md-4 col-6 char_col">
                     <div class="char_item d-flex flex-column align-items-center justify-content-center char-item">
@@ -903,7 +953,7 @@
                                     <div class="owl-item" v-for="(pGoods, pIndex) in pickedData" :key="pIndex">
                                         <figure class="card card-product-grid">
                                             <a href="#" class="img-wrap">
-                                                <img class="lozad" :data-src="pGoods.thumbnail">
+                                                <img class="lozad" src="public_new/svg/holder.svg" :data-src="pGoods.thumbnail">
                                             </a>
                                             <figcaption class="info-wrap">
                                                 <a href="#" class="title line-clamp">{{pGoods.name}}</a>
@@ -953,33 +1003,47 @@
                                     <!--                                        <source type="image/webp" srcset="https://img.crazysales.com.au/products_pictures/2004/200437_1523799_extra.webp">-->
                                     <!--                                    </picture>-->
 
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523799_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523799_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523801_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523801_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523803_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523803_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523805_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523805_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523807_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523807_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523809_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523809_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523811_extra.gif"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523811_extra.gif"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523813_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523813_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523815_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523815_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523819_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523819_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523821_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523821_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523823_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523823_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523825_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523825_extra.jpg"
                                          align=""/>
-                                    <img class="lozad" data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523827_extra.jpg"
+                                    <img class="lozad" src="public_new/svg/holder.svg"
+                                         data-src="//img.crazysales.com.au/products_pictures/2004/200437_1523827_extra.jpg"
                                          align=""/>
 
                                 </p>
@@ -1125,18 +1189,22 @@
                         <div class="right-top">
                             <div class="right-ad-img mb-2">
                                 <a href="javascript:void(0)" rel="nofollow">
-                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/testimoanl-button.gif"
-                                         alt="testimoanl">
+                                    <img class="lozad" src="public_new/svg/holder.svg" width="100%"
+                                         data-src="//img.crazysales.com.au/images/testimoanl-button.gif"
+                                         alt="testimoanl" style="min-height: 307px;">
                                 </a>
                             </div>
                             <div class="right-ad-img mb-2">
                                 <a href="/clearance" rel="nofollow">
-                                    <img class="lozad" width="100%" data-src="//img.crazysales.com.au/images/clearance-banner.jpg"
-                                         alt="clearance">
+                                    <img class="lozad" src="public_new/svg/holder.svg" width="100%"
+                                         data-src="//img.crazysales.com.au/images/clearance-banner.jpg"
+                                         alt="clearance" style="min-height: 597px;">
                                 </a>
                             </div>
-                            <div class="right-ad-img">
-
+                            <div class="right-ad-img mb-2" style="height: 400px; background-color:#ddd;">
+                                <ins class="adsbygoogle" style="display:inline-block;width:190px;height:400px;"
+                                     data-ad-client="ca-pub-8352043502333695"
+                                     data-ad-slot="4651508651"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
@@ -1150,7 +1218,7 @@
                                         <div class="row no-gutters">
                                             <aside class="col-sm-5">
                                                 <a href="#" class="img-wrap">
-                                                    <img class="lozad rounded" :data-src="pGoods.thumbnail">
+                                                    <img class="lozad rounded" src="public_new/svg/holder.svg" :data-src="pGoods.thumbnail">
                                                 </a>
                                             </aside> <!-- col.// -->
                                             <div class="col-sm-7">
@@ -1668,7 +1736,7 @@
             </div>
         </div>
 
-        <section class="container px-0 mt-5">
+        <div class="container px-0 mt-5">
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link text-dark active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
                    role="tab"
@@ -1685,7 +1753,8 @@
                     <div class="px-4">
                         <div>Crazysales accepts a range of payment options including PayPal, BPAY, Visa, Mastercard.
                         </div>
-                        <div class="py-3"><img class="lozad" data-src="public_new/images/payments.png" height="35" alt="">
+                        <div class="py-3"><img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/payments.png" width="209"
+                                               height="35" alt="">
                         </div>
                         <div>Rest assured as all payments are processed using the latest SSL encryption technology!
                         </div>
@@ -1707,7 +1776,8 @@
                             </li>
                         </ul>
                         <div class="">
-                            <img class="lozad" data-src="public_new/images/add-ons-aust-post-eparcel.png" height="45" alt="">
+                            <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/add-ons-aust-post-eparcel.png" width="192"
+                                 height="45" alt="">
                         </div>
                     </div>
                 </div>
@@ -1724,7 +1794,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="mt-3" style="height: 120px; background-color:#ddd;">
+            <ins class="adsbygoogle" style="display:inline-block;width:100%; height:120px;"
+                 data-ad-client="ca-pub-8352043502333695" data-ad-slot="4651508651"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
 
     </section>
 
@@ -1765,7 +1841,8 @@
                 <div class="row">
                     <aside class="col-md-4">
                         <article class="mr-3">
-                            <img class="lozad logo-footer" data-src="public_new/images/logo-white.svg" width="200">
+                            <img class="lozad logo-footer" src="public_new/svg/holder.svg" data-src="public_new/images/logo-white.svg" width="200"
+                                 height="59">
                             <p class="mt-3 about-txt">where you will find crazy deals & everyday discounts on the top
                                 selection of today's online products!
                                 As one of the largest Australian online department stores, we're 100% Australian owned and
@@ -1837,10 +1914,10 @@
 
                         <h6 class="title mt-3">Our app</h6>
                         <a href="#" class="d-block mb-2">
-                            <img class="lozad" data-src="public_new/images/appstore.png" height="35">
+                            <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/appstore.png" width="118" height="35">
                         </a>
                         <a href="#" class="d-block mb-2">
-                            <img class="lozad" data-src="public_new/images/playmarket.png" height="35">
+                            <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/playmarket.png" width="118" height="35">
                         </a>
                     </aside>
                 </div>
@@ -1856,29 +1933,36 @@
                                 66 166 623 169 | PO BOX 1016 Springvale, VIC 3171, Australia</a>
                             </div>
                             <div class="logos col-md ml-md-auto text-md-right mt-2 mt-md-0">
-                                <img class="lozad" src="public_new/images/cards-alt.png" height="36" alt="">
+                                <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/cards-alt.png" width="240" height="36"
+                                     alt="cards">
                             </div>
                         </div>
                     </div>
                 </div>
                 <ul class="mt-3 list-inline">
                     <li class="list-inline-item">
-                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic01.jpg" width="70" height="80">
+                        <img class="lozad" src="public_new/svg/holder.svg" data-src="//img.crazysales.com.au/images/bottom_pic01.jpg" width="70"
+                             height="80">
                     </li>
                     <li class="list-inline-item">
-                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic02.jpg" width="70" height="80">
+                        <img class="lozad" src="public_new/svg/holder.svg" data-src="//img.crazysales.com.au/images/bottom_pic02.jpg" width="70"
+                             height="80">
                     </li>
                     <li class="list-inline-item">
-                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic03.jpg" width="70" height="80">
+                        <img class="lozad" src="public_new/svg/holder.svg" data-src="//img.crazysales.com.au/images/bottom_pic03.jpg" width="70"
+                             height="80">
                     </li>
                     <li class="list-inline-item">
-                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic04.jpg" width="65" height="80">
+                        <img class="lozad" src="public_new/svg/holder.svg" data-src="//img.crazysales.com.au/images/bottom_pic04.jpg" width="65"
+                             height="80">
                     </li>
                     <li class="list-inline-item">
-                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic05.jpg" width="90" height="50">
+                        <img class="lozad" src="public_new/svg/holder.svg" data-src="//img.crazysales.com.au/images/bottom_pic05.jpg" width="90"
+                             height="50">
                     </li>
                     <li class="list-inline-item">
-                        <img class="lozad" data-src="//img.crazysales.com.au/images/bottom_pic07.jpg" width="100" height="65">
+                        <img class="lozad" src="public_new/svg/holder.svg" data-src="//img.crazysales.com.au/images/bottom_pic07.jpg" width="100"
+                             height="65">
                     </li>
                 </ul>
             </div>

@@ -393,7 +393,7 @@ require(['../config'], function () {
                 },
             },
             mounted: function () {
-                this.ajaxSearchSuburb();
+                // this.ajaxSearchSuburb();
                 // this.ajaxProductPostage();
             }
         });
@@ -407,6 +407,7 @@ require(['../config'], function () {
                     e.initGallerySlider();
                     e.showOriginImage();
                     e.imageZoom();
+                    e.navGoodsSticky();
                 },
                 lozadResources: function () {
                     const observer = lozad();
@@ -473,23 +474,37 @@ require(['../config'], function () {
                         });
                     }
                 },
+                navGoodsSticky: function () {
+                    var t = document.querySelector(".char-main");
+                    if (null != t) {
+                        var charHeight = $('.char-main').offset().top;
+                        var navTag = $('.nav-goods-sticky');
+                        $(window).on('scroll', function () {
+                            if ($(this).scrollTop() >= charHeight) {
+                                navTag.addClass('d-block');
+                            } else {
+                                navTag.removeClass('d-block');
+                            }
+                        });
+                    }
+                }
             };
             e.init();
         }(jQuery);
 
-        $(function () {
-            $('[data-toggle="popover"]').popover({
-                html: true,
-                content: function () {
-                    return "<p class='border-bottom py-1 my-1'>Postage: $" + (app.postageData.express_postage || '-') + "</p><p class='border-bottom py-1 my-1'>Quantity: " + app.postageData.quantity + "</p><p class='border-bottom py-1 my-1'>PostCode: " + app.postageData.placeID + "</p><p class='py-1 my-1'>ETA: " + app.postageData.express_dTime + "</p>";
-                }
-            });
-            $(document).on('click', '.close-popover', function () {
-                $('[data-toggle="popover"]').popover('hide');
-            });
-        });
+        // $(function () {
+        //     $('[data-toggle="popover"]').popover({
+        //         html: true,
+        //         content: function () {
+        //             return "<p class='border-bottom py-1 my-1'>Postage: $" + (app.postageData.express_postage || '-') + "</p><p class='border-bottom py-1 my-1'>Quantity: " + app.postageData.quantity + "</p><p class='border-bottom py-1 my-1'>PostCode: " + app.postageData.placeID + "</p><p class='py-1 my-1'>ETA: " + app.postageData.express_dTime + "</p>";
+        //         }
+        //     });
+        //     $(document).on('click', '.close-popover', function () {
+        //         $('[data-toggle="popover"]').popover('hide');
+        //     });
+        // });
 
-        requirejs(['sharethis']);
+        // requirejs(['sharethis']);
 
     });
 });

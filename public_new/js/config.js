@@ -15,7 +15,7 @@ require.config({
         'drift': './libs/drift-zoom/Drift.min',
         'holder': './holder',
         'sharethis': 'https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop',
-
+        'adsbygoogle': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626',
 
     },
     map: {
@@ -35,7 +35,7 @@ require.config({
     }
 });
 
-require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'hcsticky'], function (bs, lozad, SmoothScroll, simplebar, pace) {
+require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'holder', 'hcsticky'], function (bs, lozad, SmoothScroll, simplebar, pace, Holder) {
 
     // Page loading progress
     pace.start({
@@ -63,6 +63,7 @@ require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'hcsticky'],
                 e.smoothScroll();
                 e.coupletFloating();
                 e.lozadResources();
+                e.adsbygoogle();
             },
             menuStopPropagation: function () {
                 var t = document.querySelector("#all-category-menu");
@@ -97,7 +98,8 @@ require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'hcsticky'],
                     var elements = document.querySelectorAll('[data-sticky]');
                     for (var i = 0; i < elements.length; i++) {
                         new hcSticky(elements[i], {
-                            stickTo: '[data-sticky-container]'
+                            stickTo: '[data-sticky-container]',
+                            top: 5,
                         });
                     }
                 }
@@ -113,6 +115,12 @@ require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'hcsticky'],
             lozadResources: function () {
                 const observer = lozad();
                 observer.observe();
+            },
+            adsbygoogle: function () {
+                var t = document.querySelector(".adsbygoogle");
+                if (null != t) {
+                    requirejs(['adsbygoogle']);
+                }
             }
         };
         e.init();
