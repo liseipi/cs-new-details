@@ -9,6 +9,7 @@ require.config({
         'simplebar': './libs/simplebar/simplebar.min',
         'smoothscroll': './libs/smooth-scroll/smooth-scroll.polyfills.min',
         'hcsticky': './libs/hc-sticky/hc-sticky',
+        'fancybox':'./libs/fancybox/jquery.fancybox.min',
         'lozad': './libs/lozad/lozad.min',
         'vue': './vue@2.6.11',
         'pace': './libs/pace/pace.min',
@@ -32,6 +33,9 @@ require.config({
             // deps: ['css!./libs/owlcarousel/assets/owl.carousel.min.css', 'css!./libs/owlcarousel/assets/owl.theme.default.min.css', 'jquery'],
             deps: ['jquery']
         },
+        fancybox: {
+            deps: ['jquery']
+        }
     }
 });
 

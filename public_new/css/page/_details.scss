@@ -8,10 +8,21 @@
   z-index: 800;
   top: 0;
   background-color: #fff;
+  animation: navbar-show .25s;
 
   h6 {
     @include line-clamp(1);
     height: 20px;
+  }
+}
+@keyframes navbar-show {
+  from {
+    transform: translateY(-.625rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

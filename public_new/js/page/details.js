@@ -1,5 +1,5 @@
 require(['../config'], function () {
-    require(['vue', 'owlcarousel', 'lozad', 'drift', 'hcsticky'], function (Vue, owlCarousel, lozad, drift) {
+    require(['vue', 'simplebar', 'owlcarousel', 'lozad', 'drift', 'fancybox', 'hcsticky'], function (Vue, SimpleBar, owlCarousel, lozad, drift, fancybox) {
 
         var pickedData = [
             {
@@ -278,6 +278,7 @@ require(['../config'], function () {
                 dataOriginZoom: '//img.crazysales.com.au/products_pictures/2004/200437_1526701_HD.jpg',
             },
         ];
+
         var app = new Vue({
             el: '#details-page',
             data: {
@@ -408,6 +409,7 @@ require(['../config'], function () {
                     e.showOriginImage();
                     e.imageZoom();
                     e.navGoodsSticky();
+                    e.showCharMain();
                 },
                 lozadResources: function () {
                     const observer = lozad();
@@ -453,7 +455,7 @@ require(['../config'], function () {
                     }
                 },
                 initGallerySlider: function () {
-
+                    new SimpleBar(document.querySelector('.thumbs-wrap'), {autoHide: false});
                 },
                 showOriginImage: function () {
                     if ($('.item-thumb').length) {
@@ -479,20 +481,43 @@ require(['../config'], function () {
                     if (null != t) {
                         var charHeight = $('.char-main').offset().top;
                         var navTag = $('.nav-goods-sticky');
-                        $(window).on('scroll', function () {
+
+                        var calcNavSticky = function () {
                             if ($(this).scrollTop() >= charHeight) {
                                 navTag.addClass('d-block');
                             } else {
                                 navTag.removeClass('d-block');
                             }
+                        };
+                        $(window).on('scroll', function () {
+                            calcNavSticky();
                         });
+                        calcNavSticky();
                     }
+                },
+                showCharMain: function () {
+                    $('[data-fancybox="iframe"]').fancybox({
+                        toolbar: false,
+                        smallBtn: true,
+                        arrows: false,
+                        infobar: false,
+                        buttons: ["close"],
+                        iframe: {
+                            preload: false
+                        }
+                    });
                 }
             };
             e.init();
         }(jQuery);
 
-        // $(function () {
+        $(function () {
+
+
+            $(".copy_review_nav_filter").append($(".review_nav_filter").clone());
+
+            $('[data-toggle="tooltip"]').tooltip();
+
         //     $('[data-toggle="popover"]').popover({
         //         html: true,
         //         content: function () {
@@ -502,7 +527,7 @@ require(['../config'], function () {
         //     $(document).on('click', '.close-popover', function () {
         //         $('[data-toggle="popover"]').popover('hide');
         //     });
-        // });
+        });
 
         // requirejs(['sharethis']);
 
