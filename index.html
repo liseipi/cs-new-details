@@ -1279,7 +1279,8 @@
                         </div>
                         <span class="d-inline-block align-middle">4.1 Overall rating</span>
                         <p class="pt-1 font-size-sm text-muted">
-                            Share your review and photos here. And 100-200 crazypoints will be rewarded after the review approved. (100 CrazyPoints Equals to $1)
+                            Share your review and photos here. And 100-200 crazypoints will be rewarded after the review approved. (100 CrazyPoints Equals
+                            to $1)
                         </p>
                     </div>
                     <div class="col-lg-7 col-md-7">
@@ -1344,7 +1345,8 @@
                 <div class="review_nav_filter row align-items-center">
                     <div class="col-12 col-md-auto">
                         <!-- Button -->
-                        <a class="btn btn-sm btn-dark text-light" data-toggle="tooltip" data-placement="right" title="Only for customers who bought and received the product." href="#">
+                        <a class="btn btn-sm btn-dark text-light" data-toggle="tooltip" data-placement="right"
+                           title="Only for customers who bought and received the product." href="#">
                             Write Review
                         </a>
                     </div>
@@ -1382,430 +1384,61 @@
                 </div>
 
                 <div class="review_list mb-4">
-                    <div class="mt-3">
+                    <div class="mt-3" v-for="(reVal, reIndex) in reviewData" :key="reIndex">
                         <div class="card review-item p-3">
                             <div class="review-body">
-                                <div class="row">
-                                    <div class="col-12 col-md-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-xxl mb-6 mb-md-0">
-                        <span class="avatar-title rounded-circle">
-                          <svg class="bi bi-person-fill" width="10em" height="10em" viewBox="0 0 20 20"
-                               fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M5 16s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H5zm5-6a3 3 0 100-6 3 3 0 000 6z"
-        clip-rule="evenodd"></path>
-</svg>
-                        </span>
+                                <div class="d-flex">
+                                    <div class="media media-ie-fix align-items-center mr-4 pr-2">
+                                        <img class="rounded-circle" width="50" src="https://demo.createx.studio/cartzilla/img/shop/reviews/01.jpg" alt="Rafael Marquez">
+                                        <div class="media-body pl-3">
+                                            <h6 class="font-size-sm mb-0">{{reVal.name}}</h6>
+                                            <span class="font-size-ms text-muted">{{reVal.date}}</span>
                                         </div>
-
                                     </div>
-                                    <div class="col-12 col-md">
-
-                                        <!-- Header -->
-                                        <div class="row mb-6">
-                                            <div class="col-12">
-
-                                                <!-- Rating -->
-                                                <ul class="rating-stars">
-                                                    <li style="width:80%" class="stars-active">
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-                                            <div class="col-12">
-
-                                                <!-- Time -->
-                                                <span class="font-size-xs text-muted">
-                            Logan Edwards, <time datetime="2019-07-25">25 Jul 2019</time>
-                          </span>
-
-                                            </div>
+                                    <div>
+                                        <div class="star-rating">
+                                            <ul class="rating-stars">
+                                                <li style="width:80%" class="stars-active">
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                    <i class="csiconfont csicon-star"></i>
+                                                </li>
+                                            </ul>
                                         </div>
-
-                                        <!-- Title -->
-                                        <p class="mb-2 font-size-lg font-weight-bold">
-                                            So cute!
-                                        </p>
-
-                                        <!-- Text -->
-                                        <p class="text-gray-500">
-                                            Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur
-                                            diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit.
-                                            Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis
-                                            vestibulum.
-                                        </p>
-
-                                        <!-- Footer -->
-                                        <div class="row align-items-center">
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Was this review helpful?</p>
-
-                                            </div>
-                                            <div class="col-auto mr-auto">
-
-                                                <!-- Rate -->
-                                                <div class="rate">
-                                                    <a class="rate-item" href="#" role="button">
-                                                        <i class="csiconfont csicon-agree"> 3</i>
-                                                    </a>
-                                                    <a class="rate-item ml-2" href="#" role="button">
-                                                        <i class="csiconfont csicon-disagree"> 0</i>
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Comments (0)</p>
-
-                                            </div>
-                                            <div class="col-auto">
-
-                                                <!-- Button -->
-                                                <a class="btn btn-xs btn-outline-border" href="#!">
-                                                    Comment
-                                                </a>
-
-                                            </div>
-                                        </div>
-
+                                        <div class="font-size-ms text-muted">83% of users found this review helpful</div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-3">
-                        <div class="card review-item p-3">
-                            <div class="review-body">
-                                <div class="row">
-                                    <div class="col-12 col-md-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-xxl mb-6 mb-md-0">
-                        <span class="avatar-title rounded-circle">
-                          <svg class="bi bi-person-fill" width="10em" height="10em" viewBox="0 0 20 20"
-                               fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M5 16s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H5zm5-6a3 3 0 100-6 3 3 0 000 6z"
-        clip-rule="evenodd"></path>
-</svg>
-                        </span>
-                                        </div>
-
-                                    </div>
+                                <div class="row mt-3">
                                     <div class="col-12 col-md">
-
-                                        <!-- Header -->
-                                        <div class="row mb-6">
-                                            <div class="col-12">
-
-                                                <!-- Rating -->
-                                                <ul class="rating-stars">
-                                                    <li style="width:80%" class="stars-active">
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-                                            <div class="col-12">
-
-                                                <!-- Time -->
-                                                <span class="font-size-xs text-muted">
-                            Logan Edwards, <time datetime="2019-07-25">25 Jul 2019</time>
-                          </span>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Title -->
-                                        <p class="mb-2 font-size-lg font-weight-bold">
-                                            So cute!
-                                        </p>
-
                                         <!-- Text -->
                                         <p class="text-gray-500">
-                                            Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur
-                                            diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit.
-                                            Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis
-                                            vestibulum.
+                                            {{reVal.content}}
                                         </p>
-
                                         <!-- Footer -->
                                         <div class="row align-items-center">
                                             <div class="col-auto d-none d-lg-block">
-
                                                 <!-- Text -->
                                                 <p class="mb-0 font-size-sm">Was this review helpful?</p>
-
                                             </div>
                                             <div class="col-auto mr-auto">
-
                                                 <!-- Rate -->
                                                 <div class="rate">
                                                     <a class="rate-item" href="#" role="button">
-                                                        <i class="csiconfont csicon-agree"> 3</i>
+                                                        <i class="csiconfont csicon-agree"> {{reVal.yes}}</i>
                                                     </a>
                                                     <a class="rate-item ml-2" href="#" role="button">
-                                                        <i class="csiconfont csicon-disagree"> 0</i>
+                                                        <i class="csiconfont csicon-disagree"> {{reVal.no}}</i>
                                                     </a>
                                                 </div>
-
-                                            </div>
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Comments (0)</p>
-
-                                            </div>
-                                            <div class="col-auto">
-
-                                                <!-- Button -->
-                                                <a class="btn btn-xs btn-outline-border" href="#!">
-                                                    Comment
-                                                </a>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-3">
-                        <div class="card review-item p-3">
-                            <div class="review-body">
-                                <div class="row">
-                                    <div class="col-12 col-md-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-xxl mb-6 mb-md-0">
-                        <span class="avatar-title rounded-circle">
-                          <svg class="bi bi-person-fill" width="10em" height="10em" viewBox="0 0 20 20"
-                               fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M5 16s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H5zm5-6a3 3 0 100-6 3 3 0 000 6z"
-        clip-rule="evenodd"></path>
-</svg>
-                        </span>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-12 col-md">
-
-                                        <!-- Header -->
-                                        <div class="row mb-6">
-                                            <div class="col-12">
-
-                                                <!-- Rating -->
-                                                <ul class="rating-stars">
-                                                    <li style="width:80%" class="stars-active">
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-                                            <div class="col-12">
-
-                                                <!-- Time -->
-                                                <span class="font-size-xs text-muted">
-                            Logan Edwards, <time datetime="2019-07-25">25 Jul 2019</time>
-                          </span>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Title -->
-                                        <p class="mb-2 font-size-lg font-weight-bold">
-                                            So cute!
-                                        </p>
-
-                                        <!-- Text -->
-                                        <p class="text-gray-500">
-                                            Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur
-                                            diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit.
-                                            Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis
-                                            vestibulum.
-                                        </p>
-
-                                        <!-- Footer -->
-                                        <div class="row align-items-center">
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Was this review helpful?</p>
-
-                                            </div>
-                                            <div class="col-auto mr-auto">
-
-                                                <!-- Rate -->
-                                                <div class="rate">
-                                                    <a class="rate-item" href="#" role="button">
-                                                        <i class="csiconfont csicon-agree"> 3</i>
-                                                    </a>
-                                                    <a class="rate-item ml-2" href="#" role="button">
-                                                        <i class="csiconfont csicon-disagree"> 0</i>
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Comments (0)</p>
-
-                                            </div>
-                                            <div class="col-auto">
-
-                                                <!-- Button -->
-                                                <a class="btn btn-xs btn-outline-border" href="#!">
-                                                    Comment
-                                                </a>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-3">
-                        <div class="card review-item p-3">
-                            <div class="review-body">
-                                <div class="row">
-                                    <div class="col-12 col-md-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-xxl mb-6 mb-md-0">
-                        <span class="avatar-title rounded-circle">
-                          <svg class="bi bi-person-fill" width="10em" height="10em" viewBox="0 0 20 20"
-                               fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M5 16s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H5zm5-6a3 3 0 100-6 3 3 0 000 6z"
-        clip-rule="evenodd"></path>
-</svg>
-                        </span>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-12 col-md">
-
-                                        <!-- Header -->
-                                        <div class="row mb-6">
-                                            <div class="col-12">
-
-                                                <!-- Rating -->
-                                                <ul class="rating-stars">
-                                                    <li style="width:80%" class="stars-active">
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                    <li>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-                                            <div class="col-12">
-
-                                                <!-- Time -->
-                                                <span class="font-size-xs text-muted">
-                            Logan Edwards, <time datetime="2019-07-25">25 Jul 2019</time>
-                          </span>
-
-                                            </div>
-                                        </div>
-
-                                        <!-- Title -->
-                                        <p class="mb-2 font-size-lg font-weight-bold">
-                                            So cute!
-                                        </p>
-
-                                        <!-- Text -->
-                                        <p class="text-gray-500">
-                                            Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur
-                                            diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit.
-                                            Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis
-                                            vestibulum.
-                                        </p>
-
-                                        <!-- Footer -->
-                                        <div class="row align-items-center">
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Was this review helpful?</p>
-
-                                            </div>
-                                            <div class="col-auto mr-auto">
-
-                                                <!-- Rate -->
-                                                <div class="rate">
-                                                    <a class="rate-item" href="#" role="button">
-                                                        <i class="csiconfont csicon-agree"> 3</i>
-                                                    </a>
-                                                    <a class="rate-item ml-2" href="#" role="button">
-                                                        <i class="csiconfont csicon-disagree"> 0</i>
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-auto d-none d-lg-block">
-
-                                                <!-- Text -->
-                                                <p class="mb-0 font-size-sm">Comments (0)</p>
-
-                                            </div>
-                                            <div class="col-auto">
-
-                                                <!-- Button -->
-                                                <a class="btn btn-xs btn-outline-border" href="#!">
-                                                    Comment
-                                                </a>
-
                                             </div>
                                         </div>
 

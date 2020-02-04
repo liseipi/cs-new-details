@@ -278,6 +278,40 @@ require(['../config'], function () {
                 dataOriginZoom: '//img.crazysales.com.au/products_pictures/2004/200437_1526701_HD.jpg',
             },
         ];
+        var reviewData = [
+            {
+                name: "Rafael Marquez",
+                date: '2019-12-24 11:28:32',
+                star: 5,
+                content: 'Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit. Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis vestibulum.',
+                yes: 5,
+                no: 0,
+            },
+            {
+                name: "Rafael Marquez",
+                date: '2019-12-24 11:28:32',
+                star: 5,
+                content: 'Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit. Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis vestibulum.',
+                yes: 5,
+                no: 0,
+            },
+            {
+                name: "Rafael Marquez",
+                date: '2019-12-24 11:28:32',
+                star: 5,
+                content: 'Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit. Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis vestibulum.',
+                yes: 5,
+                no: 0,
+            },
+            {
+                name: "Rafael Marquez",
+                date: '2019-12-24 11:28:32',
+                star: 5,
+                content: 'Justo ut diam erat hendrerit. Morbi porttitor, per eu. Sodales curabitur diam sociis. Taciti lobortis nascetur. Ante laoreet odio hendrerit. Dictumst curabitur nascetur lectus potenti dis sollicitudin habitant quis vestibulum.',
+                yes: 5,
+                no: 0,
+            },
+        ];
 
         var app = new Vue({
             el: '#details-page',
@@ -285,6 +319,7 @@ require(['../config'], function () {
                 pickedData: pickedData,
                 newHotData: newHotData,
                 galleryData: galleryData,   // galleryData.slice(0, 10),
+                reviewData: reviewData,
                 status: {
                     isLoadingSuburb: false,
                     isLoadingPostage: false,
