@@ -1,5 +1,4 @@
 require(['../config'], function () {
-    console.log(1);
     var app = null;
     require(['vue',], function (Vue) {
         var pickedData = [
@@ -314,7 +313,6 @@ require(['../config'], function () {
             },
         ];
 
-        console.log(11);
         app = new Vue({
             el: '#details-page',
             data: {
@@ -435,12 +433,9 @@ require(['../config'], function () {
                 // this.ajaxProductPostage();
             }
         });
-        console.log(111);
     });
 
-    console.log(2);
     require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky'], function (lozad, SimpleBar, owlCarousel, drift, fancybox) {
-        console.log(22);
         !function (c) {
             var e = {
                 init: function () {
@@ -570,7 +565,6 @@ require(['../config'], function () {
             e.init();
         }(jQuery);
 
-        console.log(222);
         // requirejs(['sharethis']);
 
     });
