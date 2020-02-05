@@ -435,7 +435,7 @@ require(['../config'], function () {
         });
     });
 
-    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap'], function (lozad, SimpleBar, owlCarousel, drift, fancybox) {
+    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap'], function (lozad, SimpleBar, owlCarousel, drift, fancybox, hcs, bs) {
         !function (c) {
             var e = {
                 init: function () {
@@ -527,9 +527,9 @@ require(['../config'], function () {
                     }
                 },
                 rightProductFloating: function () {
-                    if ($('[data-sticky-detail]').length) {
-                        var Sticky = new hcSticky('[data-sticky-detail]', {
-                            stickTo: '[data-sticky-detail-main]'
+                    if ($('#data-sticky-detail').length) {
+                        var sticky = new hcSticky('#data-sticky-detail', {
+                            stickTo: '#data-sticky-detail-main'
                         });
                     }
                 },
@@ -565,7 +565,9 @@ require(['../config'], function () {
             e.init();
         }(jQuery);
 
-        // requirejs(['sharethis']);
+        // setTimeout(function () {
+        //     requirejs(['sharethis']);
+        // }, 300);
 
     });
 });

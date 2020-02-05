@@ -1,4 +1,4 @@
-require(['hcsticky', 'smoothscroll', 'simplebar', 'bootstrap'], function (hcsticky, SmoothScroll, simplebar, bs) {
+require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar'], function (bootstrap, hcsticky, SmoothScroll, simplebar) {
 
     // Holder.run({
     //     domain: "img.crazysales",
@@ -30,7 +30,7 @@ require(['hcsticky', 'smoothscroll', 'simplebar', 'bootstrap'], function (hcstic
                 if ($('[data-sticky]').length) {
                     var elements = document.querySelectorAll('[data-sticky]');
                     for (var i = 0; i < elements.length; i++) {
-                        new hcSticky(elements[i], {
+                        var sticky = new hcSticky(elements[i], {
                             stickTo: '[data-sticky-container]',
                             top: 5,
                         });
