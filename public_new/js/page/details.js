@@ -1,6 +1,6 @@
 require(['../config'], function () {
-    require(['vue', 'simplebar', 'owlcarousel', 'lozad', 'drift', 'fancybox', 'hcsticky'], function (Vue, SimpleBar, owlCarousel, lozad, drift, fancybox) {
-
+    var app = null;
+    require(['vue',], function (Vue) {
         var pickedData = [
             {
                 name: 'Portable Steam Sauna Tent w/ Head',
@@ -313,7 +313,7 @@ require(['../config'], function () {
             },
         ];
 
-        var app = new Vue({
+        app = new Vue({
             el: '#details-page',
             data: {
                 pickedData: pickedData,
@@ -433,7 +433,9 @@ require(['../config'], function () {
                 // this.ajaxProductPostage();
             }
         });
+    });
 
+    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky'], function (lozad, SimpleBar, owlCarousel, drift, fancybox) {
         !function (c) {
             var e = {
                 init: function () {
@@ -445,6 +447,7 @@ require(['../config'], function () {
                     e.imageZoom();
                     e.navGoodsSticky();
                     e.showCharMain();
+                    e.popoverInfo();
                 },
                 lozadResources: function () {
                     const observer = lozad();
@@ -541,28 +544,26 @@ require(['../config'], function () {
                             preload: false
                         }
                     });
+                },
+                popoverInfo: function () {
+                    $(function () {
+                        $(".copy_review_nav_filter").append($(".review_nav_filter").clone());
+                        $('[data-toggle="tooltip"]').tooltip();
+
+                        $('[data-toggle="popover"]').popover({
+                            html: true,
+                            content: function () {
+                                return "<p class='border-bottom py-1 my-1'>Postage: $" + (app.postageData.express_postage || '-') + "</p><p class='border-bottom py-1 my-1'>Quantity: " + app.postageData.quantity + "</p><p class='border-bottom py-1 my-1'>PostCode: " + app.postageData.placeID + "</p><p class='py-1 my-1'>ETA: " + app.postageData.express_dTime + "</p>";
+                            }
+                        });
+                        $(document).on('click', '.close-popover', function () {
+                            $('[data-toggle="popover"]').popover('hide');
+                        });
+                    });
                 }
             };
             e.init();
         }(jQuery);
-
-        $(function () {
-
-
-            $(".copy_review_nav_filter").append($(".review_nav_filter").clone());
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-        //     $('[data-toggle="popover"]').popover({
-        //         html: true,
-        //         content: function () {
-        //             return "<p class='border-bottom py-1 my-1'>Postage: $" + (app.postageData.express_postage || '-') + "</p><p class='border-bottom py-1 my-1'>Quantity: " + app.postageData.quantity + "</p><p class='border-bottom py-1 my-1'>PostCode: " + app.postageData.placeID + "</p><p class='py-1 my-1'>ETA: " + app.postageData.express_dTime + "</p>";
-        //         }
-        //     });
-        //     $(document).on('click', '.close-popover', function () {
-        //         $('[data-toggle="popover"]').popover('hide');
-        //     });
-        });
 
         // requirejs(['sharethis']);
 
