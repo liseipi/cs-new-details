@@ -1,6 +1,6 @@
 require(['../config'], function () {
     var app = null;
-    require(['vue',], function (Vue) {
+    require(['vue', 'bootstrap'], function (Vue) {
         var pickedData = [
             {
                 name: 'Portable Steam Sauna Tent w/ Head',
@@ -435,7 +435,7 @@ require(['../config'], function () {
         });
     });
 
-    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky'], function (lozad, SimpleBar, owlCarousel, drift, fancybox) {
+    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap'], function (lozad, SimpleBar, owlCarousel, drift, fancybox) {
         !function (c) {
             var e = {
                 init: function () {
@@ -568,7 +568,4 @@ require(['../config'], function () {
         // requirejs(['sharethis']);
 
     });
-
-    requirejs(['public']);
-
 });

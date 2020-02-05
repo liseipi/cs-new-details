@@ -42,7 +42,7 @@ require.config({
     }
 });
 
-require(['lozad', 'pace', 'bootstrap'], function (lozad, pace) {
+require(['pace', 'lozad', 'bootstrap'], function (pace, lozad) {
     // # page loading progress
     pace.start({
         document: false
@@ -50,6 +50,8 @@ require(['lozad', 'pace', 'bootstrap'], function (lozad, pace) {
     // # lozad data-origin
     var observer = lozad();
     observer.observe();
+
+    requirejs(['public']);
 });
 
 

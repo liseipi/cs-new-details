@@ -1,4 +1,4 @@
-require(['hcsticky', 'smoothscroll', 'simplebar', 'bootstrap'], function (hcsticky, SmoothScroll, simplebar, bs) {
+require(['hcsticky', 'smoothscroll', 'simplebar'], function (hcsticky, SmoothScroll, simplebar, bs) {
 
     // Holder.run({
     //     domain: "img.crazysales",
