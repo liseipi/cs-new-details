@@ -9,7 +9,7 @@ require.config({
         'simplebar': './libs/simplebar/simplebar.min',
         'smoothscroll': './libs/smooth-scroll/smooth-scroll.polyfills.min',
         'hcsticky': './libs/hc-sticky/hc-sticky',
-        'fancybox':'./libs/fancybox/jquery.fancybox.min',
+        'fancybox': './libs/fancybox/jquery.fancybox.min',
         'lozad': './libs/lozad/lozad.min',
         'vue': './vue@2.6.11',
         'pace': './libs/pace/pace.min',
@@ -63,6 +63,7 @@ require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'holder', 'h
         var e = {
             init: function () {
                 e.menuStopPropagation();
+                e.renderTopButton();
                 e.scrollTopButton();
                 e.smoothScroll();
                 e.coupletFloating();
@@ -77,13 +78,16 @@ require(['bootstrap', 'lozad', 'smoothscroll', 'simplebar', 'pace', 'holder', 'h
                     });
                 }
             },
+            renderTopButton: function () {
+                $('body').append('<a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="fas fa-chevron-up align-middle text-light"></i></a>');
+            },
             scrollTopButton: function () {
                 var t = document.querySelector(".btn-scroll-top");
                 if (null != t) {
                     var o = parseInt(600, 10);
                     window.addEventListener("scroll", function (e) {
                         e.currentTarget.pageYOffset > o ? t.classList.add("show") : t.classList.remove("show")
-                    })
+                    });
                 }
             },
             smoothScroll: function () {
