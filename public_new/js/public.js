@@ -27,11 +27,11 @@ require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar'], function (bootst
                 }, 800);
             },
             coupletFloating: function () {
-                if ($('[data-sticky]').length) {
-                    var elements = document.querySelectorAll('[data-sticky]');
+                if ($('[data-sticky-main-ad]').length) {
+                    var elements = document.querySelectorAll('[data-sticky-main-ad]');
                     for (var i = 0; i < elements.length; i++) {
-                        var sticky = new hcSticky(elements[i], {
-                            stickTo: '[data-sticky-container]',
+                        new hcSticky(elements[i], {
+                            stickTo: '[data-sticky-main-container]',
                             top: 5,
                         });
                     }
