@@ -170,7 +170,8 @@ body.compensate-for-scrollbar {
     background: #fff;
     display: inline-block;
     margin: 0;
-    max-width: 100%;
+    /*max-width: 100%;*/
+    max-width: 1000px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     padding: 44px;
