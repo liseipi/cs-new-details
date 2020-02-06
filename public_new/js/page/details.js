@@ -440,7 +440,7 @@ require(['../config'], function () {
             var e = {
                 init: function () {
                     e.lozadResources();
-                    e.navGoodsSticky();
+                    // e.navGoodsSticky();
                     e.showOriginImage();
                     e.imageZoom();
                     e.initGallerySlider();

@@ -52,9 +52,10 @@ require(['pace', 'lozad', 'jquery'], function (pace, lozad) {
     observer.observe();
 
     // init public
-    setTimeout(function () {
-        requirejs(['public']);
-    }, 300);
+    // setTimeout(function () {
+    requirejs(['public']);
+    // }, 300);
+
 });
 
 
