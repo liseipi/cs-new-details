@@ -223,14 +223,14 @@ require(['../config'], function () {
         ];
         var galleryData = [
             {
-                thumbnail: 'https://img.crazysales.com.au/products_pictures/200/200437_1523713_T.jpg',
-                dataOrigin: 'https://img.crazysales.com.au/products_pictures/200/200437_1523713_F.jpg',
-                dataOriginZoom: 'https://img.crazysales.com.au/products_pictures/200/200437_1523713_HD.jpg',
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523713_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523713_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523713_HD.jpg',
             },
             {
-                thumbnail: 'https://img.crazysales.com.au/products_pictures/200/200437_1523697_T.jpg',
-                dataOrigin: 'https://img.crazysales.com.au/products_pictures/200/200437_1523697_F.jpg',
-                dataOriginZoom: 'https://img.crazysales.com.au/products_pictures/200/200437_1523697_HD.jpg',
+                thumbnail: '//img.crazysales.com.au/products_pictures/200/200437_1523697_T.jpg',
+                dataOrigin: '//img.crazysales.com.au/products_pictures/200/200437_1523697_F.jpg',
+                dataOriginZoom: '//img.crazysales.com.au/products_pictures/200/200437_1523697_HD.jpg',
             },
             {
                 thumbnail: '//img.crazysales.com.au/products_pictures/2004/200437_1526699_T.jpg',
