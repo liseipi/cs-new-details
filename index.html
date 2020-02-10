@@ -701,8 +701,7 @@
                                     </div>
                                     <div class="col">
                                         <select class="form-control" v-model="suburbID">
-                                            <option v-for="(iSuburb, iIndex) in suburbData" :key="iIndex" :value="iSuburb.subID">{{iSuburb.sub_name}}
-                                            </option>
+                                            <option v-for="(iSuburb, iIndex) in suburbData" :key="iIndex" :value="iSuburb.subID" v-text="iSuburb.sub_name"></option>
                                         </select>
                                     </div>
                                     <div class="col-auto" v-show="status.isLoadingSuburb">
@@ -725,7 +724,7 @@
                                                 <div class="font-weight-semibold text-dark">Delivery & Handling</div>
                                                 <!--<div class="font-size-sm text-muted">txt</div>-->
                                             </div>
-                                            <div>${{postageData.postage}}</div>
+                                            <div v-cloak>${{postageData.postage}}</div>
                                         </div>
                                         <div class="d-flex justify-content-between border-bottom py-2">
                                             <div>
@@ -733,14 +732,14 @@
                                             </div>
                                             <div>
                                                 <a class="btn-link text-decoration" target="_blank"
-                                                   href="https://www.crazysales.com.au/article/DeliveryBrand">{{postageData.courierName}}</a>
+                                                   href="https://www.crazysales.com.au/article/DeliveryBrand" v-cloak>{{postageData.courierName}}</a>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between border-bottom py-2">
                                             <div>
                                                 <div class="font-weight-semibold text-dark">ETA</div>
                                             </div>
-                                            <div>{{postageData.dTime}}</div>
+                                            <div v-cloak>{{postageData.dTime}}</div>
                                         </div>
                                         <div class="d-flex justify-content-between border-bottom py-2">
                                             <div>
@@ -872,16 +871,16 @@
                                                 <img class="lozad" src="public_new/svg/holder.svg" :data-src="pGoods.thumbnail">
                                             </a>
                                             <figcaption class="info-wrap">
-                                                <a href="#" class="title line-clamp">{{pGoods.name}}</a>
+                                                <a href="#" v-cloak class="title line-clamp">{{pGoods.name}}</a>
                                                 <div class="mt-2 d-flex justify-content-between">
-                                                    <var class="price">${{pGoods.price}}</var>
-                                                    <del class="was-price">${{pGoods.wasPrice}}</del>
+                                                    <var class="price" v-cloak>${{pGoods.price}}</var>
+                                                    <del class="was-price" v-cloak>${{pGoods.wasPrice}}</del>
                                                 </div>
                                                 <div class="mt-1 d-flex justify-content-between align-items-center">
-                                                    <span class="text-success">
+                                                    <span class="text-success" v-cloak>
                                                         <i class="csiconfont csicon-star mr-1"></i>({{pGoods.reviews}})
                                                     </span>
-                                                    <span class="badge badge-warning text-light py-1">Save {{pGoods.save}}%</span>
+                                                    <span class="badge badge-warning text-light py-1" v-cloak>Save {{pGoods.save}}%</span>
                                                 </div>
                                             </figcaption>
                                         </figure>
@@ -1140,13 +1139,14 @@
                                             </aside> <!-- col.// -->
                                             <div class="col-sm-7">
                                                 <div class="ml-2">
-                                                    <a href="#" class="title mb-2 line-clamp text-muted">{{pGoods.name}}</a>
+                                                    <a href="#" class="title mb-2 line-clamp text-muted" v-cloak>{{pGoods.name}}</a>
                                                     <div class="price-wrap">
-                                                        <span class="price h6 brand-color">${{pGoods.price}}</span>
+                                                        <span class="price h6 brand-color" v-cloak>${{pGoods.price}}</span>
                                                     </div> <!-- price-dewrap // -->
                                                     <div class="review-wrap">
-                                                        <span class="text-warning"><i
-                                                                class="csiconfont csicon-star"></i> ({{pGoods.reviews}})</span>
+                                                        <span class="text-warning" v-cloak>
+                                                            <i class="csiconfont csicon-star"></i> ({{pGoods.reviews}})
+                                                        </span>
                                                     </div> <!-- price-dewrap // -->
                                                 </div>
                                             </div> <!-- col.// -->
@@ -1299,8 +1299,8 @@
                                         <img class="rounded-circle" width="50" src="https://demo.createx.studio/cartzilla/img/shop/reviews/01.jpg"
                                              alt="Rafael Marquez">
                                         <div class="media-body pl-3">
-                                            <h6 class="font-size-sm mb-0">{{reVal.name}}</h6>
-                                            <span class="font-size-ms text-muted">{{reVal.date}}</span>
+                                            <h6 class="font-size-sm mb-0" v-cloak>{{reVal.name}}</h6>
+                                            <span class="font-size-ms text-muted" v-cloak>{{reVal.date}}</span>
                                         </div>
                                     </div>
                                     <div>
@@ -1328,7 +1328,7 @@
                                 <div class="row mt-3">
                                     <div class="col-12 col-md">
                                         <!-- Text -->
-                                        <p class="text-gray-500">
+                                        <p class="text-gray-500" v-cloak>
                                             {{reVal.content}}
                                         </p>
                                         <!-- Footer -->
@@ -1339,12 +1339,12 @@
                                             </div>
                                             <div class="col-auto mr-auto">
                                                 <!-- Rate -->
-                                                <div class="rate">
+                                                <div class="rate" v-cloak>
                                                     <a class="rate-item" href="#" role="button">
-                                                        <i class="csiconfont csicon-agree"> {{reVal.yes}}</i>
+                                                        <i class="csiconfont csicon-agree" v-cloak>{{reVal.yes}}</i>
                                                     </a>
                                                     <a class="rate-item ml-2" href="#" role="button">
-                                                        <i class="csiconfont csicon-disagree"> {{reVal.no}}</i>
+                                                        <i class="csiconfont csicon-disagree" v-cloak>{{reVal.no}}</i>
                                                     </a>
                                                 </div>
                                             </div>
@@ -1629,8 +1629,7 @@
 <!-- End Google Tag Manager -->
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVB67F"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVB67F" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
