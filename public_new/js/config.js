@@ -53,9 +53,11 @@ require(['pace', 'lozad', 'jquery'], function (pace, lozad) {
 
     // init public
     // setTimeout(function () {
-    requirejs(['public']);
+    // requirejs(['public']);
     // }, 300);
 
 });
+
+requirejs(['public']);
 
 
