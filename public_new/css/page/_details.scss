@@ -15,6 +15,7 @@
     height: 20px;
   }
 }
+
 @keyframes navbar-show {
   from {
     transform: translateY(-.625rem);
@@ -95,31 +96,29 @@
       }
     }
   }
-
-
 }
 
-.viewed {
+#picked_product {
   padding: .75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
   background-color: #e9ecef;
   border-radius: .25rem;
 
-  .viewed_title_container {
+  .picked_title_container {
     border-bottom: solid 1px #dadada;
     position: relative;
 
-    .viewed_title {
+    .picked_title {
       margin-top: 10px;
     }
 
-    .viewed_nav_container {
+    .picked_nav_container {
       position: absolute;
       right: -5px;
       bottom: 14px;
 
-      .viewed_nav {
+      .picked_nav {
         display: inline-block;
         cursor: pointer;
 
@@ -134,16 +133,13 @@
           }
         }
 
-        .viewed_prev {
+        .picked_prev {
           margin-right: 15px;
         }
       }
     }
   }
 
-  .viewed_slider_container {
-    padding-top: 10px;
-  }
 }
 
 .info_information {
