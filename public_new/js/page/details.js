@@ -557,6 +557,7 @@ require(['../config'], function () {
 
                         $('[data-toggle="popover"]').popover({
                             html: true,
+                            trigger: 'hover',
                             content: function () {
                                 return "<p class='border-bottom py-1 my-1'>Postage: $" + (app.postageData.express_postage || '-') + "</p><p class='border-bottom py-1 my-1'>Quantity: " + app.postageData.quantity + "</p><p class='border-bottom py-1 my-1'>PostCode: " + app.postageData.placeID + "</p><p class='py-1 my-1'>ETA: " + app.postageData.express_dTime + "</p>";
                             }

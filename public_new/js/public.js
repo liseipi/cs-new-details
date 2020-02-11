@@ -24,7 +24,7 @@ require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar'], function (bootst
 
                 setTimeout(function () {
                     e.adsbygoogle();
-                });
+                }, 30);
             },
             coupletFloating: function () {
                 if ($('[data-sticky-main-ad]').length) {
