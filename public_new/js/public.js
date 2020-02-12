@@ -1,4 +1,4 @@
-require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar'], function (bootstrap, hcsticky, SmoothScroll, simplebar) {
+require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'common'], function (bootstrap, hcsticky, SmoothScroll, simplebar, common) {
 
     // Holder.run({
     //     domain: "img.crazysales",
@@ -13,15 +13,17 @@ require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar'], function (bootst
     //     images: document.querySelector('img.holder')
     // });
 
+    var timeLeft = '2020/2/16 23:29:36';
+
     !function (c) {
         var e = {
             init: function () {
                 e.coupletFloating();
                 e.smoothScroll();
+                e.menuStopPropagation();
                 e.renderTopButton();
                 e.scrollTopButton();
-                e.menuStopPropagation();
-
+                e.updateTime();
                 setTimeout(function () {
                     e.adsbygoogle();
                 }, 30);
@@ -73,6 +75,20 @@ require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar'], function (bootst
                     window.addEventListener("scroll", function (e) {
                         e.currentTarget.pageYOffset > o ? t.classList.add("show") : t.classList.remove("show")
                     });
+                }
+            },
+            updateTime: function () {
+                var el = document.querySelector("#promotion_today_product");
+                if (null != el) {
+                    var t = common.timeLeft({
+                        'end': timeLeft,
+                    });
+                    if (JSON.stringify(t) !== '{}') {
+                        document.querySelector('#promotion_today_product_time').innerHTML = t.hour + ':' + t.minute + ':' + t.second;
+                        setTimeout(function () {
+                            e.updateTime();
+                        }, 1000);
+                    }
                 }
             },
             adsbygoogle: function () {

@@ -1,6 +1,6 @@
 require(['../config'], function () {
     var app = null;
-    var timeLeft = 1582330220000; //# (new Date(" 2020/02/22 08:10:20")).getTime(); #new Date(1472048779952);
+    var timeLeft = '2020/2/13 19:19:00';
     var pickedData = [
         {
             name: 'Portable Steam Sauna Tent w/ Head',
@@ -337,6 +337,12 @@ require(['../config'], function () {
                     postage: 0,
                     error: ""
                 },
+                timeLeft: {
+                    day: 0,
+                    hour: 0,
+                    minute: 0,
+                    second: 0
+                },
             },
             methods: {
                 ajaxSearchSuburb: function () {
@@ -435,7 +441,7 @@ require(['../config'], function () {
         });
     });
 
-    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap'], function (lozad, SimpleBar, owlCarousel, drift, fancybox, hcs, bs) {
+    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap', 'common'], function (lozad, SimpleBar, owlCarousel, drift, fancybox, hcs, bs, common) {
         !function (c) {
             var e = {
                 init: function () {
@@ -455,7 +461,20 @@ require(['../config'], function () {
                     var observer = lozad();
                     observer.observe();
                 },
-                updateTime: function(){},
+                updateTime: function () {
+                    var el = document.querySelector("#current_product_countdown");
+                    if (null != el) {
+                        var t = common.timeLeft({
+                            'end': timeLeft,
+                        });
+                        if (JSON.stringify(t) !== '{}') {
+                            app.timeLeft = t;
+                            setTimeout(function () {
+                                e.updateTime();
+                            }, 1000);
+                        }
+                    }
+                },
                 navGoodsSticky: function () {
                     var t = document.querySelector(".char-main");
                     if (null != t) {
@@ -580,7 +599,7 @@ require(['../config'], function () {
                         });
                     }
                 },
-                showReviews: function(){
+                showReviews: function () {
                     var t = document.querySelector("#product_reviews");
                     if (null != t) {
                         var o = $('#product_reviews').offset().top;
