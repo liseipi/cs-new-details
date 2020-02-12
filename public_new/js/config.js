@@ -158,4 +158,4 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
 
 });
 
-// requirejs(['https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js']);
+requirejs(['https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js']);
