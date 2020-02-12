@@ -59,6 +59,6 @@ require(['pace', 'lozad', 'jquery'], function (pace, lozad) {
 
 });
 
-// requirejs(['public']);
+requirejs(['public']);
 
 
