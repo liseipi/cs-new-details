@@ -312,6 +312,7 @@ require(['../config'], function () {
             no: 0,
         },
     ];
+
     require(['vue'], function (Vue) {
         app = new Vue({
             el: '#details-page',
@@ -657,4 +658,5 @@ require(['../config'], function () {
         // }, 300);
 
     });
+
 });
