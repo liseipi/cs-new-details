@@ -43,22 +43,6 @@ require.config({
     }
 });
 
-require(['pace', 'lozad', 'jquery'], function (pace, lozad) {
-    // # page loading progress
-    pace.start({
-        document: false
-    });
-    // # lozad data-origin
-    var observer = lozad();
-    observer.observe();
-
-    // init public
-    // setTimeout(function () {
-    // requirejs(['public']);
-    // }, 300);
-
-});
-
 requirejs(['public']);
 
 

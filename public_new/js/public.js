@@ -1,4 +1,13 @@
-require(['bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'common'], function (bootstrap, hcsticky, SmoothScroll, simplebar, common) {
+require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'common'], function (pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, common) {
+
+    // # page loading progress
+    pace.start({
+        document: false
+    });
+
+    // # lozad data-origin
+    var observer = lozad();
+    observer.observe();
 
     // Holder.run({
     //     domain: "img.crazysales",

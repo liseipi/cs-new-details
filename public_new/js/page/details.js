@@ -312,7 +312,7 @@ require(['../config'], function () {
             no: 0,
         },
     ];
-    require(['vue', 'bootstrap'], function (Vue) {
+    require(['vue'], function (Vue) {
         app = new Vue({
             el: '#details-page',
             data: {
