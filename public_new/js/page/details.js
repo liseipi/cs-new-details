@@ -608,14 +608,13 @@ require(['../config'], function () {
                         window.addEventListener("scroll", function (ev) {
                             var s = document.querySelector("#reviewData").getAttribute('data-render');
                             if (ev.currentTarget.pageYOffset + w + 200 > o && s == 'false') {
-                                app.reviewData = newHotData;
+                                app.reviewData = reviewData;
                                 document.querySelector("#reviewData").setAttribute('data-render', 'true');
                                 app.$nextTick(function () {
                                     if (app.reviewData.length > 0) {
                                         e.lozadResources();
                                     }
                                 });
-                            } else {
                             }
                         });
                     }
