@@ -1,6 +1,6 @@
 require(['../config'], function () {
     var app = null;
-    var timeLeft = '2020/2/13 19:19:00';
+    var timeLeft = '2020/2/23 19:19:00';
     var pickedData = [
         {
             name: 'Portable Steam Sauna Tent w/ Head',
