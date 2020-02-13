@@ -1541,6 +1541,48 @@
         }
     });
 </script>
+<script>
+    (function () {
+        var YOUTUBE_API_KEY = "AIzaSyBVvcBJO24xPJqSzavXcFMiO1CRyWr_Onk";
+        [].forEach.call(document.getElementsByTagName('iframe'), function (e) {
+            var ytbSrc = e.getAttribute('data-src');
+            var id = e.src.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
+            if (id) {
+                var url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=' + YOUTUBE_API_KEY;
+                var xhttp2 = new XMLHttpRequest();
+                console.log(xhttp2);
+                xhttp2.onreadystatechange = function () {
+                    console.log(123);
+                    if (this.readyState == 4 && this.status == 200) {
+                        var responseObject = JSON.parse(this.response);
+                        var video = responseObject.items[0].snippet;
+                        var jsonld = {
+                            "@context": "http://schema.org",
+                            "@type": "VideoObject",
+                            "name": video.title,
+                            "description": video.description,
+                            "thumbnailUrl": [
+                                video.thumbnails.default.url,
+                                video.thumbnails.medium.url,
+                                video.thumbnails.high.url,
+                                video.thumbnails.maxres.url,
+                            ],
+                            "uploadDate": video.publishedAt,
+                            "contentUrl": "https://www.youtube.com/watch?v=" + video.id,
+                            "embedUrl": "https://www.youtube.com/embed/" + video.id,
+                        };
+                        var script = document.createElement("script");
+                        script.type = "application/ld+json";
+                        script.text = JSON.stringify(jsonld);
+                        document.querySelector("head").appendChild(script);
+                    }
+                };
+                xhttp2.open("GET", url, true);
+                xhttp2.send();
+            }
+        });
+    })();
+</script>
 
 <script src="public_new/js/require.js" data-main="public_new/js/page/details"></script>
 
@@ -1585,25 +1627,22 @@
 </script>
 
 <!-- Google Tag Manager -->
-<script>(function (w, d, s, l, i) {
-    w[l] = w[l] || [];
-    w[l].push({
-        'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-    });
-    var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-    j.async = true;
-    j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-    f.parentNode.insertBefore(j, f);
-})(window, document, 'script', 'dataLayer', 'GTM-KGVB67F');</script>
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KGVB67F');
+</script>
 <!-- End Google Tag Manager -->
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGVB67F" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <script async src="https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js"></script>
 
