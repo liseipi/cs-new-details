@@ -68,7 +68,7 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
     //     images: document.querySelector('img.holder')
     // });
 
-    var timeLeft = '2020/2/16 23:29:36';
+    var timeLeft = '2020/2/26 23:29:36';
 
     !function (c) {
         var e = {
