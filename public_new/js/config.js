@@ -121,7 +121,7 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                 }
             },
             renderTopButton: function () {
-                $('body').append('<a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="fas fa-chevron-up align-middle text-light"></i></a>');
+                $('body').append('<a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="csiconfont csicon-chevron_up csicon-xl align-middle text-light"></i></a>');
             },
             scrollTopButton: function () {
                 var t = document.querySelector(".btn-scroll-top");
