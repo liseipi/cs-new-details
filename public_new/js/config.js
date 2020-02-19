@@ -154,17 +154,21 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                 if (null != el) {
                     var _inputKeywords = $("#input-keywords");
                     var _hot_SearchList = $('.hot-search-list');
-
+                    var _search_results = $('.search-results');
                     _inputKeywords.focus(function (e) {
                         var _str = $.trim(e.target.value);
                         if (_str.length < 3) {
                             _hot_SearchList.show();
+                        } else {
+                            _search_results.show();
                         }
                     });
                 }
             },
             showSearchList() {
                 var text = document.querySelector("#input-keywords");
+                var _hot_SearchList = $('.hot-search-list');
+                var _search_results = $('.search-results');
                 var ids = 0;
                 if (null != text) {
                     text.addEventListener("input", inputHandler);
@@ -178,24 +182,49 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                         var _str = $.trim(elem.value);
                         if (_str.length >= 3) {
                             getSearchList(_str);
+                            _hot_SearchList.hide();
+                            _search_results.show();
+                        } else {
+                            _search_results.hide();
+                            _hot_SearchList.show();
                         }
                         clearTimeout(ids);
                         ids = 0;
                     }
 
                     function getSearchList(key) {
-                        console.log(key);
+                        // console.log(key);
+                        $.ajax({
+                            url: '/fulltextsearch/ajaxAutoComplete',
+                            type: 'POST',
+                            data: {
+                                keyword: key,
+                                pageSize: 10
+                            },
+                            success: function (res) {
+                                if (res) {
+                                    _search_results.html(res.html);
+                                } else {
+                                    _search_results.html('<h6 class="h6 font-weight-normal p-2">No related products</h6>');
+                                }
+                            },
+                            error: function (e) {
+                                _search_results.html('<h6 class="h6 font-weight-normal p-2">No related products</h6>');
+                            }
+                        });
                     }
                 }
             },
             hideSearchInputTip() {
                 var _inputKeywords = $("#input-keywords");
                 var _hot_SearchList = $('.hot-search-list');
+                var _search_results = $('.search-results');
 
                 $(document).click(function (e) {
                     var _target = $(e.target);
                     if (_target.closest(".search-keywords").length == 0) {
                         _hot_SearchList.hide();
+                        _search_results.hide();
                         _inputKeywords.blur();
                     }
                 });
