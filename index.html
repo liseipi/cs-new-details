@@ -68,18 +68,34 @@
                             <img class="logo" width="200" src="public_new/images/logo.svg">
                         </a> <!-- brand-wrap.// -->
                     </div>
-                    <div class="col-lg-6 col-sm-12 mt-sm-2 order-3 order-lg-2">
+                    <div class="col-lg-6 col-sm-12 mt-2 mt-lg-0 order-3 order-lg-2">
                         <form action="/search" class="search-wrap">
                             <div class="input-group w-100">
-                                <select class="custom-select w-25" name="category_name">
+                                <select class="custom-select select-category w-25" name="category_name">
                                     <option value="">All Categories</option>
                                     <option value="codex">Special</option>
                                     <option value="comments">Only best</option>
                                     <option value="content">Latest</option>
                                 </select>
-                                <input type="text" name="keywords" class="form-control search-keywords"
-                                       placeholder="Search">
-                                <div class="input-group-append" style="width: 12%">
+                                <div class="search-keywords">
+                                    <input type="text" name="keywords" class="form-control input-keywords w-100" id="input-keywords" autocomplete="off" placeholder="Search">
+                                    <div class="hot-search-list shadow-sm">
+                                        <div class="p-2">
+                                            <h6 class="h6 font-weight-normal">Hot Search</h6>
+                                            <div class="pb-2">
+                                                <a href="#">office chairs</a>
+                                                <a href="#">heaters</a>
+                                                <a href="#">Pest Control</a>
+                                                <a href="#">luxdream spring mattress</a>
+                                                <a href="#">led lights</a>
+                                                <a href="#">artificial grass</a>
+                                                <a href="#">Steam Mop</a>
+                                                <a href="#">Vacuum Cleaner</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group-append" style="width: 15%">
                                     <button class="btn btn-primary header-search-button btn-block" type="submit">
                                         <i class="csiconfont csicon-search"></i>
                                     </button>

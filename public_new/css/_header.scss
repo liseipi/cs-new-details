@@ -66,20 +66,40 @@ header {
       display: inline-block;
     }
 
-    .custom-select, .search-keywords {
+    .select-category, .search-keywords {
       border: solid 2px $brand-color;
       font-size: 13px;
       height: calc(1.5em + .75rem + 8px);
     }
 
-    .custom-select {
+    .select-category {
       flex: none;
       border-right: 0 !important;
     }
 
     .search-keywords {
       width: 60%;
+      position: relative;
 
+      .input-keywords {
+        font-size: 13px;
+        height: calc(1.5em + .75rem + 4px);
+        border: 0;
+        border-radius: 0;
+      }
+
+      .hot-search-list {
+        display: none;
+        position: absolute;
+        top: 38px;
+        z-index: 998;
+        background-color: #fff;
+        width: 100%;
+
+        a {
+          margin-right: 10px;
+        }
+      }
     }
 
     .header-search-button {
@@ -135,7 +155,8 @@ header {
           &:active {
             background-color: #f8f9fa;
           }
-          &:hover{
+
+          &:hover {
             color: $brand-color;
           }
 
