@@ -100,6 +100,80 @@ header {
           margin-right: 10px;
         }
       }
+
+      .search-results {
+        display: none;
+        position: absolute;
+        top: 38px;
+        z-index: 998;
+        background-color: #fff;
+        //width: 100%;
+        border: solid 2px #d50b18;
+        border-top: 0;
+        margin: 0 -2px;
+
+        .title {
+          background-color: $brand-color;
+          color: #fff;
+          padding: 5px 10px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        .auto-result {
+          padding: 5px 0px;
+          margin: 0;
+          list-style: none;
+
+          li {
+            a {
+              display: block;
+              padding: 2px 10px;
+              clear: both;
+
+              &:hover {
+                background-color: #eee;
+              }
+            }
+          }
+        }
+
+        .search_products {
+          .auto-result {
+            li {
+              a {
+                padding: 5px 10px;
+                color: #5d5d5d;
+
+                img {
+                  float: left;
+                  width: 40px;
+                  min-height: 40px;
+                  background-color: #ddd;
+                  border-radius: 5px;
+                  margin-right: 10px;
+                }
+
+                h3 {
+                  font-size: 13px;
+                  font-weight: bolder;
+                  line-height: 14px;
+                  margin: 0;
+                }
+
+                p {
+                  font-size: 12px;
+                  line-height: 12px;
+
+                  span.price {
+                    float: right;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
     .header-search-button {

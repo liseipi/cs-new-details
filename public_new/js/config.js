@@ -80,6 +80,7 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                 e.scrollTopButton();
                 e.updateTime();
                 e.showHotsearch();
+                e.showSearchList();
                 e.hideSearchInputTip();
                 setTimeout(function () {
                     e.adsbygoogle();
@@ -160,6 +161,31 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                             _hot_SearchList.show();
                         }
                     });
+                }
+            },
+            showSearchList() {
+                var text = document.querySelector("#input-keywords");
+                var ids = 0;
+                if (null != text) {
+                    text.addEventListener("input", inputHandler);
+
+                    function inputHandler(e) {
+                        if (ids) return;
+                        ids = setTimeout(textContentHandler, 500, this);
+                    }
+
+                    function textContentHandler(elem) {
+                        var _str = $.trim(elem.value);
+                        if (_str.length >= 3) {
+                            getSearchList(_str);
+                        }
+                        clearTimeout(ids);
+                        ids = 0;
+                    }
+
+                    function getSearchList(key) {
+                        console.log(key);
+                    }
                 }
             },
             hideSearchInputTip() {
