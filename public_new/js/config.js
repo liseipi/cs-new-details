@@ -105,6 +105,8 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                                 console.log(res);
                                 _el.attr("status", "cached");
                                 _el.find('.mega-menu').html(res.html);
+
+                                new SimpleBar(_el.find('.mega-menu').get()[0], {autoHide: false});
                             },
                             error: function (e) {
                                 _el.attr("status", "empty");
