@@ -53,6 +53,12 @@ input {
   }
 }
 
+.security-screen {
+  max-width: 1000px;
+  min-width: 720px;
+  margin: 0 auto;
+}
+
 
 @-webkit-keyframes fade-in {
   from {
