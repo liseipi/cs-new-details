@@ -4,6 +4,7 @@ require.config({
         'css': './css',
         'jquery': './jquery-3.4.1.min',
         'popper': './popper.min',
+        'hoverDelay': './libs/hoverDelay',
         'bootstrap': './libs/bootstrap/js/bootstrap.min',
         'owlcarousel': './libs/owlcarousel/owl.carousel.min',
         'simplebar': './libs/simplebar/simplebar.min',
@@ -39,12 +40,13 @@ require.config({
         },
         fancybox: {
             deps: ['jquery']
-        }
+        },
+        'hoverDelay': ['jquery'],
     }
 });
 
 // requirejs(['public']);
-require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'common'], function (pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, common) {
+require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'], function (pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
 
     // # page loading progress
     pace.start({
@@ -73,7 +75,7 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
     !function (c) {
         var e = {
             init: function () {
-                e.getSubCategories();
+                e.showSubCategory();
                 e.coupletFloating();
                 e.smoothScroll();
                 e.menuStopPropagation();
@@ -87,33 +89,49 @@ require(['pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 
                     e.adsbygoogle();
                 }, 30);
             },
-            getSubCategories: function () {
-                $("#all-category-menu>.dropdown-item").mouseenter(function (e) {
-                    var _status = $(this).attr('data-status');
-                    var _cateid = $(this).attr('data-cateid');
-                    var _el = $(this);
-                    if (_status == 'empty') {
-                        $.ajax({
-                            type: "post",
-                            data: {
-                                newHome: 1,
-                                version: 2,
-                                cateid: _cateid,
-                            },
-                            url: "/index/ajaxCategoryMenu",
-                            success: function (res) {
-                                console.log(res);
-                                _el.attr("status", "cached");
-                                _el.find('.mega-menu').html(res.html);
-
-                                new SimpleBar(_el.find('.mega-menu').get()[0], {autoHide: false});
-                            },
-                            error: function (e) {
-                                _el.attr("status", "empty");
-                            }
-                        });
-                    }
+            showSubCategory: function () {
+                $("#all-category-menu .dropdown-item").each(function () {
+                    var that = $(this);
+                    that.hoverDelay({
+                        hoverEvent: function () {
+                            that.children(".dropdown-submenu").show();
+                            e.getSubCategories(that);
+                            $("#all-category-menu").css({
+                                borderBottomRightRadius: '0'
+                            });
+                        },
+                        outEvent: function () {
+                            that.children(".dropdown-submenu").hide();
+                            $("#all-category-menu").css({
+                                borderBottomRightRadius: '.25rem',
+                            });
+                        }
+                    });
                 });
+            },
+            getSubCategories: function (el) {
+                var _status = $(el).attr('data-status');
+                var _cateid = $(el).attr('data-cateid');
+                var _el = $(el);
+                if (_status == 'empty') {
+                    $.ajax({
+                        type: "post",
+                        data: {
+                            newHome: 1,
+                            version: 2,
+                            cateid: _cateid,
+                        },
+                        url: "/index/ajaxCategoryMenu",
+                        success: function (res) {
+                            // console.log(res);
+                            _el.attr("status", "cached");
+                            _el.find('.mega-menu').html(res.html);
+                        },
+                        error: function (e) {
+                            _el.attr("status", "empty");
+                        }
+                    });
+                }
             },
             coupletFloating: function () {
                 if ($('[data-sticky-main-ad]').length) {
