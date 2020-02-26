@@ -566,19 +566,13 @@
                             </dl>
                             <hr>
                             <div class="form-row">
-                                <div class="col">
-                                    <label>Size</label>
-                                    <select class="form-control">
-                                        <option> XL</option>
-                                        <option> MD</option>
-                                        <option> XS</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label>Color</label>
-                                    <select class="form-control">
-                                        <option> Red</option>
-                                        <option> Blue</option>
+                                <div class="col" v-for="(vattr, vindex) in attrData" :key="vindex">
+                                    <label>{{vattr.key}}</label>
+                                    <select class="form-control select-attr-list" @change="selectAttr($event)">
+                                        <option v-for="(va, vi) in  vattr.val" :key="vi"
+                                                :data-optionid="va.optionID"
+                                                :data-variantid="va.variantID"
+                                        >{{va.name}}</option>
                                     </select>
                                 </div>
                             </div>

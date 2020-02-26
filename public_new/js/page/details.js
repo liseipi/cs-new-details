@@ -312,6 +312,28 @@ require(['../config'], function () {
             no: 0,
         },
     ];
+    var attrData = [
+        {
+            "key": "Color",
+            "val": [{"name": "Rose Gold", "optionID": "8", "variantID": "726"}, {"name": "Blue", "optionID": "8", "variantID": "47"}]
+        }, {
+            "key": "Size",
+            "val": [{"name": "Ipad Mini 1\/2\/3", "optionID": "2", "variantID": "413"}, {"name": "1G", "optionID": "2", "variantID": "727"}]
+        }
+    ];
+    var group_info = [{
+        "defaultMember": "0",
+        "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128640.html",
+        "group_info": [{"optionID": 2, "variantID": 413}, {"optionID": 8, "variantID": 47}]
+    }, {
+        "defaultMember": "0",
+        "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128641.html",
+        "group_info": [{"optionID": 2, "variantID": 727}, {"optionID": 8, "variantID": 47}]
+    }, {
+        "defaultMember": "1",
+        "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128642.html",
+        "group_info": [{"optionID": 2, "variantID": 727}, {"optionID": 8, "variantID": 726}]
+    }];
 
     require(['vue'], function (Vue) {
         app = new Vue({
@@ -321,6 +343,8 @@ require(['../config'], function () {
                 // galleryData: galleryData,   // galleryData.slice(0, 10),
                 newHotData: [],
                 reviewData: [],
+                attrData: attrData,
+                group_info: group_info,
                 status: {
                     isLoadingSuburb: false,
                     isLoadingPostage: false,
@@ -346,6 +370,32 @@ require(['../config'], function () {
                 },
             },
             methods: {
+                selectAttr: function (e) {
+                    // var _target = e.target;
+                    // console.log(_target);
+                    var _actList = [];
+                    var _selectList = document.querySelectorAll('.select-attr-list');
+                    for (var i = 0; i < _selectList.length; i++) {
+                        var _index = _selectList[i].selectedIndex;
+                        _actList.push(parseInt(_selectList[i][_index].getAttribute('data-optionid')));
+                        _actList.push(parseInt(_selectList[i][_index].getAttribute('data-variantid')));
+                    }
+                    group_info.forEach(function (item, index) {
+                        var _orgList = [];
+                        (item.group_info).forEach(function (list) {
+                            _orgList.push(list.optionID);
+                            _orgList.push(list.variantID);
+                        });
+                        if (JSON.stringify(_orgList.sort(function (a, b) {
+                            return a - b
+                        })) == JSON.stringify(_actList.sort(function (a, b) {
+                            return a - b
+                        }))) {
+                            // console.log(item.url);
+                            window.location = '/' + item.url;
+                        }
+                    });
+                },
                 ajaxSearchSuburb: function () {
                     this.status.isLoadingSuburb = true;
                     $.ajax({
