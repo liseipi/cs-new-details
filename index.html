@@ -572,6 +572,7 @@
                                         <option v-for="(va, vi) in  vattr.val" :key="vi"
                                                 :data-optionid="va.optionID"
                                                 :data-variantid="va.variantID"
+                                                :selected="isAttrSelected(va.optionID, va.variantID)"
                                         >{{va.name}}</option>
                                     </select>
                                 </div>

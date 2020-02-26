@@ -392,7 +392,7 @@ require(['../config'], function () {
                             return a - b
                         }))) {
                             // console.log(item.url);
-                            window.location = '/' + item.url;
+                            // window.location = '/' + item.url;
                         }
                     });
                 },
@@ -484,6 +484,24 @@ require(['../config'], function () {
                         this.ajaxProductPostage();
                     }
                 },
+            },
+            computed: {
+                isAttrSelected: function () {
+                    return function (optionID, variantID) {
+                        // console.log(optionID, variantID);
+                        var _s = false;
+                        this.group_info.forEach(function (item) {
+                            if (item.defaultMember == 1) {
+                                item.group_info.forEach(function (list) {
+                                    if (list.optionID == optionID && list.variantID == variantID) {
+                                        _s = true;
+                                    }
+                                })
+                            }
+                        });
+                        return _s;
+                    };
+                }
             },
             mounted: function () {
                 // this.ajaxSearchSuburb();
