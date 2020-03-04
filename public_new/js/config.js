@@ -17,6 +17,7 @@ require.config({
         'drift': './libs/drift-zoom/Drift.min',
         'holder': './holder',
         'moment': './libs/moment/moment',
+        'pagination': './libs/jquery.simplePagination',
         'sharethis': 'https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop',
         'adsbygoogle': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626',
 
@@ -42,6 +43,7 @@ require.config({
             deps: ['jquery']
         },
         'hoverDelay': ['jquery'],
+        'pagination': ['jquery'],
     }
 });
 

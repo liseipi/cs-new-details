@@ -510,7 +510,7 @@ require(['../config'], function () {
         });
     });
 
-    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap', 'common'], function (lozad, SimpleBar, owlCarousel, drift, fancybox, hcs, bs, common) {
+    require(['lozad', 'simplebar', 'owlcarousel', 'drift', 'fancybox', 'hcsticky', 'bootstrap', 'common', 'pagination'], function (lozad, SimpleBar, owlCarousel, drift, fancybox, hcs, bs, common, pagination) {
         !function (c) {
             var e = {
                 init: function () {
@@ -525,6 +525,7 @@ require(['../config'], function () {
                     e.showReviews();
                     e.showCharMain();
                     e.popoverInfo();
+                    e.initReivewPagination();
                 },
                 lozadResources: function () {
                     var observer = lozad();
@@ -716,6 +717,33 @@ require(['../config'], function () {
                         });
                     });
                 },
+                initReivewPagination: function () {
+                    // $('#reviews-pagination').twbsPagination({
+                    //     totalPages: 35,
+                    //     visiblePages: 5,
+                    //     first: '&laquo;',
+                    //     prev: '&lt;',
+                    //     next: '&gt;',
+                    //     last: '&raquo;',
+                    //     onPageClick: function (event, page) {
+                    //         $('#page-content').text('Page ' + page);
+                    //     }
+                    // });
+                    $('#reviews-pagination').pagination({
+                        items: 20,
+                        itemOnPage: 8,
+                        currentPage: 1,
+                        cssStyle: '',
+                        prevText: '<span aria-hidden="true">&laquo;</span>',
+                        nextText: '<span aria-hidden="true">&raquo;</span>',
+                        onInit: function () {
+                            // fire first page loading
+                        },
+                        onPageClick: function (page, evt) {
+                            // some code
+                        }
+                    });
+                }
             };
             e.init();
         }(jQuery);
