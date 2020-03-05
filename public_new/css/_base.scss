@@ -131,6 +131,13 @@ input {
   display: none;
 }
 
+.pagination {
+  .page-link.ellipse.clickable {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+  }
+}
+
 $btn-scroll-top-size: 2.2rem;
 $spacer: 1rem !default;
 $btn-scroll-top-transition: right 400ms cubic-bezier(.68, -.55, .265, 1.55), opacity .3s, background-color .25s ease-in-out !default;

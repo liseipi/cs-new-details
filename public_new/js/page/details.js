@@ -278,6 +278,7 @@ require(['../config'], function () {
             dataOriginZoom: '//img.crazysales.com.au/products_pictures/2004/200437_1526701_HD.jpg',
         },
     ];
+    // var reviewData = [];
     var reviewData = [
         {
             name: "Rafael Marquez",
@@ -315,25 +316,35 @@ require(['../config'], function () {
     var attrData = [
         {
             "key": "Color",
-            "val": [{"name": "Rose Gold", "optionID": "8", "variantID": "726"}, {"name": "Blue", "optionID": "8", "variantID": "47"}]
+            "val": [{"name": "Rose Gold", "optionID": "8", "variantID": "726"}, {
+                "name": "Blue",
+                "optionID": "8",
+                "variantID": "47"
+            }]
         }, {
             "key": "Size",
-            "val": [{"name": "Ipad Mini 1\/2\/3", "optionID": "2", "variantID": "413"}, {"name": "1G", "optionID": "2", "variantID": "727"}]
+            "val": [{"name": "Ipad Mini 1\/2\/3", "optionID": "2", "variantID": "413"}, {
+                "name": "1G",
+                "optionID": "2",
+                "variantID": "727"
+            }]
         }
     ];
-    var group_info = [{
-        "defaultMember": "0",
-        "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128640.html",
-        "group_info": [{"optionID": 2, "variantID": 413}, {"optionID": 8, "variantID": 47}]
-    }, {
-        "defaultMember": "0",
-        "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128641.html",
-        "group_info": [{"optionID": 2, "variantID": 727}, {"optionID": 8, "variantID": 47}]
-    }, {
-        "defaultMember": "1",
-        "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128642.html",
-        "group_info": [{"optionID": 2, "variantID": 727}, {"optionID": 8, "variantID": 726}]
-    }];
+    var group_info = [
+        {
+            "defaultMember": "0",
+            "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128640.html",
+            "group_info": [{"optionID": 2, "variantID": 413}, {"optionID": 8, "variantID": 47}]
+        }, {
+            "defaultMember": "0",
+            "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128641.html",
+            "group_info": [{"optionID": 2, "variantID": 727}, {"optionID": 8, "variantID": 47}]
+        }, {
+            "defaultMember": "1",
+            "url": "online-ic047-decorative-lovely-chef-pattern-colorful-skin-sticker-for-ipad-1-2-3-4-air-air-2-128642.html",
+            "group_info": [{"optionID": 2, "variantID": 727}, {"optionID": 8, "variantID": 726}]
+        }
+    ];
 
     require(['vue'], function (Vue) {
         app = new Vue({
@@ -525,7 +536,7 @@ require(['../config'], function () {
                     e.showReviews();
                     e.showCharMain();
                     e.popoverInfo();
-                    e.initReivewPagination();
+                    // e.initReivewPagination();
                 },
                 lozadResources: function () {
                     var observer = lozad();
@@ -703,6 +714,7 @@ require(['../config'], function () {
                 popoverInfo: function () {
                     $(function () {
                         $(".copy_review_nav_filter").append($(".review_nav_filter").clone());
+                        e.initReivewPagination();
                         $('[data-toggle="tooltip"]').tooltip();
 
                         $('[data-toggle="popover"]').popover({
@@ -718,31 +730,29 @@ require(['../config'], function () {
                     });
                 },
                 initReivewPagination: function () {
-                    // $('#reviews-pagination').twbsPagination({
-                    //     totalPages: 35,
-                    //     visiblePages: 5,
-                    //     first: '&laquo;',
-                    //     prev: '&lt;',
-                    //     next: '&gt;',
-                    //     last: '&raquo;',
-                    //     onPageClick: function (event, page) {
-                    //         $('#page-content').text('Page ' + page);
-                    //     }
-                    // });
-                    $('#reviews-pagination').pagination({
-                        items: 20,
-                        itemOnPage: 8,
-                        currentPage: 1,
-                        cssStyle: '',
-                        prevText: '<span aria-hidden="true">&laquo;</span>',
-                        nextText: '<span aria-hidden="true">&raquo;</span>',
-                        onInit: function () {
-                            // fire first page loading
-                        },
-                        onPageClick: function (page, evt) {
-                            // some code
-                        }
-                    });
+                    var _pageDom = $('.reviews-pagination');
+                    if (_pageDom.length > 0) {
+                        _pageDom.each(function () {
+                            var that = $(this);
+                            that.pagination({
+                                items: 20,
+                                itemOnPage: 5,
+                                currentPage: 1,
+                                cssStyle: '',
+                                prevText: '<span aria-hidden="true">&laquo;</span>',
+                                nextText: '<span aria-hidden="true">&raquo;</span>',
+                                onInit: function () {
+                                    // fire first page loading
+                                },
+                                onPageClick: function (page, evt) {
+                                    // some code
+                                }
+                            });
+                        });
+
+                        _pageDom.pagination('drawPage', 1);
+                    }
+
                 }
             };
             e.init();
