@@ -132,9 +132,9 @@ input {
 }
 
 .pagination {
-  .page-link.ellipse.clickable {
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
+  .hellip {
+    margin: -.45rem 0;
+    cursor: pointer;
   }
 }
 

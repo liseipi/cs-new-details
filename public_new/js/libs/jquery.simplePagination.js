@@ -200,7 +200,7 @@
                         }
                     }
                     if (o.edges < interval.start && (interval.start - o.edges != 1)) {
-                        $panel.append('<li class="page-item disabled"><span class="page-link ellipse"><span class="form-control form-control-sm border-0 px-0" aria-hidden="true">' + o.ellipseText + '</span></span></li>');
+                        $panel.append('<li class="page-item disabled"><span class="page-link ellipse"><span class="form-control form-control-sm border-0 px-0 bg-transparent hellip" aria-hidden="true">' + o.ellipseText + '</span></span></li>');
                     } else if (interval.start - o.edges == 1) {
                         methods._appendItem.call(this, o.edges);
                     }
@@ -237,7 +237,7 @@
             if (!o.invertPageOrder) {
                 if (interval.end < o.pages && o.edges > 0) {
                     if (o.pages - o.edges > interval.end && (o.pages - o.edges - interval.end != 1)) {
-                        $panel.append('<li class="page-item"><span class="page-link ellipse"><span class="form-control form-control-sm border-0 px-0" aria-hidden="true">' + o.ellipseText + '</span></span></li>');
+                        $panel.append('<li class="page-item"><span class="page-link ellipse"><span class="form-control form-control-sm border-0 px-0 bg-transparent hellip" aria-hidden="true">' + o.ellipseText + '</span></span></li>');
                     } else if (o.pages - o.edges - interval.end == 1) {
                         methods._appendItem.call(this, interval.end);
                     }
