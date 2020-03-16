@@ -947,7 +947,7 @@ a[class*='card']:hover .title {
 .card-product-grid .img-wrap {
   border-radius: 0.2rem 0.2rem 0 0;
   //min-height: 175px;
-  height: 151px;
+  height: 183px;
 }
 
 @include media-breakpoint-down(sm) {
@@ -971,7 +971,7 @@ a[class*='card']:hover .title {
 @include media-breakpoint-up(xl) {
   .card-product-grid .img-wrap {
     //height: 175px;
-    height: 151px;
+    height: 183px;
   }
 }
 
