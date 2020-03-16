@@ -1,0 +1,162 @@
+$base: #CCC;
+$base-shadow: darken(#CCC, 10%);
+
+@mixin tag($bg, $shadow, $color: darken($shadow, 30%)) {
+  color: $color;
+  background: $bg;
+  @include box-shadow(0 4px 0 0 $shadow, 4px 4px 0 0 $shadow);
+
+  &:before {
+    background: $bg;
+    @include box-shadow(0 4px 0 0 $shadow);
+  }
+  &:hover:before {
+    background: lighten($bg, 5%);
+  }
+  &:after {
+    @include box-shadow(3px 3px 0 0 $shadow inset);
+  }
+  &:hover {
+    background: lighten($bg, 5%);
+  }
+  span.num {
+    color: darken($bg, 5%);
+  }
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag {
+  color: darken($base-shadow, 25%);
+  background: $base;
+  @include box-shadow(0 4px 0 0 $base-shadow, 4px 4px 0 0 $base-shadow);
+  display: inline-block;
+  font: normal normal normal 14px/12px 'Open Sans', sans-serif;
+  //height: 26px;
+  margin: 0 2rem 1rem 0;
+  //padding: 1rem 2.8rem 1rem 2rem;
+  position: relative;
+  top: 0;
+  content: "";
+  cursor: pointer;
+  text-align: center;
+  text-transform: lowercase;
+  border: 0 solid transparent;
+  @include transition(all .3s ease);
+  box-shadow: 0 5px 5px -5px #757575;
+
+  &:before {
+    color: rgba(255, 255, 255, 0.9);
+    background: $base;
+    @include box-shadow(0 4px 0 0 $base-shadow);
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 4px;
+    right: -6px;
+    z-index: 1;
+    content: "";
+    cursor: pointer;
+    //@include transform(rotateY(1deg) rotateZ(-45deg) scaleX(1) scaleY(1) scaleZ(1));
+    transform: (rotateY(1deg) rotateZ(-45deg) scaleX(1) scaleY(1) scaleZ(1));
+    box-shadow: 0 5px 5px -5px #757575;
+    @include transition(all .3s ease);
+  }
+
+  &:hover:before {
+    background: lighten($base, 5%);
+  }
+
+  &:active:before {
+    @include box-shadow(none);
+  }
+
+  &:after {
+    display: inline-block;
+    background: #FFF;
+    @include border-radius(10px);
+    @include box-shadow(3px 3px 0 0 $base-shadow inset);
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 7px;
+    right: 0px;
+    z-index: 2;
+    content: "";
+    cursor: pointer;
+    @include transition(all .3s ease);
+  }
+
+  &:active:after {
+    @include box-shadow(none);
+  }
+
+  &:hover {
+    background: lighten($base, 5%);
+    //@include scale(1.03);
+  }
+
+  &:active {
+    @include box-shadow(none);
+    top: 4px;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    line-height: 14px;
+    padding-right: 5px;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  span.num {
+    display: block;
+    color: darken($base, 5%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font: bold 50px/28px 'Open Sans', sans-serif;
+    letter-spacing: -6px;
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+    z-index: 1;
+  }
+
+  &:hover span.num {
+  }
+}
+
+/* Rounded Tag */
+.tag-round {
+  @include border-radius(4px 1px 1px 4px);
+
+  &:before {
+    @include border-radius(1px 1px 4px);
+  }
+}
+
+/* Colors */
+.tag-free {
+  @include tag(#17a2b8, darken(#17a2b8, 10%));
+}
+
+.tag-on-sale {
+  @include tag(#28a745, darken(#28a745, 10%), #000);
+}
+
+.tag-new {
+  @include tag(#6c757d, darken(#6c757d, 10%));
+}
+
+.tag-reduced {
+  @include tag(#ffc107, darken(#ffc107, 10%));
+}
