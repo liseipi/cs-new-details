@@ -1,0 +1,46 @@
+body {
+  &::before {
+    font-size: 0;
+    display: none;
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  body {
+    &::before {
+      content: 'mobile';
+    }
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  body {
+    &::before {
+      content: 'ipad-v';
+    }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  body {
+    &::before {
+      content: 'ipad-h';
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  body {
+    &::before {
+      content: 'desktop';
+    }
+  }
+}
+
+@include media-breakpoint-only(xl) {
+  body {
+    &::before {
+      content: 'desktop';
+    }
+  }
+}

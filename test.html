@@ -5,62 +5,124 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="public_new/css/style.css">
+    <link rel="stylesheet" href="public_new/js/libs/bootstrap/scss/bootstrap.css">
+    <script src="public_new/js/jquery-3.4.1.min.js"></script>
+    <script src="public_new/js/libs/elevatezoom/jquery.ez-plus.js"></script>
 </head>
 <body>
-<div class="div1 position-absolute">Free Shipping</div>
-<style>
-    .div1 {
-        /*width: 50px;*/
-        height: 30px;
-        background-color: #ee7600;
-        position: relative;
-        box-shadow: 0 5px 5px -5px #757575;
-        line-height: 30px;
-        text-align: center;
-        display: inline-block;
-        padding: 0 15px;
-        color: #fff;
+
+<div class="container">
+    <div class="zoomWrapper">
+        <img class="zoom-img" id="zoom_03" src="https://igorlino.github.io/elevatezoom-plus/images/small/image1.jpg"
+             data-zoom-image="https://igorlino.github.io/elevatezoom-plus/images/large/image1.jpg"/>
+    </div>
+    <div id="gallery_01">
+        <a href="javascript:;" data-image="https://igorlino.github.io/elevatezoom-plus/images/small/image1.jpg"
+           data-zoom-image="https://igorlino.github.io/elevatezoom-plus/images/large/image1.jpg">
+            <img id="img_01" src="https://igorlino.github.io/elevatezoom-plus/images/thumb/image1.jpg"/>
+        </a>
+        <a href="javascript:;" data-image="https://igorlino.github.io/elevatezoom-plus/images/small/image2.jpg"
+           data-zoom-image="https://igorlino.github.io/elevatezoom-plus/images/large/image2.jpg">
+            <img id="img_01" src="https://igorlino.github.io/elevatezoom-plus/images/thumb/image2.jpg"/>
+        </a>
+        <a href="javascript:;" data-image="https://igorlino.github.io/elevatezoom-plus/images/small/image3.jpg"
+           data-zoom-image="https://igorlino.github.io/elevatezoom-plus/images/large/image3.jpg">
+            <img id="img_01" src="https://igorlino.github.io/elevatezoom-plus/images/thumb/image3.jpg"/>
+        </a>
+        <a href="javascript:;" data-image="https://igorlino.github.io/elevatezoom-plus/images/small/image4.jpg"
+           data-zoom-image="https://igorlino.github.io/elevatezoom-plus/images/large/image4.jpg">
+            <img id="img_01" src="https://igorlino.github.io/elevatezoom-plus/images/thumb/image4.jpg"/>
+        </a>
+    </div>
+
+    <article class="gallery-wrap">
+        <div class="img-big-wrap">
+            <div class="position-relative">
+                <img class="position-absolute lozad cz-image-zoom"
+                     id="cz-image-zoom"
+                     alt="<?php echo htmlspecialchars($product->name); ?>"
+                     width="100%"
+                     height="100%"
+                     src="public_new/svg/holder.svg"
+                     data-src="<?php echo $this->configItem('productPictureBaseUrl').'/'.$product->defaultLargePicture; ?>"
+                     data-zoom="<?php
+                                     foreach ($product->pictures as $picture)
+                                     {
+                                         if( $product->defaultLargePicture == $picture->largePicture)
+                                         {
+                                             if($picture->image_HD != null && strlen($picture->image_HD) >0 )
+                                                 echo $this->configItem('productPictureBaseUrl').'/'.$picture->image_HD;
+                                         }
+                                     }
+                                     ?>">
+                <div class="cz-image-zoom-pane"></div>
+                <!--                                <div class="position-absolute cz-loading">Loading..</div>-->
+                <img src="public_new/svg/holder.svg" width="100%" alt="holder">
+            </div>
+        </div> <!-- slider-product.// -->
+        <div class="thumbs-wrap mx-1" data-simplebar data-simplebar-auto-hide="false">
+            <div class="d-flex flex-wrap justify-content-start">
+                <?php if(!empty($product->pictures)): ?>
+                <?php foreach ($product->pictures as $picture): ?>
+                <a href="javascript:;" class="item-thumb <?php echo $picture->largePicture == $product->defaultLargePicture ? 'active' : ''; ?>">
+                    <img width="100%" height="100%"
+                         class="lozad"
+                         src="public_new/svg/holder.svg"
+                         data-src="<?php echo $this->configItem('productPictureBaseUrl').'/'.$picture->smallPicture; ?>"
+                         data-origin="<?php echo $this->configItem('productPictureBaseUrl').'/'.$picture->largePicture; ?>"
+                         data-origin-zoom="<?php echo ($picture->image_HD==null || strlen($picture->image_HD) == 0 )?'':$this->configItem('productPictureBaseUrl').'/'.$picture->image_HD; ?>"
+                    >
+                </a>
+                <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </article>
+
+</div>
+
+<script>
+
+    function getDeviceFlag() {
+        var bodyElementStyle = getComputedStyle(document.body, '::before');
+        return window.deviceFlag = bodyElementStyle.content;
     }
 
-    .div1:before {
-        position: absolute;
-        top: 0px;
-        right: -25px;
-        z-index: -1;
-        height: 0;
-        padding-right: 10px;
-        font-weight: bold;
-        line-height: 0;
-        color: #000;
-        border-top: 15px solid transparent;
-        border-left: 15px solid #ee7600;
-        border-bottom: 15px solid transparent;
-        content: '';
-    }
 
-    .div1:after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        top: 30px;
-        left: 0px;
-        border: 4px solid #89540c;
-        border-left-color: transparent;
-        border-bottom-color: transparent;
-    }
-</style>
+    $(document).ready(function () {
+        // initEZPlusInner();
+        initEZPlusPointer();
 
-<ul class="tags">
-    <li class="tag"><span>standard</span> <span class="num">4</span></li>
-    <li class="tag tag-aqua"><span>aqua</span> <span class="num">12</span></li>
-    <li class="tag tag-free">
-        <span>blue</span>
-    </li>
-    <li class="tag tag-new"><span>orange</span> <span class="num">1</span></li>
-    <li class="tag tag-red"><span>red</span> <span class="num">2</span></li>
-    <li class="tag tag-yellow"><span>yellow</span> <span class="num">8</span></li>
-    <li class="tag tag-round"><span>standard round</span> <span class="num">6</span></li>
-</ul>
+        function initEZPlusInner() {
+            $('#zoom_03').ezPlus({
+                constrainType: 'height',
+                // constrainSize: 274,
+                zoomType: 'inner',
+                containLensZoom: true,
+                gallery: 'gallery_01',
+                cursor: 'pointer',
+                borderSize: 1,
+                galleryActiveClass: 'active'
+            });
+        }
+
+        function initEZPlusPointer() {
+            $('#zoom_03').ezPlus({
+                gallery: 'gallery_01',
+                cursor: 'pointer',
+                scrollZoom: true,
+                zoomWindowWidth: 300,
+                zoomWindowHeight: 300,
+
+                borderSize: 1,
+                galleryActiveClass: 'active',
+                imageCrossfade: true,
+                loadingIcon: 'https://www.elevateweb.co.uk/spinner.gif'
+            });
+        }
+    });
+
+</script>
+
 </body>
 </html>

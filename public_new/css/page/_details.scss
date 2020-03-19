@@ -58,6 +58,41 @@
   color: #fff;
 }
 
+@include media-breakpoint-only(xs) {
+  #cz-image-zoom {
+    width:538px;
+    height:538px;
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  #cz-image-zoom {
+    width:538px;
+    height:538px;
+  }
+}
+
+@include media-breakpoint-only(md) {
+  #cz-image-zoom {
+    width:359px;
+    height:359px;
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  #cz-image-zoom {
+    width:479px;
+    height:479px;
+  }
+}
+
+@include media-breakpoint-only(xl) {
+  #cz-image-zoom {
+    width:499px;
+    height:499px;
+  }
+}
+
 .char-main {
   width: 100%;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .1);

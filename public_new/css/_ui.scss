@@ -1491,6 +1491,10 @@ a[class*='card']:hover .title {
     overflow: hidden;
     background-color: #fff;
 
+    .zoomWrapper {
+      position: absolute;
+    }
+
     a {
       text-align: center;
       display: block;
@@ -1592,9 +1596,19 @@ a[class*='card']:hover .title {
     }
 
   }
+
+  .cz-loading {
+    bottom: 5%;
+    left: 50%;
+    margin-left: -60px;
+    padding: 2px 30px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: none;
+  }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-between(xs, md) {
   .gallery-wrap .thumbs-wrap {
     height: 172px;
   }
@@ -1604,17 +1618,6 @@ a[class*='card']:hover .title {
     height: 80px;
   }
 }
-
-@include media-breakpoint-only(sm) {
-   .gallery-wrap .thumbs-wrap {
-     height: 172px;
-   }
-
-   .gallery-wrap .thumbs-wrap .item-thumb {
-     width: 80px;
-     height: 80px;
-   }
- }
 
 @include media-breakpoint-only(lg) {
   .gallery-wrap .thumbs-wrap {
@@ -1627,7 +1630,7 @@ a[class*='card']:hover .title {
   }
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-only(xl) {
   .gallery-wrap .thumbs-wrap {
     height: 194px;
   }

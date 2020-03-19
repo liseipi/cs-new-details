@@ -55,7 +55,7 @@ input {
 
 .security-screen {
   max-width: 1000px;
-  min-width: 720px;
+  min-width: 540px;
   margin: 0 auto;
 }
 
@@ -271,6 +271,10 @@ $btn-scroll-top-hover-color: $white !default;
 }
 
 // # \simplebar
+//[data-sticky-main-ad] {
+//  top: 5px;
+//  bottom: 5px;
+//}
 
 .newsletter-left {
   position: absolute;

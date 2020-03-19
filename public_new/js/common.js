@@ -26,5 +26,9 @@ define(['jquery'], function ($) {
                 second: maysecond,
             };
         },
+        "getDeviceFlag": function () {
+            var bodyElementStyle = getComputedStyle(document.body, '::before');
+            return window.deviceFlag = bodyElementStyle.content;
+        }
     };
 });
