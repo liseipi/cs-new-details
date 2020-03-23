@@ -26,9 +26,54 @@ define(['jquery'], function ($) {
                 second: maysecond,
             };
         },
+        "getVerifyImg": function (config) {
+            $.ajax({
+                type: 'POST',
+                data: {},
+                url: config.url ? config.url : '/contactus/refreshcode',
+                // dataType: 'jsonp',
+                success: function (res) {
+                    config.callback(res);
+                },
+                error: function (res) {
+                    alert("error!");
+                }
+            });
+        },
+        "goodsTagStatus": function (config) {
+            var str = '';
+            if (config.isFreeShipping || (config.promotionType == 3)) {
+                var str = '<p class="tag tag-free"><span class="text-capitalize">Free Shipping</span></p>';
+            } else if (config.promotionType != 99 && config.promotionType > 0) {
+                var str = '<p class="tag tag-on-sale"><span class="text-capitalize">On Sale</span></p>';
+            } else if (config.promotionType == 99) {
+                var str = '<p class="tag tag-reduced"><span class="text-capitalize">Reduced</span></p>';
+            } else if (config.isNew) {
+                var str = '<p class="tag tag-new"><span class="text-capitalize">New</span></p>';
+            } else {
+                var str = '';
+            }
+            return str;
+        },
+        "goodsBadgeStatus": function (config) {
+            var str = '';
+            if (config.isFreeShipping || (config.promotionType == 3)) {
+                var str = '<span class="badge badge-info font-weight-normal">Free Shipping</span>';
+            } else if (config.promotionType != 99 && config.promotionType > 0) {
+                var str = '<span class="badge badge-success font-weight-normal">On Sale</span>';
+            } else if (config.promotionType == 99) {
+                var str = '<span class="badge badge-warning font-weight-normal">Reduced</span>';
+            } else if (config.isNew) {
+                var str = '<span class="badge badge-secondary font-weight-normal">New</span>';
+            } else {
+                var str = '';
+            }
+            return str;
+        },
         "getDeviceFlag": function () {
             var bodyElementStyle = getComputedStyle(document.body, '::before');
-            return window.deviceFlag = bodyElementStyle.content;
+            window.deviceFlag = bodyElementStyle.content.replace(/"/g, "");
+            return window.deviceFlag;
         }
     };
 });

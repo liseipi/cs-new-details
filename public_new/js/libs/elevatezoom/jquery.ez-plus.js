@@ -1375,7 +1375,7 @@ if (typeof Object.create !== 'function') {
                     width: self.nzWidth,
                     zIndex: 2000,
                     position: 'absolute',
-                    backgroundPosition: 'center center',
+                    backgroundPosition: 'center 95%',
                 };
                 if (self.options.zoomType === 'inner') {
                     styleAttr.setProperty('top', 0);
