@@ -50,6 +50,6 @@ require.config({
     }
 });
 
-// requirejs(['public']);
-
-// requirejs(['https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js']);
+require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'],
+    function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
+});
