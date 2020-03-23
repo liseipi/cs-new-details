@@ -31,12 +31,12 @@ require(['config'], function () {
         !function (c) {
             var e = {
                 init: function () {
-                    e.showSubCategory();
                     e.coupletFloating();
+                    e.updateTime();
+                    e.showSubCategory();
                     e.menuStopPropagation();
                     e.renderTopButton();
                     e.scrollTopButton();
-                    e.updateTime();
                     e.showHotsearch();
                     e.showSearchList();
                     e.hideSearchInputTip();

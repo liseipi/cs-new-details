@@ -293,8 +293,8 @@ require(['config'], function () {
                 init: function () {
                     e.lozadResources();
                     e.updateTime();
-                    e.elevatezoomImage();
                     e.initSimpleBar();
+                    e.elevatezoomImage();
                     e.initPickedSlider();
                     e.rightProductFloating();
                     e.showReviews();
