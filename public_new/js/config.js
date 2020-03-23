@@ -19,8 +19,6 @@ require.config({
         'holder': './libs/holder.min',
         'moment': './libs/moment/moment.min',
         'pagination': './libs/simple-pagination/jquery.simplePagination.min',
-        'sharethis': 'https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop',
-        'adsbygoogle': 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626',
 
         'public': './public',
         'common': './common',

@@ -41,9 +41,7 @@ require(['config'], function () {
                     e.showSearchList();
                     e.hideSearchInputTip();
                     e.searchSubmit();
-                    setTimeout(function () {
-                        e.adsbygoogle();
-                    }, 30);
+                    e.adsbygoogle();
                 },
                 showSubCategory: function () {
                     $("#all-category-menu .dropdown-item").each(function () {
@@ -271,6 +269,7 @@ require(['config'], function () {
                         (function (url) {
                             var js = document.createElement('script');
                             js.src = url;
+                            js.async=true;
                             var fs = document.getElementsByTagName('script')[0];
                             fs.parentNode.insertBefore(js, fs);
                         })('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626');
