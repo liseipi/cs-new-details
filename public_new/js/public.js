@@ -279,7 +279,6 @@ require(['config'], function () {
             };
             e.init();
         }(jQuery);
-
     });
 
 });

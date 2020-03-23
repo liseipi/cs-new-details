@@ -1,7 +1,7 @@
 require(['config'], function () {
     var app = null;
 
-    require(['vue', 'common'], function (Vue, common) {
+    require(['public_new/js/libs/vue', 'common'], function (Vue, common) {
         app = new Vue({
             el: '#details-page',
             data: {

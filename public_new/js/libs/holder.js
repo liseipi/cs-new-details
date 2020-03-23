@@ -1,5 +1,4 @@
 /*!
-
 Holder - client side image placeholders
 Version 2.9.6+fblyy
 © 2018 Ivan Malopinsky - http://imsky.co
