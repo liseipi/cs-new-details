@@ -751,9 +751,9 @@ require(['config'], function () {
             e.init();
         }(jQuery);
 
-        setTimeout(function () {
-            requirejs(['sharethis']);
-        }, 30);
+        // setTimeout(function () {
+        //     requirejs(['sharethis']);
+        // }, 30);
 
     });
 
