@@ -253,6 +253,19 @@ require(['config.min'], function () {
                         });
                     }
                 },
+                renderLivechat: function () {
+                    var t = document.querySelector(".adsbygoogle");
+                    if (null != t) {
+                        // requirejs(['adsbygoogle']);
+                        (function (url) {
+                            var js = document.createElement('script');
+                            js.src = url;
+                            js.async = true;
+                            var fs = document.getElementsByTagName('script')[0];
+                            fs.parentNode.insertBefore(js, fs);
+                        })('https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js');
+                    }
+                },
                 adsbygoogle: function () {
                     var t = document.querySelector(".adsbygoogle");
                     if (null != t) {
@@ -266,19 +279,6 @@ require(['config.min'], function () {
                         })('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626');
                     }
                 },
-                renderLivechat: function () {
-                    var t = document.querySelector(".adsbygoogle");
-                    if (null != t) {
-                        // requirejs(['adsbygoogle']);
-                        (function (url) {
-                            var js = document.createElement('script');
-                            js.src = url;
-                            js.async = true;
-                            var fs = document.getElementsByTagName('script')[0];
-                            fs.parentNode.insertBefore(js, fs);
-                        })('https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js');
-                    }
-                }
             };
             e.init();
         }(jQuery);

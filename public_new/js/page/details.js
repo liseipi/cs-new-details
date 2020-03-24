@@ -302,8 +302,8 @@ require(['config.min'], function () {
                     e.popoverInfo();
                     e.reviewsSmoothScroll();
                     e.notifymeDom();
+                    e.renderShare();
                     e.endRenderDom();
-                    // e.renderShare();
                 },
                 lozadResources: function () {
                     var observer = lozad();
@@ -729,8 +729,20 @@ require(['config.min'], function () {
                         });
                     }
                 },
+                renderShare: function () {
+                    var t = document.querySelector(".sharethis-inline-share-buttons");
+                    if (null != t) {
+                        (function (url) {
+                            var js = document.createElement('script');
+                            js.src = url;
+                            js.async=true;
+                            var fs = document.getElementsByTagName('script')[0];
+                            fs.parentNode.insertBefore(js, fs);
+                        })('https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop');
+                    }
+                },
                 endRenderDom: function () {
-                    $(function () {
+                    // $(function () {
                         $('.description_information table.Specification').addClass("table text-sm");
 
                         $(".review-item").each(function () {
@@ -746,20 +758,8 @@ require(['config.min'], function () {
                             });
                         });
 
-                    });
+                    // });
                 },
-                renderShare: function () {
-                    var t = document.querySelector(".sharethis-inline-share-buttons");
-                    if (null != t) {
-                        (function (url) {
-                            var js = document.createElement('script');
-                            js.src = url;
-                            js.async=true;
-                            var fs = document.getElementsByTagName('script')[0];
-                            fs.parentNode.insertBefore(js, fs);
-                        })('https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop');
-                    }
-                }
             };
             e.init();
         }(jQuery);
