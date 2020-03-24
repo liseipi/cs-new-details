@@ -20,8 +20,8 @@ require.config({
         'moment': './libs/moment/moment.min',
         'pagination': './libs/simple-pagination/jquery.simplePagination.min',
 
-        'public': './public',
-        'common': './common',
+        'public': './public.min',
+        'common': './common.min',
 
     },
     map: {
@@ -47,6 +47,9 @@ require.config({
     }
 });
 
-require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'],
-    function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
-});
+// require(['jquery', 'pace', 'lozad'], function (jquery, pace, lozad) {
+//     (function () {
+//         var observer = lozad();
+//         observer.observe();
+//     })();
+// });

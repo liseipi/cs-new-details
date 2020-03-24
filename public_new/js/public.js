@@ -1,29 +1,19 @@
-require(['config'], function () {
+require(['config.min'], function () {
 
     require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'], function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
 
-        // # page loading progress
-        pace.start({
-            document: false,
-            // ajax: true
-        });
+        (function () {
+            // # page loading progress
+            pace.start({
+                document: false,
+                // ajax: true
+            });
 
-        // # lozad data-origin
-        var observer = lozad();
-        observer.observe();
+            // # lozad data-origin
+            var observer = lozad();
+            observer.observe();
+        })();
 
-        // Holder.run({
-        //     domain: "img.crazysales",
-        //     dataAttr: 'holder-src',
-        //     themes: {
-        //         "simple": {
-        //             bg: "#fff",
-        //             fg: "#000",
-        //             size: 12
-        //         }
-        //     },
-        //     images: document.querySelector('img.holder')
-        // });
 
         // var timeLeft = '2020/2/26 23:29:36';
         var timeLeft = _floatREndtime;
@@ -269,7 +259,7 @@ require(['config'], function () {
                         (function (url) {
                             var js = document.createElement('script');
                             js.src = url;
-                            js.async=true;
+                            js.async = true;
                             var fs = document.getElementsByTagName('script')[0];
                             fs.parentNode.insertBefore(js, fs);
                         })('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626');

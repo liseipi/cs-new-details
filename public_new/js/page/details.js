@@ -1,4 +1,4 @@
-require(['config'], function () {
+require(['config.min'], function () {
     var app = null;
 
     require(['vue', 'common'], function (Vue, common) {
