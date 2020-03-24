@@ -47,6 +47,6 @@ require.config({
     }
 });
 
-// require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'],
-//     function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
-// });
+require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'],
+    function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
+});

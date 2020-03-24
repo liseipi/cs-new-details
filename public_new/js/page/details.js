@@ -303,7 +303,7 @@ require(['config'], function () {
                     e.reviewsSmoothScroll();
                     e.notifymeDom();
                     e.endRenderDom();
-                    e.renderShare();
+                    // e.renderShare();
                 },
                 lozadResources: function () {
                     var observer = lozad();
