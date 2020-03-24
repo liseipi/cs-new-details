@@ -46,10 +46,3 @@ require.config({
         'elevatezoom': ['jquery'],
     }
 });
-
-// require(['jquery', 'pace', 'lozad'], function (jquery, pace, lozad) {
-//     (function () {
-//         var observer = lozad();
-//         observer.observe();
-//     })();
-// });
