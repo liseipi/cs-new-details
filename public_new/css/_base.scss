@@ -335,3 +335,46 @@ $btn-scroll-top-hover-color: $white !default;
     }
   }
 }
+
+.adsbygoogle_right_ad {
+  width: 242px;
+  height: 400px;
+}
+
+.adsbygoogle_bottom_ad {
+  width: 1000px;
+  height: 120px;
+}
+
+@media (max-width: 575.98px) and (max-width: 767.98px) {
+  .adsbygoogle_right_ad {
+    width: 242px;
+    height: 400px;
+  }
+  .adsbygoogle_bottom_ad {
+    width: 540px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .adsbygoogle_right_ad {
+    width: 172px;
+    height: 320px;
+  }
+  .adsbygoogle_bottom_ad {
+    width: 720px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .adsbygoogle_right_ad {
+    width: 232px;
+    height: 380px;
+  }
+  .adsbygoogle_bottom_ad {
+    width: 960px;
+    height: 100px;
+  }
+}
