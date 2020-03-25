@@ -304,6 +304,7 @@ require(['config.min'], function () {
                     e.notifymeDom();
                     e.renderShare();
                     e.endRenderDom();
+                    e.renderSchema()
                 },
                 lozadResources: function () {
                     var observer = lozad();
@@ -482,7 +483,6 @@ require(['config.min'], function () {
                             });
                         };
 
-                        // console.log(m + w > o);
                         if (m + w > o) {
                             renderData();
                         }
@@ -735,31 +735,75 @@ require(['config.min'], function () {
                         (function (url) {
                             var js = document.createElement('script');
                             js.src = url;
-                            js.async=true;
+                            js.async = true;
                             var fs = document.getElementsByTagName('script')[0];
                             fs.parentNode.insertBefore(js, fs);
                         })('https://platform-api.sharethis.com/js/sharethis.js#property=5e1eb86ad9b8290012a6ec22&product=inline-share-buttons&cms=sop');
                     }
                 },
                 endRenderDom: function () {
-                    // $(function () {
-                        $('.description_information table.Specification').addClass("table text-sm");
+                    $('.description_information table.Specification').addClass("table text-sm");
 
-                        $(".review-item").each(function () {
-                            $(this).find('[data-fancybox="review-images"]').fancybox({
-                                // toolbar: false,
-                                // smallBtn: true,
-                                // arrows: false,
-                                // infobar: false,
-                                buttons: ["close"],
-                                thumbs: {
-                                    autoStart: true
+                    $(".review-item").each(function () {
+                        $(this).find('[data-fancybox="review-images"]').fancybox({
+                            // toolbar: false,
+                            // smallBtn: true,
+                            // arrows: false,
+                            // infobar: false,
+                            buttons: ["close"],
+                            thumbs: {
+                                autoStart: true
+                            }
+                        });
+                    });
+                },
+                renderSchema: function () {
+                    (function () {
+                        var YOUTUBE_API_KEY = "AIzaSyBSe5moDEmqPl2yOemNYmPx5wLdCeeUq-A";
+                        try {
+                            [].forEach.call(document.getElementsByTagName('iframe'), function (e) {
+                                var ytbSrc = e.getAttribute('data-src');
+                                if (!ytbSrc) return;
+                                var rx = /(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=|\/sandalsResorts#\w\/\w\/.*\/))([^\/;]{10,12})/;
+                                var yid = ytbSrc.match(rx);
+                                var id = yid ? yid[1] : '';
+                                if (id) {
+                                    var url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=' + YOUTUBE_API_KEY;
+                                    var xhttp2 = new XMLHttpRequest();
+                                    xhttp2.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                            var responseObject = JSON.parse(this.response);
+                                            var video = responseObject.items[0].snippet;
+                                            var jsonld = {
+                                                "@context": "http://schema.org",
+                                                "@type": "VideoObject",
+                                                "name": video.title,
+                                                "description": video.description ? video.description : video.title,
+                                                "thumbnailUrl": [
+                                                    video.thumbnails.default.url,
+                                                    video.thumbnails.medium.url,
+                                                    video.thumbnails.high.url,
+                                                    // video.thumbnails.maxres.url,
+                                                ],
+                                                "uploadDate": video.publishedAt,
+                                                "contentUrl": "https://www.youtube.com/watch?v=" + id,
+                                                "embedUrl": "https://www.youtube.com/embed/" + id,
+                                            };
+                                            var script = document.createElement("script");
+                                            script.type = "application/ld+json";
+                                            script.text = JSON.stringify(jsonld);
+                                            document.querySelector("body").appendChild(script);
+                                        }
+                                    };
+                                    xhttp2.open("GET", url, true);
+                                    xhttp2.send();
                                 }
                             });
-                        });
-
-                    // });
-                },
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    })();
+                }
             };
             e.init();
         }(jQuery);
