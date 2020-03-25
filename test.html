@@ -693,7 +693,7 @@
             </div>
 
             <!-- # PICKED FOR YOU-->
-            <div id="picked_product" class="mt-3">
+            <div id="picked_product" :class="{'mt-3': pickedData.length>0}">
                 <div class="picked-body" v-show="pickedData.length>0">
                     <div class="picked_title_container">
                         <h3 class="picked_title h5 py-1">You May Be Interested In The Following Products:</h3>
