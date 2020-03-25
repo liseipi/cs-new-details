@@ -10,6 +10,7 @@ require(['config.min'], function () {
                 pickedData: [],
                 // galleryData: galleryData,   // galleryData.slice(0, 10),
                 newHotData: [],
+                reviewPercent: [],
                 reviewData: [],
 
                 reviewFitle: {
@@ -561,6 +562,7 @@ require(['config.min'], function () {
                         }
 
                         var renderData = function () {
+                            app.reviewPercent = app.pageData.reviewPercent;
                             app.reviewData = app.pageData.reviewsData;
                             document.querySelector("#reviewData").setAttribute('data-render', 'true');
                             app.$nextTick(function () {
