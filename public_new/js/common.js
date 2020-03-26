@@ -74,6 +74,7 @@ define(['jquery'], function ($) {
             var bodyElementStyle = getComputedStyle(document.body, '::before');
             window.deviceFlag = bodyElementStyle.content.replace(/"/g, "");
             return window.deviceFlag;
-        }
+        },
+        "reviewPercentColor": ['#28a745', '#a7e453', '#ffda75', '#fea569', '#dc3545'],
     };
 });

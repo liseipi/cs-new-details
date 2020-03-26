@@ -11,6 +11,7 @@ require(['config.min'], function () {
                 // galleryData: galleryData,   // galleryData.slice(0, 10),
                 newHotData: [],
                 reviewPercent: [],
+                reviewPercentColor: common.reviewPercentColor,
                 reviewData: [],
 
                 reviewFitle: {
