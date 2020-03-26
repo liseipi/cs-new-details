@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +51,8 @@
                     </ul>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a rel="nofollow" href="/myaccount" class="nav-link text-dark">Hello, oli</a>
+                            <a rel="nofollow" href="/login?f=l" class="nav-link text-dark">Hello, Sign In</a>
+                            <a rel="nofollow" href="/login?f=r" class="nav-link text-success">Join Free</a>
                         </li>
                         <li class="spacer"></li>
                         <li class="nav-item dropdown">
@@ -66,8 +66,11 @@
                                 <li><a rel="nofollow" class="dropdown-item px-3" href="/myaccount/credits">CrazyPoints & credits</a></li>
                                 <li><div class="dropdown-divider"></div></li>
                                 <li class="mb-2">
-                                    <a class="dropdown-item px-3" href="/login/logout" rel="nofollow">
-                                        <i class="csiconfont csicon-sign-out text-danger mr-2"></i> Sign Out
+                                    <a class="dropdown-item px-3" href="/login?f=l" rel="nofollow">
+                                        <i class="csiconfont csicon-sign-in text-danger mr-2"></i> Sign In
+                                    </a>
+                                    <a class="dropdown-item px-3" href="/login?f=r" rel="nofollow">
+                                        <i class="csiconfont csicon-join text-danger mr-2"></i> Join Free
                                     </a>
                                 </li>
                             </ul>
@@ -166,7 +169,7 @@
                             </a>
                             <a rel="nofollow" href="https://www.crazysales.com.au/myaccount/wishlist" class="btn btn-outline-danger">
                                 <i class="csiconfont csicon-favorite csicon-lg"></i>
-                                <span class="badge badge-warning" id="wishlistitemsnum">0</span>
+                                <span class="badge badge-warning" id="wishlistitemsnum"></span>
                             </a>
                         </div> <!-- widgets-wrap.// -->
                     </div> <!-- col.// -->
@@ -189,22 +192,22 @@
             </div>
         </aside>
         <script>
-            var _floatREndtime = '2020/3/26 12:00:01';
+            var _floatREndtime = '2020/3/27 09:00:01';
         </script>
         <aside class="promotion-today-right d-none d-xl-block" id="promotion_today_product" data-sticky-main-ad>
             <div class="card rounded-0 d-inline-block">
                 <a href="/crazysalesoftheday" rel="nofollow">
                     <img class="lozad" src="public_new/svg/holder.svg" data-src="public_new/images/promotion-today.png" width="86" height="85" alt="">
                     <img class="lozad" src="public_new/svg/holder.svg"
-                         data-src="//img.crazysales.com.au/products_pictures/159/159087_1057279_T.jpg" width="86" height="86" alt="goods-img">
-                    <div class="product-price text-center font-weight-bolder py-1">$49.99</div>
+                         data-src="//img.crazysales.com.au/products_pictures/1646/164671_1164625_T.jpg" width="86" height="86" alt="goods-img">
+                    <div class="product-price text-center font-weight-bolder py-1">$149.99</div>
                     <div class="product-was-price text-dark text-center font-weight-bolder py-1">
-                        <del>Was:$99.95</del>
+                        <del>Was:$259.95</del>
                     </div>
-                    <div class="product-was-name text-muted text-center">Dog Barking Control Bark Collar Anti Bark Recharge...</div>
+                    <div class="product-was-name text-muted text-center">Modern TV Stand Cabinet 160cm Wood Entertainment U...</div>
                     <div class="timeLeft text-center py-2">
                         <strong class="text-dark font-weight-bolder">Time Left</strong>
-                        <div class="badge badge-pill badge-danger time" id="promotion_today_product_time">20:58:20</div>
+                        <div class="badge badge-pill badge-danger time" id="promotion_today_product_time">16:38:40</div>
                     </div>
                     <div class="in-show text-center py-3">
                         <strong> Buy Now</strong>
@@ -273,7 +276,6 @@
 
 
 
-
             <div class="mt-3">
                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative">
                     <div class="col-auto d-lg-block discount-statue">
@@ -300,6 +302,11 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
 
             <!--email only-->
 
@@ -540,7 +547,7 @@
                             <div class="form-row mt-3">
                                 <div class="col-3">
                                     <select class="form-control" v-model="quantity" id="quantity_select">
-                                        <option value="1">1</option><option value="2">2</option>                                </select>
+                                        <option value="1">1</option>                                </select>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;" onclick="location.href='https://www.crazysales.com.au/viewcart/addcart/97919/'+quantity_select.value;" class="btn btn-danger btn-block" data-track-event="addToCart">
@@ -952,89 +959,35 @@
                 <div class="row pb-3">
                     <div class="col-lg-5 col-md-5">
                         <h4 class="h5 mb-2">144 Reviews</h4>
-                        <div class="star-rating mr-2 d-inline-block">
+                        <div class="star-rating mr-1 d-inline-block">
                             <ul class="rating-stars">
                                 <li style="width:100%" class="stars-active">
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
+                                    <i class="csiconfont csicon-star csicon-lg mr-1" v-for="i in 5" :key="i"></i>
                                 </li>
                                 <li>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
-                                    <i class="csiconfont csicon-star"></i>
+                                    <i class="csiconfont csicon-star csicon-lg mr-1" v-for="i in 5" :key="i"></i>
                                 </li>
                             </ul>
                         </div>
                         <span class="d-inline-block align-middle">5 overall rating</span>
                         <p class="pt-1 font-size-sm text-muted">
-                            Share your review and photos here. And 100-200 crazypoints will be rewarded after the review approved. (100 CrazyPoints Equals
-                            to $1)
+                            Share your review and photos here. And 100-200 crazypoints will be rewarded after the review approved. (100 CrazyPoints Equals to $1)
                         </p>
                     </div>
                     <div class="col-lg-7 col-md-7">
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="text-nowrap mr-3"><span class="d-inline-block align-middle text-muted">5</span><i
-                                    class="czi-star-filled font-size-xs ml-1"></i></div>
+                        <div class="d-flex align-items-center mb-2" v-for="(Rv, Ri) in reviewPercent" :key="Ri">
+                            <div class="text-nowrap mr-3">
+                                <span class="d-inline-block align-middle text-muted">{{5-Ri}}</span>
+                            </div>
                             <div class="w-100">
                                 <div class="progress" style="height: 4px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" :style="{width: parseInt(100*Rv/pageData.reviewCount)+'%', 'backgroundColor': reviewPercentColor[Ri]}" :aria-valuenow="parseInt(100*Rv/pageData.reviewCount)" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                            <span class="text-muted ml-3">144</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="text-nowrap mr-3"><span class="d-inline-block align-middle text-muted">4</span><i
-                                    class="czi-star-filled font-size-xs ml-1"></i></div>
-                            <div class="w-100">
-                                <div class="progress" style="height: 4px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <span class="text-muted ml-3">0</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="text-nowrap mr-3"><span class="d-inline-block align-middle text-muted">3</span><i
-                                    class="czi-star-filled font-size-xs ml-1"></i></div>
-                            <div class="w-100">
-                                <div class="progress" style="height: 4px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <span class="text-muted ml-3">0</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="text-nowrap mr-3"><span class="d-inline-block align-middle text-muted">2</span><i
-                                    class="czi-star-filled font-size-xs ml-1"></i></div>
-                            <div class="w-100">
-                                <div class="progress" style="height: 4px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <span class="text-muted ml-3">0</span>
-                        </div>
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="text-nowrap mr-3"><span class="d-inline-block align-middle text-muted">1</span><i
-                                    class="czi-star-filled font-size-xs ml-1"></i></div>
-                            <div class="w-100">
-                                <div class="progress" style="height: 4px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
-                                         aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <span class="text-muted ml-3">0</span>
+                            <span class="text-muted ml-3" style="min-width: 30px;">{{Rv}}</span>
                         </div>
                     </div>
                 </div>
-
                 <div id="reviewData" data-render="false">
                     <div class="review_nav_filter row align-items-center">
                         <div class="col-12 col-md-auto">
@@ -1088,18 +1041,10 @@
                                             <div class="star-rating">
                                                 <ul class="rating-stars">
                                                     <li :style="{width: reVal.rate*20+'%'}" class="stars-active">
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
+                                                        <i class="csiconfont csicon-star mr-1" v-for="i in 5" :key="i"></i>
                                                     </li>
                                                     <li>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
-                                                        <i class="csiconfont csicon-star"></i>
+                                                        <i class="csiconfont csicon-star mr-1" v-for="i in 5" :key="i"></i>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1146,7 +1091,6 @@
 
                     <div class="copy_review_nav_filter border-top pt-3 pb-5"></div>
                 </div>
-
             </div>
             <!--# end Reviews -->
         </div>
@@ -1238,10 +1182,10 @@
             productName: "50L Stainless Steel Fingerprint Proof Step Garbage Bin",
             productCategory: 'Bins',
             productPrice: '119.96',
-            inStockOrigin: 2,
+            inStockOrigin: 1,
             productURL: 'https://www.crazysales.com.au/online-50l-stainless-steel-fingerprint-proof-step-garbage-bin-97919.html',
-            customerId: "3237081",
-            isLogin: true,
+            customerId: "0",
+            isLogin: false,
             httpsUrl: 'https://www.crazysales.com.au/',
 
             showSizetable: false,
@@ -1250,8 +1194,8 @@
             product_attributes: [],
             group_info: [],
 
-            defaultPlaceID: '2065',
-            suburbs: [{"firstKey":"2","sub_postcode":"2065","sub_name":"CROWS NEST","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1267","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2065","sub_name":"CROWS NEST DC","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1269","lifespanHunterZone":null,"lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2065","sub_name":"GREENWICH","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1271","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2065","sub_name":"NAREMBURN","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1273","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2065","sub_name":"ROYAL NORTH SHORE HOSPITAL","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1275","lifespanHunterZone":null,"lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2065","sub_name":"ST LEONARDS","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1277","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2065","sub_name":"WOLLSTONECRAFT","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1279","lifespanHunterZone":"62","lifespanEparcelZone":"N0"}],
+            defaultPlaceID: '2000',
+            suburbs: [{"firstKey":"2","sub_postcode":"2000","sub_name":"BARANGAROO","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"997","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"DAWES POINT","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"999","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"HAYMARKET","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1001","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"MILLERS POINT","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1003","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"PARLIAMENT HOUSE","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1005","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"SYDNEY","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1007","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"SYDNEY SOUTH","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1009","lifespanHunterZone":"62","lifespanEparcelZone":"N0"},{"firstKey":"2","sub_postcode":"2000","sub_name":"THE ROCKS","zoneID":"191","zone_code":"NSW","countryID":"240","subID":"1011","lifespanHunterZone":"62","lifespanEparcelZone":"N0"}],
 
             postageData: {
                 courierName: "eParcel",
@@ -1262,19 +1206,19 @@
                 error: ""
             },
 
-            timeLeft: "2020/3/31 17:20:00",
+            timeLeft: "2020/3/31 14:20:00",
 
             interested_products: [{"name":"68L Silver Chrome Sensor Operated Touch Less Dust Bin \r\n\r\n","isFreeShipping":false,"url":"online-68l-silver-chrome-sensor-operated-touch-less-dust-bin-118037.html","thumbnail":"1180\/118037_1269961_N.jpg","price":"99.88","isNew":false,"reviews":188,"productID":"118037","wasPrice":"149.95","save":33,"promotionType":"2"},{"name":"360 Degree Spin Rotating Mop and Bucket Set w\/ Wheels and 4 Microfiber Mop Heads","isFreeShipping":false,"url":"online-360-degree-spin-rotating-mop-and-bucket-set-w-wheels-and-4-microfiber-mop-heads-155603.html","thumbnail":"155\/155603_1009193_N.jpg","price":"69.96","isNew":false,"reviews":143,"productID":"155603","wasPrice":"89.95","save":22,"promotionType":"2"},{"name":"360 Degree Spin Mop & Bucket with Wheels with four Free Mop Heads \r\n\r\n\r\n","isFreeShipping":false,"url":"online-360-degree-spin-mop-bucket-with-wheels-with-four-free-mop-heads-117225.html","thumbnail":"1172\/117225_1386323_N.jpg","price":"69.96","isNew":false,"reviews":139,"productID":"117225","wasPrice":"89.95","save":22,"promotionType":"2"},{"name":"DR FUSSY 360 Degree Spin Mop Bucket System Microfiber Mop with Easy Wringer Bucket","isFreeShipping":false,"url":"online-dr-fussy-360-degree-spin-mop-bucket-system-microfiber-mop-with-easy-wringer-bucket-164141.html","thumbnail":"164\/164141_1154341_N.jpg","price":"79.96","isNew":false,"reviews":114,"productID":"164141","wasPrice":"99.95","save":20,"promotionType":"2"},{"name":"68L Motion Sensor Bin Automatic Touchless Stainless Steel Kitchen Waste Rubbish Trash Can - Black\n","isFreeShipping":false,"url":"online-68l-motion-sensor-bin-automatic-touchless-stainless-steel-kitchen-waste-rubbish-trash-can-black-158065.html","thumbnail":"1580\/158065_1080871_N.jpg","price":"109.96","isNew":false,"reviews":76,"productID":"158065","wasPrice":"149.95","save":27,"promotionType":"2"},{"name":"DR FUSSY Spin Mop Bucket System Stainless Steel Basket W\/4 Microfiber Mop Heads","isFreeShipping":false,"url":"online-dr-fussy-spin-mop-bucket-system-stainless-steel-basket-w-4-microfiber-mop-heads-158827.html","thumbnail":"1588\/158827_1053569_N.jpg","price":"69.96","isNew":false,"reviews":73,"productID":"158827","wasPrice":"99.95","save":30,"promotionType":"2"},{"name":"Upgraded 360 Degree Spin Mop Bucket System w\/4 Mop Heads","isFreeShipping":false,"url":"online-upgraded-360-degree-spin-mop-bucket-system-w-4-mop-heads-164803.html","thumbnail":"164\/164803_1165197_N.jpg","price":"69.96","isNew":false,"reviews":68,"productID":"164803","wasPrice":"79.95","save":12,"promotionType":"2"},{"name":"60L Dual Compartment Pedal Garbage Rubbish Bin Steel Shiny Black Kitchen Waste Trash Can","isFreeShipping":false,"url":"online-60l-dual-compartment-pedal-garbage-rubbish-bin-steel-shiny-black-kitchen-waste-trash-can-169415.html","thumbnail":"1694\/169415_1213787_N.jpg","price":"119.97","isNew":false,"reviews":31,"productID":"169415","wasPrice":"159.95","save":25,"promotionType":"2"},{"name":"60L Dual Compartment Pedal Garbage Rubbish Bin Stainless Steel Kitchen Waste Trash Can","isFreeShipping":false,"url":"online-60l-dual-compartment-pedal-garbage-rubbish-bin-stainless-steel-kitchen-waste-trash-can-160473.html","thumbnail":"160\/160473_1074117_N.jpg","price":"119.96","isNew":false,"reviews":21,"productID":"160473","wasPrice":"179.95","save":33,"promotionType":"2"},{"name":"60L Motion Sensor Bin Automatic Touchless Stainless Steel Kitchen Waste Rubbish Trash Can - Silver\n","isFreeShipping":false,"url":"online-60l-motion-sensor-bin-automatic-touchless-stainless-steel-kitchen-waste-rubbish-trash-can-silver-158067.html","thumbnail":"1580\/158067_1080873_N.jpg","price":"129.96","isNew":false,"reviews":16,"productID":"158067","wasPrice":"189.95","save":32,"promotionType":"2"},{"name":"60L Pedal Garbage Rubbish Bin 3-Compartment Stainless Steel Kitchen Waste Trash Can w\/Flip-Top Lids","isFreeShipping":false,"url":"online-60l-pedal-garbage-rubbish-bin-3-compartment-stainless-steel-kitchen-waste-trash-can-w-flip-top-lids-160471.html","thumbnail":"160\/160471_1074101_N.jpg","price":"139.96","isNew":false,"reviews":13,"productID":"160471","wasPrice":"169.95","save":18,"promotionType":"2"},{"name":"34L Two Layer Press Top Dustbin Kitchen Waste Pedal Bin Garbage Trash Can","isFreeShipping":false,"url":"online-34l-two-layer-press-top-dustbin-kitchen-waste-pedal-bin-garbage-trash-can-175615.html","thumbnail":"1756\/175615_1290775_N.jpg","price":"99.96","isNew":false,"reviews":13,"productID":"175615","wasPrice":"139.95","save":29,"promotionType":"2"},{"name":"80L Stainless Steel Motion Sensor Dustbin Recycle Bin Automatic Rubbish Kitchen Waste Trash Can","isFreeShipping":false,"url":"online-80l-stainless-steel-motion-sensor-dustbin-recycle-bin-automatic-rubbish-kitchen-waste-trash-can-196801.html","thumbnail":"1968\/196801_1494077_N.jpg","price":"149.96","isNew":false,"reviews":12,"productID":"196801","wasPrice":"159.95","save":6,"promotionType":"2"},{"name":"70L Motion Sensor Rubbish Bin Dual Kitchen Waste Can Stainless Steel Recycle Bin","isFreeShipping":false,"url":"online-70l-motion-sensor-rubbish-bin-dual-kitchen-waste-can-stainless-steel-recycle-bin-196803.html","thumbnail":"1968\/196803_1494417_N.jpg","price":"119.95","isNew":false,"reviews":10,"productID":"196803","wasPrice":"159.95","save":25,"promotionType":"2"},{"name":"Duel Side Pull Out Rubbish Waste Basket 2 x 20L","isFreeShipping":true,"url":"online-duel-side-pull-out-rubbish-waste-basket-2-x-20l-99407.html","thumbnail":"994\/99407_530823_N.jpg","price":"99.97","isNew":false,"reviews":3,"productID":"99407","wasPrice":"129.95","save":23,"promotionType":"2"},{"name":"MAXKON 1400ml High Power Ultrasonic Cleaner Jewellery Glasses Cleaning with Digital Timer","isFreeShipping":false,"url":"online-maxkon-1400ml-high-power-ultrasonic-cleaner-jewellery-glasses-cleaning-with-digital-timer-184423.html","thumbnail":"184\/184423_1352663_N.jpg","price":"99.95","isNew":false,"reviews":3,"productID":"184423","wasPrice":"179.95","save":44,"promotionType":"2"},{"name":"Dual Pull Out Waste Bin 15L","isFreeShipping":true,"url":"online-dual-pull-out-waste-bin-15l-149867.html","thumbnail":"1498\/149867_947091_N.jpg","price":"89.96","isNew":false,"reviews":1,"productID":"149867","wasPrice":"119.95","save":25,"promotionType":"2"},{"name":"Giselle Bedding Super King Size Classic Quilt Cover Set - Charcoal","isFreeShipping":true,"url":"online-giselle-bedding-super-king-size-classic-quilt-cover-set-charcoal-165759.html","thumbnail":"1657\/165759_1180219_N.jpg","price":"49.95","isNew":false,"reviews":1,"productID":"165759","wasPrice":"69.95","save":29,"promotionType":"2"},{"name":"Self-adhesive PVC Flooring Planks 5.02 m\u00b2 2 mm Oak Washed","isFreeShipping":false,"url":"online-self-adhesive-pvc-flooring-planks-5-02-m-2-mm-oak-washed-182205.html","thumbnail":"1822\/182205_1338151_N.jpg","price":"99.95","isNew":false,"reviews":1,"productID":"182205","wasPrice":"169.95","save":41,"promotionType":"2"},{"name":"PVC Flooring Planks 5.26 m\u00b2 2 mm Elm Nature","isFreeShipping":false,"url":"online-pvc-flooring-planks-5-26-m-2-mm-elm-nature-189015.html","thumbnail":"1890\/189015_1408125_N.jpg","price":"89.95","isNew":false,"reviews":1,"productID":"189015","wasPrice":"149.95","save":40,"promotionType":"2"}],
 
             newHotData: [],
 
             reviewCount: 144,
+            reviewPercent: [144,0,0,0,0],
             reviewsData: [{"reviewID":368019,"customerName":"irah5350","rate":5,"cusomerID":0,"title":"","detail":"Thank you for the fast shipping","yes":0,"no":0,"usefulPercent":0,"imgs":[],"productID":97919,"createTime":"2020-02-21 07:42:42 "},{"reviewID":367231,"customerName":"redbaron17","rate":5,"cusomerID":0,"title":"","detail":"great product","yes":0,"no":0,"usefulPercent":0,"imgs":[],"productID":97919,"createTime":"2020-02-13 08:10:54 "},{"reviewID":363413,"customerName":"magna_sentinel","rate":5,"cusomerID":0,"title":"","detail":"Got there in the end thanks","yes":0,"no":0,"usefulPercent":0,"imgs":[],"productID":97919,"createTime":"2020-01-07 17:11:14 "},{"reviewID":344161,"customerName":"poss8100","rate":5,"cusomerID":0,"title":"","detail":"Great product fast postage thanks","yes":0,"no":0,"usefulPercent":0,"imgs":[],"productID":97919,"createTime":"2019-07-27 06:30:58 "},{"reviewID":335117,"customerName":"manxmike68","rate":5,"cusomerID":0,"title":"","detail":"Thank you exactly as advertised","yes":0,"no":0,"usefulPercent":0,"imgs":[],"productID":97919,"createTime":"2019-05-05 01:14:57 "},{"reviewID":335107,"customerName":"captaink62","rate":5,"cusomerID":0,"title":"","detail":"Great item","yes":0,"no":0,"usefulPercent":0,"imgs":[],"productID":97919,"createTime":"2019-05-05 10:06:00 "}],
         };
 
     </script>
     <script src="public_new/js/page/details.min.js"></script>
-
     <script type="text/javascript">
         dataLayer = [];
         dataLayer.push({
@@ -1285,15 +1229,26 @@
             }
         });
     </script>
-
     <script type="application/ld+json">
         {
             "@context": "https://schema.org/",
             "@type": "Product",
             "name": "50L Stainless Steel Fingerprint Proof Step Garbage Bin",
             "image": [
-                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511129_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_998943_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511153_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511151_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511149_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511145_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511141_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511139_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511135_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511133_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511131_T.jpg",                        "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_784107_T.jpg"            ],
-            "description": "Stainless Steel Body  - Save on a 50L Stainless Steel Fingerprint Proof Step Garbage Bin  at CrazySales.com.au - Get rid of trash simply with this 50L Stainless Steel Fingerprint Proof Step Garbage Bin!",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511129_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_998943_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511153_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511151_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511149_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511145_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511141_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511139_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511135_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511133_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_511131_T.jpg",
+                "https://www.crazysales.com.au///img.crazysales.com.au/products_pictures/979/97919_784107_T.jpg"
+            ],
+            "description": "Stainless Steel Body - Save on a 50L Stainless Steel Fingerprint Proof Step Garbage Bin at CrazySales.com.au - Get rid of trash simply with this 50L Stainless Steel Fingerprint Proof Step Garbage Bin!",
             "sku": "960407A",
             "mpn": "97919",
             "brand": {
@@ -1316,7 +1271,7 @@
                 "url": "https://www.crazysales.com.au/online-50l-stainless-steel-fingerprint-proof-step-garbage-bin-97919.html",
                 "priceCurrency": "AUD",
                 "price": "119.96",
-                "priceValidUntil": "2021-03-25",
+                "priceValidUntil": "2021-03-26",
                 "itemCondition": "https://schema.org/UsedCondition",
                 "availability": "https://schema.org/InStock",
                 "seller": {
@@ -1325,53 +1280,6 @@
                 }
             }
         }
-    </script>
-    <script>
-        (function () {
-            var YOUTUBE_API_KEY = "AIzaSyBSe5moDEmqPl2yOemNYmPx5wLdCeeUq-A";
-            try{
-                [].forEach.call(document.getElementsByTagName('iframe'), function (e) {
-                    var ytbSrc = e.getAttribute('data-src');
-                    if(!ytbSrc) return;
-                    var rx = /(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/user\/\S+|\/ytscreeningroom\?v=|\/sandalsResorts#\w\/\w\/.*\/))([^\/;]{10,12})/;
-                    var yid = ytbSrc.match(rx);
-                    var id = yid ? yid[1] : '';
-                    if (id) {
-                        var url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=' + YOUTUBE_API_KEY;
-                        var xhttp2 = new XMLHttpRequest();
-                        xhttp2.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                var responseObject = JSON.parse(this.response);
-                                var video = responseObject.items[0].snippet;
-                                var jsonld = {
-                                    "@context": "http://schema.org",
-                                    "@type": "VideoObject",
-                                    "name": video.title,
-                                    "description": video.description,
-                                    "thumbnailUrl": [
-                                        video.thumbnails.default.url,
-                                        video.thumbnails.medium.url,
-                                        video.thumbnails.high.url,
-                                        // video.thumbnails.maxres.url,
-                                    ],
-                                    "uploadDate": video.publishedAt,
-                                    "contentUrl": "https://www.youtube.com/watch?v=" + id,
-                                    "embedUrl": "https://www.youtube.com/embed/" + id,
-                                };
-                                var script = document.createElement("script");
-                                script.type = "application/ld+json";
-                                script.text = JSON.stringify(jsonld);
-                                document.querySelector("body").appendChild(script);
-                            }
-                        };
-                        xhttp2.open("GET", url, true);
-                        xhttp2.send();
-                    }
-                });
-            } catch(e) {
-                console.log(e);
-            }
-        })();
     </script>
 
 
@@ -1553,6 +1461,7 @@
 <!-- End Google Tag Manager -->
 
 <!--<script async src="https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js"></script>-->
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1580701438626"></script>-->
 
 </body>
 </html>

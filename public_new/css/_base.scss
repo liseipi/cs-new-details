@@ -133,8 +133,11 @@ input {
 
 .pagination {
   .hellip {
-    margin: -.45rem 0;
+    height: 100%;
+    line-height: 50%;
     cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 
@@ -336,15 +339,15 @@ $btn-scroll-top-hover-color: $white !default;
   }
 }
 
-.adsbygoogle_right_ad {
-  width: 242px;
-  height: 400px;
-}
-
-.adsbygoogle_bottom_ad {
-  width: 1000px;
-  height: 120px;
-}
+//.adsbygoogle_right_ad {
+//  width: 242px;
+//  height: 400px;
+//}
+//
+//.adsbygoogle_bottom_ad {
+//  width: 1000px;
+//  height: 120px;
+//}
 
 @media (max-width: 575.98px) and (max-width: 767.98px) {
   .adsbygoogle_right_ad {
