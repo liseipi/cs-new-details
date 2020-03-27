@@ -32,8 +32,8 @@ require(['config.min'], function () {
                     e.showSearchList();
                     e.hideSearchInputTip();
                     e.searchSubmit();
-                    // e.renderLivechat();
-                    // e.adsbygoogle();
+                    e.renderLivechat();
+                    e.adsbygoogle();
                 },
                 showSubCategory: function () {
                     $("#all-category-menu .dropdown-item").each(function () {
