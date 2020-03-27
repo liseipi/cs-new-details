@@ -27,12 +27,13 @@ require(['config.min'], function () {
                     e.menuStopPropagation();
                     e.renderTopButton();
                     e.scrollTopButton();
+                    e.autoTipKeywords();
                     e.showHotsearch();
                     e.showSearchList();
                     e.hideSearchInputTip();
                     e.searchSubmit();
-                    // e.renderLivechat();
-                    // e.adsbygoogle();
+                    e.renderLivechat();
+                    e.adsbygoogle();
                 },
                 showSubCategory: function () {
                     $("#all-category-menu .dropdown-item").each(function () {
@@ -145,6 +146,30 @@ require(['config.min'], function () {
                         }
                     }
                 },
+                autoTipKeywords: function () {
+                    var _hotSearchData = [];
+                    $('.hot-search-list a').each(function () {
+                        _hotSearchData.push($(this).text());
+                    });
+
+                    var t = _hotSearchData.length, i = 0;
+                    if (t > 0) {
+                        function sleep() {
+                            setTimeout(function () {
+                                $('#input-keywords').attr('placeholder', _hotSearchData[i]);
+                                i++;
+                                if (i < t) {
+                                    setTimeout(arguments.callee, 5000);
+                                } else {
+                                    i = 0;
+                                    setTimeout(arguments.callee, 5000);
+                                }
+                            }, 100);
+                        }
+
+                        sleep();
+                    }
+                },
                 showHotsearch: function () {
                     var el = document.querySelector("#input-keywords");
                     if (null != el) {
@@ -230,20 +255,27 @@ require(['config.min'], function () {
                     if (null != forms) {
                         var validation = Array.prototype.filter.call(forms, function (form) {
                             form.addEventListener('submit', function (event) {
-                                if (form.checkValidity() === false) {
-                                    document.querySelector("#input-keywords").focus();
-
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                } else {
+                                function search(val) {
                                     var additionUrl = '';
-                                    var _key = document.querySelector("#input-keywords").value;
+                                    var _key = val;
                                     var keyword = ($.trim(_key).replace(/[^-\w+]/g, " ")).replace(/( )+/g, "+");
                                     var _category = document.querySelector(".select-category").value;
                                     if ($.trim(_category).length > 0 && _category != 0) {
                                         additionUrl = 'category/' + _category + '/';
                                     }
                                     window.location.href = "https://" + window.location.host + "/search/" + keyword + '/' + additionUrl;
+                                }
+
+                                if (form.checkValidity() === false) {
+                                    // document.querySelector("#input-keywords").focus();
+                                    var _key = document.querySelector("#input-keywords").getAttribute('placeholder');
+                                    search(_key);
+
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                } else {
+                                    var _key = document.querySelector("#input-keywords").value;
+                                    search(_key);
 
                                     event.preventDefault();
                                     event.stopPropagation();

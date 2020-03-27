@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: 'public_new/js/',
+    baseUrl: '/public_new/js/',
     waitSeconds: 200,
     paths: {
         'css': './libs/css',
