@@ -300,7 +300,7 @@ require(['config.min'], function () {
                     e.initPickedSlider();
                     e.rightProductFloating();
                     e.showReviews();
-                    e.showCharMain();
+                    e.showPaymentBox();
                     e.popoverInfo();
                     e.reviewsSmoothScroll();
                     e.notifymeDom();
@@ -581,22 +581,7 @@ require(['config.min'], function () {
 
                     }
                 },
-                showCharMain: function () {
-
-                    $('[data-fancybox="char-iframe"]').fancybox({
-                        toolbar: false,
-                        smallBtn: true,
-                        arrows: false,
-                        infobar: false,
-                        buttons: ["close"],
-                        iframe: {
-                            preload: false,
-                            css: {
-                                width: '1000px'
-                            }
-                        }
-                    });
-
+                showPaymentBox: function () {
                     $('[data-fancybox="payment-iframe"]').fancybox({
                         toolbar: false,
                         smallBtn: true,

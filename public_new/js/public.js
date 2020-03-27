@@ -32,6 +32,7 @@ require(['config.min'], function () {
                     e.showSearchList();
                     e.hideSearchInputTip();
                     e.searchSubmit();
+                    e.showCharMain();
                     e.renderLivechat();
                     e.adsbygoogle();
                 },
@@ -283,6 +284,62 @@ require(['config.min'], function () {
                                 }
                             }, false);
                         });
+                    }
+                },
+                showCharMain: function () {
+                    var t = document.querySelector("#char_main");
+                    if (null != t) {
+                        var m = $(window).scrollTop();
+                        var w = $(window).height();
+                        var o = $('#char_main').offset().top;
+
+                        function handleScroll(ev) {
+                            m = $(window).scrollTop();
+                            w = $(window).height();
+                            o = $('#char_main').offset().top;
+
+                            var s = document.querySelector("#char_main").getAttribute('data-render');
+                            if (ev.currentTarget.pageYOffset + w + 200 >= o && s == 'false') {
+                                renderData();
+                                window.removeEventListener("scroll", handleScroll);
+                            }
+                            if (ev.currentTarget.pageYOffset + w + 200 >= o && s == 'true') {
+                                window.removeEventListener("scroll", handleScroll);
+                            }
+                        }
+
+                        var renderData = function () {
+                            $('#char_main').html('<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/EarnCrazyPoints?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-reward"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Earn CrazyPoints with our Reward Program!</div></div></div></div>\n' +
+                                '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/30DayChangeMind?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-change-of-mind"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">30 Day Change-of-Mind Policy</div></div></div></div>\n' +
+                                '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/FastDelivery?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-delivery"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Fast Delivery for Online Shopping in Australia</div></div></div></div>\n' +
+                                '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/SafeOnlineShopping?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-secure"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Safe Online Shopping With Secure Payment</div></div></div></div>\n' +
+                                '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/ShopWithHappy?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-happy"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Shop Online With Over 1 Million Happy Customers</div></div></div></div>\n' +
+                                '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/AwardWinning?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-award-winning"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Award-Winning Online Shopping in Australia</div></div></div></div>');
+                            document.querySelector("#char_main").setAttribute('data-render', 'true');
+                            renderFancybox();
+                        };
+
+                        if (m + w > o) {
+                            renderData();
+                        }
+
+                        window.addEventListener("scroll", handleScroll);
+
+                        function renderFancybox() {
+                            $('[data-fancybox="char-iframe"]').fancybox({
+                                toolbar: false,
+                                smallBtn: true,
+                                arrows: false,
+                                infobar: false,
+                                buttons: ["close"],
+                                iframe: {
+                                    preload: false,
+                                    css: {
+                                        width: '1000px'
+                                    }
+                                }
+                            });
+                        }
                     }
                 },
                 renderLivechat: function () {
