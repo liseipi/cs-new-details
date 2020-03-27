@@ -1,6 +1,6 @@
 require(['config.min'], function () {
 
-    require(['lozad', 'pace'], function (lozad, pace) {
+    define(['lozad', 'pace'], function(lozad, pace){
         var observer = lozad();
         observer.observe();
 
@@ -9,7 +9,6 @@ require(['config.min'], function () {
             // ajax: true
         });
     });
-
 
     require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'], function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
 
