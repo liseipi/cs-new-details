@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: 'public_new/js/',
+    baseUrl: '/public_new/js/',
     waitSeconds: 200,
     paths: {
         'css': './libs/css',
@@ -20,6 +20,7 @@ require.config({
         'moment': './libs/moment/moment.min',
         'pagination': './libs/simple-pagination/jquery.simplePagination.min',
 
+        'config': './config.min',
         'public': './public.min',
         'common': './common.min',
 
