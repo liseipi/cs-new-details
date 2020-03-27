@@ -1118,6 +1118,14 @@
     </section>
 
     <script src="public_new/js/require.js" data-main="public_new/js/config.min"></script>
+    <script>
+        require(['config.min'], function () {
+            requirejs(['lozad'], function (lozad) {
+                var observer = lozad();
+                observer.observe();
+            });
+        });
+    </script>
     <script src="public_new/js/public.min.js"></script>
     <script>
         var _pageData = {
