@@ -1,18 +1,18 @@
 require(['config.min'], function () {
 
     (function () {
-        // # page loading progress
-        pace.start({
-            document: false,
-            // ajax: true
-        });
-
-        // # lozad data-origin
         var observer = lozad();
         observer.observe();
     })();
 
     require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'], function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
+
+        (function () {
+            pace.start({
+                document: false,
+                // ajax: true
+            });
+        })();
 
         // var timeLeft = '2020/2/26 23:29:36';
         var timeLeft = _floatREndtime;
