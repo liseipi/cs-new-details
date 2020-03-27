@@ -21,6 +21,7 @@ require(['config.min'], function () {
         !function (c) {
             var e = {
                 init: function () {
+                    e.lozadResources();
                     e.coupletFloating();
                     e.updateTime();
                     e.showSubCategory();
@@ -36,6 +37,10 @@ require(['config.min'], function () {
                     e.renderGTM();
                     e.renderLivechat();
                     e.adsbygoogle();
+                },
+                lozadResources: function () {
+                    var observer = lozad();
+                    observer.observe();
                 },
                 showSubCategory: function () {
                     $("#all-category-menu .dropdown-item").each(function () {
