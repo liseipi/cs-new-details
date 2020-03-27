@@ -1,9 +1,8 @@
 require(['config.min'], function () {
 
-    requirejs(['pace'], function(pace){
-        pace.start({
-            document: false
-        });
+    requirejs(['lozad'], function (lozad) {
+        var observer = lozad();
+        observer.observe();
     });
 
     require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'], function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
