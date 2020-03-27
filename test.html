@@ -1120,7 +1120,12 @@
     <script src="public_new/js/require.js" data-main="public_new/js/config.min"></script>
     <script>
         require(['config.min'], function () {
-            requirejs(['lozad'], function (lozad) {
+            requirejs(['pace', 'lozad'], function (pace, lozad) {
+                pace.start({
+                    document: false,
+                    // ajax: true
+                });
+
                 var observer = lozad();
                 observer.observe();
             });
@@ -1234,7 +1239,6 @@
             }
         }
     </script>
-
 
     <section id="footer-bottom" class="mt-5">
         <div class="footer-bg">
