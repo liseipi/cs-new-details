@@ -1,6 +1,6 @@
 require(['config.min'], function () {
 
-    define(['pace'], function(pace){
+    requirejs(['pace'], function(pace){
         pace.start({
             document: false
         });
