@@ -1,5 +1,8 @@
 require(['config.min'], function () {
 
+    var observer = lozad();
+    observer.observe();
+
     require(['jquery', 'pace', 'lozad', 'bootstrap', 'hcsticky', 'smoothscroll', 'simplebar', 'hoverDelay', 'common'], function (jquery, pace, lozad, bootstrap, hcsticky, SmoothScroll, simplebar, hoverDelay, common) {
 
         (function () {
