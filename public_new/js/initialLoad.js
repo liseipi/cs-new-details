@@ -8,6 +8,7 @@ require.config({
 });
 
 requirejs(['pace', 'lozad'], function (pace, lozad) {
+    console.log(111);
     pace.start({
         document: false,
         // ajax: true
