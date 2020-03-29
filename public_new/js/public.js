@@ -2,7 +2,7 @@ require(['config'], function () {
 
     require(['pace', 'lozad', 'jquery', 'bootstrap', 'hcsticky', 'smoothscroll', 'hoverDelay', 'common'],
         function (pace, lozad, jquery, bootstrap, hcsticky, SmoothScroll, hoverDelay, common) {
-
+            console.log(222);
             // var observer = lozad();
             // observer.observe();
             //
