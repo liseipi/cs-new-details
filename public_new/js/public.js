@@ -1,4 +1,4 @@
-require(['config.min'], function () {
+require(['config'], function () {
 
     require(['pace', 'lozad', 'jquery', 'bootstrap', 'hcsticky', 'smoothscroll', 'hoverDelay', 'common'],
         function (pace, lozad, jquery, bootstrap, hcsticky, SmoothScroll, hoverDelay, common) {

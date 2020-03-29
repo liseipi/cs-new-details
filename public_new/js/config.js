@@ -2,7 +2,6 @@ require.config({
     baseUrl: 'public_new/js/',
     waitSeconds: 200,
     paths: {
-        'domReady': 'domReady',
         'css': './libs/css',
         'jquery': './libs/jquery-3.4.1.min',
         'popper': './libs/popper.min',
@@ -21,7 +20,6 @@ require.config({
         'moment': './libs/moment/moment.min',
         'pagination': './libs/simple-pagination/jquery.simplePagination.min',
 
-        'config': './config.min',
         'public': './public.min',
         'common': './common.min',
 
