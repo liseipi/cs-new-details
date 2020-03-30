@@ -1,6 +1,5 @@
 require(['config'], function () {
     var app = null;
-
     require(['vue', 'common'], function (Vue, common) {
         app = new Vue({
             el: '#details-page',
@@ -290,6 +289,7 @@ require(['config'], function () {
     });
 
     require(['lozad', 'simplebar', 'owlcarousel', 'elevatezoom', 'fancybox', 'hcsticky', 'hoverDelay', 'bootstrap', 'common', 'smoothscroll', 'pagination'], function (lozad, SimpleBar, owlCarousel, elevatezoom, fancybox, hcs, hoverDelay, bs, common, SmoothScroll, pagination) {
+        console.log(333);
         !function (c) {
             var e = {
                 init: function () {
@@ -761,26 +761,28 @@ require(['config'], function () {
                                     xhttp2.onreadystatechange = function () {
                                         if (this.readyState == 4 && this.status == 200) {
                                             var responseObject = JSON.parse(this.response);
-                                            var video = responseObject.items[0].snippet;
-                                            var jsonld = {
-                                                "@context": "http://schema.org",
-                                                "@type": "VideoObject",
-                                                "name": video.title,
-                                                "description": video.description ? video.description : video.title,
-                                                "thumbnailUrl": [
-                                                    video.thumbnails.default.url,
-                                                    video.thumbnails.medium.url,
-                                                    video.thumbnails.high.url,
-                                                    // video.thumbnails.maxres.url,
-                                                ],
-                                                "uploadDate": video.publishedAt,
-                                                "contentUrl": "https://www.youtube.com/watch?v=" + id,
-                                                "embedUrl": "https://www.youtube.com/embed/" + id,
-                                            };
-                                            var script = document.createElement("script");
-                                            script.type = "application/ld+json";
-                                            script.text = JSON.stringify(jsonld);
-                                            document.querySelector("body").appendChild(script);
+                                            if (responseObject.items.length > 0) {
+                                                var video = responseObject.items[0].snippet;
+                                                var jsonld = {
+                                                    "@context": "http://schema.org",
+                                                    "@type": "VideoObject",
+                                                    "name": video.title,
+                                                    "description": video.description ? video.description : video.title,
+                                                    "thumbnailUrl": [
+                                                        video.thumbnails.default.url,
+                                                        video.thumbnails.medium.url,
+                                                        video.thumbnails.high.url,
+                                                        // video.thumbnails.maxres.url,
+                                                    ],
+                                                    "uploadDate": video.publishedAt,
+                                                    "contentUrl": "https://www.youtube.com/watch?v=" + id,
+                                                    "embedUrl": "https://www.youtube.com/embed/" + id,
+                                                };
+                                                var script = document.createElement("script");
+                                                script.type = "application/ld+json";
+                                                script.text = JSON.stringify(jsonld);
+                                                document.querySelector("body").appendChild(script);
+                                            }
                                         }
                                     };
                                     xhttp2.open("GET", url, true);
@@ -795,7 +797,5 @@ require(['config'], function () {
             };
             e.init();
         }(jQuery);
-
     });
-
 });

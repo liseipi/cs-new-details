@@ -1,9 +1,8 @@
 require(['config'], function () {
-    require(['lozad'], function (lozad) {
-        (function () {
-            console.log(111);
-            var observer = lozad();
-            observer.observe();
-        })();
+    require(['pace'], function (pace) {
+        console.log("aaa");
+        pace.start({
+            document: false
+        });
     });
 });
