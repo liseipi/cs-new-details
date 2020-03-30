@@ -1,13 +1,4 @@
 require(['config'], function () {
-    require(['config'], function () {
-        require(['lozad'], function (lozad) {
-            (function () {
-                var observer = lozad();
-                observer.observe();
-            })();
-        });
-    });
-
     require(['lozad', 'jquery', 'bootstrap', 'hcsticky', 'smoothscroll', 'hoverDelay', 'common'], function (lozad, jquery, bootstrap, hcsticky, SmoothScroll, hoverDelay, common) {
         // var timeLeft = '2020/2/26 23:29:36';
         var timeLeft = _floatREndtime;
