@@ -289,7 +289,6 @@ require(['config'], function () {
     });
 
     require(['lozad', 'simplebar', 'owlcarousel', 'elevatezoom', 'fancybox', 'hcsticky', 'hoverDelay', 'bootstrap', 'common', 'smoothscroll', 'pagination'], function (lozad, SimpleBar, owlCarousel, elevatezoom, fancybox, hcs, hoverDelay, bs, common, SmoothScroll, pagination) {
-        console.log(333);
         !function (c) {
             var e = {
                 init: function () {
