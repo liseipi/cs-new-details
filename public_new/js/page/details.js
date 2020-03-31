@@ -302,6 +302,7 @@ require(['config'], function () {
                     e.showPaymentBox();
                     e.popoverInfo();
                     e.reviewsSmoothScroll();
+                    e.topNavSticky();
                     e.notifymeDom();
                     e.renderShare();
                     e.endRenderDom();
@@ -492,13 +493,13 @@ require(['config'], function () {
                     }
                 },
                 rightProductFloating: function () {
-                    if ($('[data-sticky-products]').length && $('[data-sticky-products-container]').length) {
-                        var sticky = new hcSticky('[data-sticky-products]', {
-                            stickTo: '[data-sticky-products-container]',
-                            top: 5,
-                            bottom: 5,
-                        });
-                    }
+                    // if ($('[data-sticky-products]').length && $('[data-sticky-products-container]').length) {
+                    //     var sticky = new hcSticky('[data-sticky-products]', {
+                    //         stickTo: '[data-sticky-products-container]',
+                    //         top: 5,
+                    //         bottom: 5,
+                    //     });
+                    // }
 
                     var t = document.querySelector("#new-hot-product");
                     if (null != t) {
@@ -656,6 +657,67 @@ require(['config'], function () {
                         new SmoothScroll("[data-scroll-reviews]", {
                             updateURL: !1
                         });
+                    }
+                },
+                topNavSticky: function () {
+                    var t = document.querySelector("#char_main");
+                    if (null != t) {
+                        var m = $(window).scrollTop();
+                        var w = $(window).height();
+                        var o = $('#char_main').offset().top;
+                        var showStatus = false;
+                        var hideStatus = false;
+
+                        function handleScroll(ev) {
+                            m = $(window).scrollTop();
+                            w = $(window).height();
+                            o = $('#char_main').offset().top;
+
+                            if (ev.currentTarget.pageYOffset + 20 >= o) {
+                                showNav();
+                            } else {
+                                hideNav();
+                            }
+                        }
+
+                        function showNav() {
+                            $('.nav-goods-sticky').show();
+                            if (!showStatus) {
+                                if ($('[data-sticky-main-ad]').length) {
+                                    var elements = document.querySelectorAll('[data-sticky-main-ad]');
+                                    for (var i = 0; i < elements.length; i++) {
+                                        window._adSticky['ad' + i].update({
+                                            top: 81
+                                        });
+                                    }
+                                }
+                            }
+                            showStatus = true;
+                            hideStatus = false;
+                        }
+
+                        function hideNav() {
+                            $('.nav-goods-sticky').hide();
+                            if (!hideStatus) {
+                                if ($('[data-sticky-main-ad]').length) {
+                                    var elements = document.querySelectorAll('[data-sticky-main-ad]');
+                                    for (var i = 0; i < elements.length; i++) {
+                                        window._adSticky['ad' + i].update({
+                                            top: 5
+                                        });
+                                    }
+                                }
+                            }
+                            showStatus = false;
+                            hideStatus = true;
+                        }
+
+                        if (m + 20 > o) {
+                            showNav();
+                        }
+
+                        window.addEventListener("scroll", handleScroll);
+
                     }
                 },
                 notifymeDom: function () {

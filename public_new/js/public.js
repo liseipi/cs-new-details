@@ -83,8 +83,9 @@ require(['config'], function () {
                 coupletFloating: function () {
                     if ($('[data-sticky-main-ad]').length) {
                         var elements = document.querySelectorAll('[data-sticky-main-ad]');
+                        window._adSticky = {};
                         for (var i = 0; i < elements.length; i++) {
-                            new hcSticky(elements[i], {
+                            window._adSticky['ad' + i] = new hcSticky(elements[i], {
                                 stickTo: '[data-sticky-main-container]',
                                 top: 5,
                             });
@@ -315,7 +316,9 @@ require(['config'], function () {
                                 '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/ShopWithHappy?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-happy"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Shop Online With Over 1 Million Happy Customers</div></div></div></div>\n' +
                                 '<div class="col-lg-2 col-md-4 col-6 char_col"><div data-fancybox="char-iframe" data-type="iframe" data-src="https://www.crazysales.com.au/article/AwardWinning?loadType=true" class="char_item d-flex flex-column align-items-center justify-content-center char-item"><div class="char_icon"><i class="csiconfont csicon-award-winning"></i></div><div class="char_content text-center w-100"><div class="char_title text-wrap w-100 text-break">Award-Winning Online Shopping in Australia</div></div></div></div>');
                             document.querySelector("#char_main").setAttribute('data-render', 'true');
-                            renderFancybox();
+                            setTimeout(function () {
+                                renderFancybox();
+                            }, 300);
                         };
 
                         if (m + w > o) {
@@ -325,7 +328,7 @@ require(['config'], function () {
                         window.addEventListener("scroll", handleScroll);
 
                         function renderFancybox() {
-                            $('[data-fancybox="char-iframe"]').fancybox({
+                            $('#char_main [data-fancybox="char-iframe"]').fancybox({
                                 toolbar: false,
                                 smallBtn: true,
                                 arrows: false,
@@ -358,17 +361,13 @@ require(['config'], function () {
                     })(window, document, 'script', 'dataLayer', 'GTM-KGVB67F');
                 },
                 renderLivechat: function () {
-                    var t = document.querySelector(".adsbygoogle");
-                    if (null != t) {
-                        // requirejs(['adsbygoogle']);
-                        (function (url) {
-                            var js = document.createElement('script');
-                            js.src = url;
-                            js.async = true;
-                            var fs = document.getElementsByTagName('script')[0];
-                            fs.parentNode.insertBefore(js, fs);
-                        })('https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js');
-                    }
+                    (function (url) {
+                        var js = document.createElement('script');
+                        js.src = url;
+                        js.async = true;
+                        var fs = document.getElementsByTagName('script')[0];
+                        fs.parentNode.insertBefore(js, fs);
+                    })('https://helpcentre.crazysales.com.au/__apps/livechat/assets/visitor/js/loader.js');
                 },
                 adsbygoogle: function () {
                     var t = document.querySelector(".adsbygoogle");

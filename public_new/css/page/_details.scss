@@ -5,7 +5,7 @@
 .nav-goods-sticky {
   display: none;
   width: 100%;
-  z-index: 800;
+  z-index: 2000;
   top: 0;
   background-color: #fff;
   animation: navbar-show .25s;
@@ -60,36 +60,36 @@
 
 @include media-breakpoint-only(xs) {
   #cz-image-zoom {
-    width:538px;
-    height:538px;
+    width: 538px;
+    height: 538px;
   }
 }
 
 @include media-breakpoint-only(sm) {
   #cz-image-zoom {
-    width:538px;
-    height:538px;
+    width: 538px;
+    height: 538px;
   }
 }
 
 @include media-breakpoint-only(md) {
   #cz-image-zoom {
-    width:359px;
-    height:359px;
+    width: 359px;
+    height: 359px;
   }
 }
 
 @include media-breakpoint-only(lg) {
   #cz-image-zoom {
-    width:479px;
-    height:479px;
+    width: 479px;
+    height: 479px;
   }
 }
 
 @include media-breakpoint-only(xl) {
   #cz-image-zoom {
-    width:499px;
-    height:499px;
+    width: 499px;
+    height: 499px;
   }
 }
 

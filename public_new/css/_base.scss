@@ -285,6 +285,7 @@ $btn-scroll-top-hover-color: $white !default;
   z-index: 900;
   width: 97px;
   left: -102px;
+  transition: top .25s;
 }
 
 .promotion-today-right {
@@ -294,6 +295,7 @@ $btn-scroll-top-hover-color: $white !default;
   width: 88px;
   left: auto;
   right: -92px;
+  transition: top .25s;
 
   .product-price {
     background-color: $brand-color;
@@ -339,45 +341,14 @@ $btn-scroll-top-hover-color: $white !default;
   }
 }
 
-//.adsbygoogle_right_ad {
-//  width: 242px;
-//  height: 400px;
-//}
-//
-//.adsbygoogle_bottom_ad {
-//  width: 1000px;
-//  height: 120px;
-//}
-
-@media (max-width: 575.98px) and (max-width: 767.98px) {
-  .adsbygoogle_right_ad {
-    width: 242px !important;
-    //height: 400px !important;
-  }
-  .adsbygoogle_bottom_ad {
-    width: 540px !important;
-    height: 60px !important;
-  }
+.adslot_r {
+  display: inline-block;
+  width: 170px;
+  height: 340px;
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .adsbygoogle_right_ad {
-    width: 172px !important;
-    //height: 320px !important;
-  }
-  .adsbygoogle_bottom_ad {
-    width: 720px !important;
-    height: 80px !important;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .adsbygoogle_right_ad {
-    width: 232px !important;
-    //height: 380px !important;
-  }
-  .adsbygoogle_bottom_ad {
-    width: 960px !important;
-    height: 100px !important;
-  }
+.adslot_b {
+  display: inline-block;
+  width: 670px;
+  height: 83px;
 }
