@@ -661,7 +661,12 @@ require(['config'], function () {
                 reviewsSmoothScroll: function () {
                     if ($('[data-scroll-reviews]').length) {
                         new SmoothScroll("[data-scroll-reviews]", {
-                            updateURL: !1
+                            updateURL: !1,
+                            speed: 800,
+                            speedAsDuration: !0,
+                            offset: function (anchor, toggle) {
+                                return 81;
+                            },
                         });
                     }
                 },
