@@ -109,7 +109,7 @@ require(['config'], function () {
                         type: 'POST',
                         data: {
                             productID: this.pageData.productID,
-                            quantity: this.quantity,
+                            quantity: this.quantity > 0 ? this.quantity : 1,
                             placeID: this.placeID,
                             suburbID: this.suburbID,
                         },
@@ -228,6 +228,12 @@ require(['config'], function () {
                 },
                 quantity: function (val, originVal) {
                     if (parseInt(val) != parseInt(originVal)) {
+                        if (val < 1) {
+                            this.quantity = 1;
+                        }
+                        if (val > this.pageData.inStockOrigin) {
+                            this.quantity = this.pageData.inStockOrigin;
+                        }
                         this.ajaxProductPostage();
                     }
                 },
