@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<aside class="position-fixed shadow nav-goods-sticky">
+    <div class="container security-screen">
+        <div class="row py-2">
+            <div class="col-8">
+                <div class="media">
+                    <img class="rounded mr-3 lozad" src="/public_new/svg/holder.svg" data-src="<?php echo $this->configItem('productPictureBaseUrl').'/'.$product->defaultLargePicture; ?>" width="60" height="60" alt="">
+                    <div class="media-body">
+                        <h6 class="mt-0 "><?php echo $product->name;?></h6>
+                        <div class="rating-wrap">
+                            <ul class="rating-stars">
+                                <li class="stars-active" style="width: <?php echo $product->reviewSummery->averageReviewRate*20?>%;">
+                                    <i class="csiconfont csicon-star csicon-lg mr-1" v-for="i in 5" :key="i"></i>
+                                </li>
+                                <li>
+                                    <i class="csiconfont csicon-star csicon-lg mr-1" v-for="i in 5" :key="i"></i>
+                                </li>
+                            </ul>
+                            <small class="label-rating text-muted"><?php $reviewNumer = $product->reviewSummery->totalReviews;echo $reviewNumer>1?"$reviewNumer reviews":"$reviewNumer review"?></small>
+                            <var class="price h6 ml-2"><?php echo $this->CurrencyHelper($product->price); ?></var>
+
+                            <?php if (isset($promotion->normalPrice)):?>
+                            <del class="ml-2">Was: <?php echo $this->CurrencyHelper($promotion->normalPrice); ?></del>
+                            <?php elseif ($product->flashdeal->status == 1 && $product->flashdeal->normalPrice):?>
+                            <del class="ml-2">Was: <?php echo $this->CurrencyHelper($product->flashdeal->normalPrice); ?></del>
+                            <?php endif;?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="d-flex h-100 align-items-center">
+                    <label class="mb-0"><input type="number" id="quantity_select_top" class="form-control d-inline-block mr-2" v-model="quantity" min="1" max="<?php echo $limited_offer; ?>" style="width: 100px;" <?php echo !$limited_offer ? 'disabled' : ''; ?> ></label>
+                    <?php if(!$product->terminated && $product->isEnabled && $product->inStock): ?>
+                    <?php if($product->pre_sales): ?>
+                    <?php if(!$product->isGroupMaster): ?>
+                    <a rel="nofollow" href="javascript:;" @click="prdsale" class="btn btn-success btn-block" data-track-event="addToCart">
+                        Pre Sales
+                        <i class="csiconfont csicon-presale csicon-lg" style="vertical-align: top;"></i>
+                    </a>
+                    <?php else: ?>
+                    <a rel="nofollow" href="javascript:;" class="btn btn-danger btn-block">Master Product</a>
+                    <?php endif; ?>
+                    <?php else: ?>
+                    <?php if(!$product->isGroupMaster): ?>
+                    <a href="javascript:;" onclick="location.href='<?php echo $CONF_HTTPS_URL."viewcart/addcart/".$product->productID."/" ?>'+quantity_select_top.value;" class="btn btn-danger btn-block" data-track-event="addToCart">
+                    Add to cart
+                    <i class="csiconfont csicon-cart_add csicon-lg" style="vertical-align: top;"></i>
+                    </a>
+                    <?php else: ?>
+                    <a rel="nofollow" href="javascript:;" class="btn btn-danger btn-block">Master Product</a>
+                    <?php endif; ?>
+                    <?php endif; ?>
+                    <?php else: // out of stock ,show notify ?>
+                    <?php if($product->discontinued && !$product->isEnabled): ?>
+                    <a href="javascript:;" class="btn btn-warning btn-block disabled">
+                        Unavailable
+                        <i class="csiconfont csicon-warning csicon-lg" style="vertical-align: top;"></i>
+                    </a>
+                    <?php else: ?>
+                    <a rel="nofollow" data-fancybox="notifyme" data-src="#notifyme" href="javascript:;" class="btn btn-danger btn-block">
+                        Notify Me
+                        <i class="csiconfont csicon-email_marketing csicon-sm" style="vertical-align: baseline;"></i>
+                    </a>
+                    <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+</body>
+</html>

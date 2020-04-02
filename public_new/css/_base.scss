@@ -17,6 +17,11 @@ input {
   outline: none;
 }
 
+img {
+  font-size: 12px;
+  line-height: 12px;
+}
+
 .line-clamp {
   @include line-clamp();
 }

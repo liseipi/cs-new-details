@@ -308,7 +308,7 @@ require(['config'], function () {
                     e.showPaymentBox();
                     e.popoverInfo();
                     e.reviewsSmoothScroll();
-                    e.topNavSticky();
+                    // e.topNavSticky();
                     e.notifymeDom();
                     e.renderShare();
                     e.endRenderDom();
