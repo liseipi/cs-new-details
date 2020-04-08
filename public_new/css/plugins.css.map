@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEQ,+DAAoD,CACpD,oEAAyD,CACzD,mDAAwC,CACxC,mDAAwC,CACxC,wDAA6C",
+"mappings": "AAEQ,+DAAoD,CACpD,oEAAyD,CACzD,mDAAwC,CACxC,mDAAwC,CACxC,wDAA6C,CAC7C,qDAA0C",
 "sources": ["plugins.scss"],
 "names": [],
 "file": "plugins.css"

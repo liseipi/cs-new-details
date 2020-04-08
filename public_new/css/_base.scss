@@ -58,10 +58,114 @@ img {
   }
 }
 
+.opacity-25 {
+  opacity: .25 !important;
+}
+
+.opacity-50 {
+  opacity: .5 !important;
+}
+
+.opacity-60 {
+  opacity: .6 !important;
+}
+
+.opacity-70 {
+  opacity: .70 !important;
+}
+
+.opacity-75 {
+  opacity: .75 !important;
+}
+
+.opacity-80 {
+  opacity: .8 !important;
+}
+
+.opacity-90 {
+  opacity: .9 !important;
+}
+
+.opacity-100 {
+  opacity: 1 !important;
+}
+
+.newsletter-left {
+  position: absolute;
+  top: 0;
+  z-index: 900;
+  width: 97px;
+  left: 50%;
+  margin-left: -672px;
+  transition: top .25s;
+}
+
+.promotion-today-right {
+  position: absolute;
+  top: 0;
+  z-index: 900;
+  width: 88px;
+  left: 50%;
+  margin-left: 575px;
+  transition: top .25s;
+
+  .product-price {
+    background-color: $brand-color;
+    color: #fff;
+  }
+
+  .product-was-price {
+    font-size: 12px;
+  }
+
+  .product-was-name {
+    padding: 0 5px 10px;
+    font-size: 12px;
+    line-height: 14px;
+    width: 86px;
+  }
+
+  .timeLeft {
+    background-color: #f0f0f0;
+    line-height: 15px;
+
+    strong {
+      font-size: 12px;
+    }
+
+    .time {
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .in-show {
+    background-color: $brand-color;
+    color: #fff;
+    line-height: 14px;
+
+    strong {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
 .security-screen {
   max-width: 1000px;
   min-width: 540px;
   margin: 0 auto;
+
+  .newsletter-left {
+    margin-left: -602px;
+  }
+
+  .promotion-today-right {
+    margin-left: 505px;
+  }
 }
 
 
@@ -284,73 +388,11 @@ $btn-scroll-top-hover-color: $white !default;
 //  bottom: 5px;
 //}
 
-.newsletter-left {
-  position: absolute;
-  top: 0;
-  z-index: 900;
-  width: 97px;
-  left: -102px;
-  transition: top .25s;
-}
-
-.promotion-today-right {
-  position: absolute;
-  top: 0;
-  z-index: 900;
-  width: 88px;
-  left: auto;
-  right: -92px;
-  transition: top .25s;
-
-  .product-price {
-    background-color: $brand-color;
-    color: #fff;
-  }
-
-  .product-was-price {
-    font-size: 12px;
-  }
-
-  .product-was-name {
-    padding: 0 5px 10px;
-    font-size: 12px;
-    line-height: 14px;
-    width: 86px;
-  }
-
-  .timeLeft {
-    background-color: #f0f0f0;
-    line-height: 15px;
-
-    strong {
-      font-size: 12px;
-    }
-
-    .time {
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-  }
-
-  .in-show {
-    background-color: $brand-color;
-    color: #fff;
-    line-height: 14px;
-
-    strong {
-      font-size: 16px;
-    }
-
-    p {
-      font-size: 12px;
-    }
-  }
-}
 
 .adslot_r {
   display: inline-block;
-  width: 232px;
-  height: 464px;
+  width: 212px;
+  height: 424px;
 }
 
 .adslot_b {

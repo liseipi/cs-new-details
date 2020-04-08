@@ -932,7 +932,7 @@
                     </div>
                     <div class="col-md-3 pl-md-2 d-none d-md-block">
                         <div class="right-body position-relative h-100" data-sticky-products-container>
-                            <div class="position-sticky" style="top: 5px; bottom: 5px;" data-sticky-products>
+                            <div class="h-100" data-sticky-products>
                                 <div class="right-top">
                                     <div class="right-ad-img mb-2">
                                         <a href="javascript:void(0)" rel="nofollow">
@@ -948,46 +948,48 @@
                                                  alt="clearance">
                                         </a>
                                     </div>
-                                    <div class="right-ad-img mb-2 text-center align-center d-none d-lg-block">
-                                        <ins class="adsbygoogle adslot_r" style="display:inline-block; width: 232px; height: 464px;"
+                                    <div class="right-ad-img mb-2 py-2 card shadow-sm text-center align-center d-none d-lg-block">
+                                        <ins class="adsbygoogle adslot_r" style="display:inline-block; width: 212px; height: 424px; background-color: red;"
                                              data-ad-client="ca-pub-8352043502333695"
                                              data-ad-slot="4651508651"></ins>
                                         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="card">
-                                        <div class="right_hot_product px-2 pb-2" id="new-hot-product">
-                                            <div class="h6 my-2 bg-brand-color text-light text-center py-2 mb-3">New Arrivals &amp; Hot</div>
-                                            <div id="new-hot-product-list" data-render="false">
-                                                <div class="product-list pb-2" v-show="newHotData.length>0">
-                                                    <div class="product-item" v-for="(pGoods, pIndex) in newHotData" :key="pIndex">
-                                                        <div class="row no-gutters">
-                                                            <aside class="col-sm-5">
-                                                                <a :href="'/'+pGoods.url" target="_blank" class="img-wrap">
-                                                                    <img class="lozad rounded" src="public_new/svg/holder.svg" :data-src="(pageData.imgPath + pGoods.defaultLargePicture)">
-                                                                </a>
-                                                            </aside>
-                                                            <div class="col-sm-7">
-                                                                <div class="ml-2">
-                                                                    <a :href="'/'+pGoods.url" target="_blank" class="title mb-2 line-clamp text-muted" v-cloak>{{pGoods.name}}</a>
-                                                                    <div class="price-wrap">
-                                                                        <span class="price h6 brand-color" v-cloak>${{pGoods.price}}</span>
-                                                                    </div>
-                                                                    <div class="review-wrap">
+                                <div style="position: absolute; top: 1375px; bottom: 0; width: 100%;">
+                                    <div class="position-sticky" style="top: 5px; bottom: 5px;">
+                                        <div class="card">
+                                            <div class="right_hot_product px-2 pb-2" id="new-hot-product">
+                                                <div class="h6 my-2 bg-brand-color text-light text-center py-2 mb-3">New Arrivals &amp; Hot</div>
+                                                <div id="new-hot-product-list" data-render="false">
+                                                    <div class="product-list pb-2" v-show="newHotData.length>0">
+                                                        <div class="product-item" v-for="(pGoods, pIndex) in newHotData" :key="pIndex">
+                                                            <div class="row no-gutters">
+                                                                <aside class="col-sm-5">
+                                                                    <a :href="'/'+pGoods.url" target="_blank" class="img-wrap">
+                                                                        <img class="lozad rounded" src="public_new/svg/holder.svg" :data-src="(pageData.imgPath + pGoods.defaultLargePicture)">
+                                                                    </a>
+                                                                </aside>
+                                                                <div class="col-sm-7">
+                                                                    <div class="ml-2">
+                                                                        <a :href="'/'+pGoods.url" target="_blank" class="title mb-2 line-clamp text-muted" v-cloak>{{pGoods.name}}</a>
+                                                                        <div class="price-wrap">
+                                                                            <span class="price h6 brand-color" v-cloak>${{pGoods.price}}</span>
+                                                                        </div>
+                                                                        <div class="review-wrap">
                                                                     <span class="text-warning" v-cloak>
                                                                         <i class="csiconfont csicon-star csicon-xs" v-for="i in 5" :key="i"></i> <span class="text-muted">({{pGoods.reviews}})</span>
                                                                     </span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <hr class="my-2 py-0" v-show="pIndex+1!=newHotData.length">
                                                         </div>
-                                                        <hr class="my-2 py-0" v-show="pIndex+1!=newHotData.length">
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="py-2 text-center" v-show="newHotData.length==0">
-                                                <h6>No related products</h6>
+                                                <div class="py-2 text-center" v-show="newHotData.length==0">
+                                                    <h6>No related products</h6>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1206,9 +1208,6 @@
             </div>
 
 
-
-
-
         </div>
     </section>
     <script src="public_new/js/require.js" data-main="public_new/js/config"></script>
@@ -1250,7 +1249,7 @@
 
             interested_products: [{"name":"13-in-1 Handheld Steam Cleaner Mop with Accessories","isFreeShipping":false,"url":"online-13-in-1-handheld-steam-cleaner-mop-with-accessories-193265.html","thumbnail":"193\/193265_1465867_N.jpg","price":"69.96","isNew":false,"reviews":15,"productID":"193265","wasPrice":"89.95","save":22,"promotionType":"2"},{"name":"New Maxkon 13-in-1 Steam Mop Cleaner 1500W Handheld Steamer Multiple Function Floor Carpet Orange","isFreeShipping":false,"url":"online-new-maxkon-13-in-1-steam-mop-cleaner-1500w-handheld-steamer-multiple-function-floor-carpet-orange-199227.html","thumbnail":"1992\/199227_1558335_N.jpg","price":"79.95","isNew":false,"reviews":13,"productID":"199227","wasPrice":"129.95","save":38,"promotionType":"2"},{"name":"90cm Gas Cooktop Black Crystal Glass Top 5 Burner Gas Stove NG LPG","isFreeShipping":false,"url":"online-90cm-gas-cooktop-black-crystal-glass-top-5-burner-gas-stove-ng-lpg-198027.html","thumbnail":"198\/198027_1503793_N.jpg","price":"339.96","isNew":false,"reviews":4,"productID":"198027","wasPrice":"499.95","save":32,"promotionType":"2"},{"name":"4-in-1 Electric Cordless Mop Dry Wet Mopping Floor Polishing Waxing","isFreeShipping":false,"url":"online-4-in-1-electric-cordless-mop-dry-wet-mopping-floor-polishing-waxing-202165.html","thumbnail":"202\/202165_1545689_N.jpg","price":"89.95","isNew":false,"reviews":4,"productID":"202165","wasPrice":"149.95","save":40,"promotionType":"2"},{"name":"Maxkon 3.4L High Pressure Steam Cleaner Steam Mop Machine ","isFreeShipping":false,"url":"online-maxkon-3-4l-high-pressure-steam-cleaner-steam-mop-machine-200563.html","thumbnail":"200\/200563_1526015_N.jpg","price":"189.95","isNew":false,"reviews":3,"productID":"200563","wasPrice":"299.95","save":37,"promotionType":"2"},{"name":"4 Burner Gas Cooktop 60cm Hob Stainless Steel Kitchen Gas Stove NG LPG","isFreeShipping":false,"url":"online-4-burner-gas-cooktop-60cm-hob-stainless-steel-kitchen-gas-stove-ng-lpg-198029.html","thumbnail":"198\/198029_1503819_N.jpg","price":"229.95","isNew":false,"reviews":2,"productID":"198029","wasPrice":"359.95","save":36,"promotionType":"2"},{"name":"Devanti 22L Bench Top Water Cooler Dispenser Purifier Hot Cold Three Tap with 2 Replacement Filters","isFreeShipping":true,"url":"online-devanti-22l-bench-top-water-cooler-dispenser-purifier-hot-cold-three-tap-with-2-replacement-filters-193531.html","thumbnail":"1935\/193531_1468411_N.jpg","price":"279.96","isNew":false,"reviews":1,"productID":"193531","wasPrice":"429.95","save":35,"promotionType":"2"},{"name":"5 Burner Gas Cooktop 90cm Hob Stainless Steel Kitchen Gas Stove NG LPG","isFreeShipping":false,"url":"online-5-burner-gas-cooktop-90cm-hob-stainless-steel-kitchen-gas-stove-ng-lpg-198025.html","thumbnail":"1980\/198025_1505277_N.jpg","price":"299.95","isNew":false,"reviews":1,"productID":"198025","wasPrice":"459.95","save":35,"promotionType":"2"},{"name":"4-in-1 Electric Cordless Marble Wood Tile Floor Cleaner Polishing Waxing Cleaning Mop ","isFreeShipping":false,"url":"online-4-in-1-electric-cordless-marble-wood-tile-floor-cleaner-polishing-waxing-cleaning-mop-202163.html","thumbnail":"202\/202163_1545665_N.jpg","price":"89.95","isNew":false,"reviews":1,"productID":"202163","wasPrice":"149.95","save":40,"promotionType":"2"},{"name":"48\" DC Motor Ceiling Fan with Remote 8H Timer Reverse Mode 5 Speeds Natural","isFreeShipping":true,"url":"online-48-dc-motor-ceiling-fan-with-remote-8h-timer-reverse-mode-5-speeds-natural-193977.html","thumbnail":"1939\/193977_1471559_N.jpg","price":"179.96","isNew":false,"reviews":0,"productID":"193977","wasPrice":"389.95","save":54,"promotionType":"2"},{"name":"Black Tempered Glass Range Hood with Display 600 mm","isFreeShipping":false,"url":"online-black-tempered-glass-range-hood-with-display-600-mm-195229.html","thumbnail":"1952\/195229_1480365_N.jpg","price":"219.95","isNew":false,"reviews":0,"productID":"195229","wasPrice":"369.95","save":41,"promotionType":"2"},{"name":"Range Hood with Touch Display Black 900 mm","isFreeShipping":false,"url":"online-range-hood-with-touch-display-black-900-mm-195263.html","thumbnail":"1952\/195263_1480639_N.jpg","price":"259.95","isNew":false,"reviews":0,"productID":"195263","wasPrice":"429.95","save":40,"promotionType":"2"},{"name":"58 mm Pinback Button Parts 500 Sets","isFreeShipping":false,"url":"online-58-mm-pinback-button-parts-500-sets-195365.html","thumbnail":"1953\/195365_1481311_N.jpg","price":"89.95","isNew":false,"reviews":0,"productID":"195365","wasPrice":"149.95","save":40,"promotionType":"2"},{"name":"Wall Mounted Range Hood 60 cm Stainless Steel 756 m\u00b3\/h LED","isFreeShipping":false,"url":"online-wall-mounted-range-hood-60-cm-stainless-steel-756-m-h-led-195523.html","thumbnail":"1955\/195523_1482117_N.jpg","price":"229.95","isNew":false,"reviews":0,"productID":"195523","wasPrice":"379.95","save":39,"promotionType":"2"},{"name":"Rotating Fan Model: UF-3T(Pink)","isFreeShipping":false,"url":"online-rotating-fan-model-uf-3t-pink-198655.html","thumbnail":"198\/198655_1508953_N.jpg","price":"19.99","isNew":false,"reviews":0,"productID":"198655","wasPrice":0,"save":0,"promotionType":0},{"name":"Tea Tree Essential Oil","isFreeShipping":false,"url":"online-tea-tree-essential-oil-198879.html","thumbnail":"1988\/198879_1545031_N.jpg","price":"9.99","isNew":false,"reviews":0,"productID":"198879","wasPrice":0,"save":0,"promotionType":0},{"name":"GT - 301W Secondary Heating Panel \/ Intelligent Steam Heating \/ 8 Degree Inclination Angle Handheld Electric Iron from Xiaomi youpin","isFreeShipping":false,"url":"online-gt-301w-secondary-heating-panel-intelligent-steam-heating-8-degree-inclination-angle-handheld-electric-iron-from-xiaomi-youpin-201153.html","thumbnail":"201\/201153_1533437_N.jpg","price":"67.8","isNew":false,"reviews":0,"productID":"201153","wasPrice":0,"save":0,"promotionType":0},{"name":"Halogen Convection Oven with Extension Ring and Digital Timer 1400 W 17 L","isFreeShipping":false,"url":"online-halogen-convection-oven-with-extension-ring-and-digital-timer-1400-w-17-l-202655.html","thumbnail":"2026\/202655_1549733_N.jpg","price":"99.95","isNew":false,"reviews":0,"productID":"202655","wasPrice":"159.95","save":38,"promotionType":"2"},{"name":"Devanti 90cm Ceramic Cooktop Electric Cook Top 5 Burner Stove Hob Touch Control 6-Zones","isFreeShipping":false,"url":"online-devanti-90cm-ceramic-cooktop-electric-cook-top-5-burner-stove-hob-touch-control-6-zones-205819.html","thumbnail":"2058\/205819_1573629_N.jpg","price":"459.97","isNew":true,"reviews":0,"productID":"205819","wasPrice":"729.95","save":37,"promotionType":"2"},{"name":"Devanti 6kg Tumble Dryer Vented Full Automatic Wall Mountable Silver","isFreeShipping":false,"url":"online-devanti-6kg-tumble-dryer-vented-full-automatic-wall-mountable-silver-205889.html","thumbnail":"2058\/205889_1574095_N.jpg","price":"449.95","isNew":true,"reviews":0,"productID":"205889","wasPrice":"689.95","save":35,"promotionType":"2"}],
 
-            newHotData: [{"productID":"173931","is_new":"1","is_hot":"0","name":"Maxkon 1.5L Steam Cleaner Mop 13-in-1 High Pressure Floor Window Carpet Steamer","price":"119.95","product_code":"CB-08C-R","defaultLargePicture":"173\/173931_1265585_F.jpg","cid":"2037","url":"online-maxkon-1-5l-steam-cleaner-mop-13-in-1-high-pressure-floor-window-carpet-steamer-173931.html","reviews":31},{"productID":"173933","is_new":"1","is_hot":"0","name":"Maxkon 2.1L Steam Cleaner Mop 13-in-1 High Pressure Floor Window Carpet Steamer","price":"149.95","product_code":"CB-08A-R","defaultLargePicture":"173\/173933_1265615_F.jpg","cid":"2037","url":"online-maxkon-2-1l-steam-cleaner-mop-13-in-1-high-pressure-floor-window-carpet-steamer-173933.html","reviews":7},{"productID":"166891","is_new":"0","is_hot":"1","name":"Maxkon Electric Infrared Heater 2000W Outdoor Halogen Heater Ceiling Wall Mount","price":"189.95","product_code":"SUNDEAR-XDS","defaultLargePicture":"166\/166891_1193209_F.jpg","cid":"2107","url":"online-maxkon-electric-infrared-heater-2000w-outdoor-halogen-heater-ceiling-wall-mount-166891.html","reviews":11},{"productID":"166897","is_new":"0","is_hot":"1","name":"Maxkon 2500W Infrared Radiant Heater Electric Outdoor Patio Strip Heater Wall Ceiling","price":"129.97","product_code":"RAINBOW2500","defaultLargePicture":"166\/166897_1193281_F.jpg","cid":"2107","url":"online-maxkon-2500w-infrared-radiant-heater-electric-outdoor-patio-strip-heater-wall-ceiling-166897.html","reviews":8},{"productID":"166899","is_new":"0","is_hot":"1","name":"Maxkon 2000W Infrared Radiant Heater Electric Outdoor Patio Strip Heater Wall Ceiling","price":"249.95","product_code":"RAINBOW2000","defaultLargePicture":"166\/166899_1193305_F.jpg","cid":"2107","url":"online-maxkon-2000w-infrared-radiant-heater-electric-outdoor-patio-strip-heater-wall-ceiling-166899.html","reviews":3},{"productID":"166893","is_new":"0","is_hot":"1","name":"Maxkon 2500W Carbon Fibre Infrared Heater Instant Heat Electric Patio Outdoor Strip Heater","price":"349.95","product_code":"STAR2500","defaultLargePicture":"166\/166893_1193233_F.jpg","cid":"2107","url":"online-maxkon-2500w-carbon-fibre-infrared-heater-instant-heat-electric-patio-outdoor-strip-heater-166893.html","reviews":16},{"productID":"166895","is_new":"0","is_hot":"1","name":"Maxkon 2000W Carbon Fibre Infrared Heater Instant Heat Electric Patio Outdoor Strip Heater","price":"289.95","product_code":"STAR2000","defaultLargePicture":"166\/166895_1193257_F.jpg","cid":"2107","url":"online-maxkon-2000w-carbon-fibre-infrared-heater-instant-heat-electric-patio-outdoor-strip-heater-166895.html","reviews":20}],
+            newHotData: [{"productID":"166893","is_new":"0","is_hot":"1","name":"Maxkon 2500W Carbon Fibre Infrared Heater Instant Heat Electric Patio Outdoor Strip Heater","price":"349.95","product_code":"STAR2500","defaultLargePicture":"166\/166893_1193233_F.jpg","cid":"2107","url":"online-maxkon-2500w-carbon-fibre-infrared-heater-instant-heat-electric-patio-outdoor-strip-heater-166893.html","reviews":16},{"productID":"166895","is_new":"0","is_hot":"1","name":"Maxkon 2000W Carbon Fibre Infrared Heater Instant Heat Electric Patio Outdoor Strip Heater","price":"289.95","product_code":"STAR2000","defaultLargePicture":"166\/166895_1193257_F.jpg","cid":"2107","url":"online-maxkon-2000w-carbon-fibre-infrared-heater-instant-heat-electric-patio-outdoor-strip-heater-166895.html","reviews":20}],
 
             reviewCount: 36,
             reviewPercent: [36,0,0,0,0],

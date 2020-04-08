@@ -8,7 +8,7 @@ require(['config'], function () {
         });
     });
 
-    require(['lozad', 'jquery', 'bootstrap', 'hcsticky', 'smoothscroll', 'hoverDelay', 'common'], function (lozad, jquery, bootstrap, hcsticky, SmoothScroll, hoverDelay, common) {
+    require(['lozad', 'jquery', 'bootstrap', 'hcsticky', 'smoothscroll', 'hoverDelay', 'fancybox', 'common'], function (lozad, jquery, bootstrap, hcsticky, SmoothScroll, hoverDelay, fancybox, common) {
         // var timeLeft = '2020/2/26 23:29:36';
         var timeLeft = _floatREndtime;
         !function (c) {

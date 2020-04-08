@@ -13,6 +13,7 @@ require.config({
         'hcsticky': './libs/hc-sticky/hc-sticky',
         'fancybox': './libs/fancybox/jquery.fancybox.min',
         'lozad': './libs/lozad/lozad.min',
+        'nouislider': './libs/nouislider/nouislider.min',
         'vue': './libs/vue',
         'pace': './libs/pace/pace.min',
         'elevatezoom': './libs/elevatezoom/jquery.ez-plus.min',
@@ -39,6 +40,9 @@ require.config({
             deps: ['jquery']
         },
         fancybox: {
+            deps: ['jquery']
+        },
+        nouislider: {
             deps: ['jquery']
         },
         'hoverDelay': ['jquery'],
