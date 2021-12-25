@@ -1,0 +1,29 @@
+{
+	"status": 200,
+	"data": [{
+			"id": "https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3",
+			"album": "Science Friday",
+			"title": "A Salute To Head-Scratching Science",
+			"artist": "Science Friday and WNYC Studios",
+			"duration": 5739820,
+			"artUri": "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg"
+		},
+		{
+			"id": "https://s3.amazonaws.com/scifri-segments/scifri201711241.mp3",
+			"album": "Science Friday",
+			"title": "From Cat Rheology To Operatic Incompetence",
+			"artist": "Science Friday and WNYC Studios",
+			"duration": 2856950,
+			"artUri": "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg"
+		},
+		{
+			"id": "https://s3.amazonaws.com/scifri-segments/scifri202011274.mp3",
+			"album": "Science Friday",
+			"title": "Laugh Along At Home With The Ig Nobel Awards",
+			"artist": "Science Friday and WNYC Studios",
+			"duration": 1791883,
+			"artUri": "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg"
+		}
+	],
+	"statusText": "OK"
+}
