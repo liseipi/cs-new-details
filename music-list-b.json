@@ -1,0 +1,57 @@
+{
+"status": 200,
+"data": [
+{
+"id": "53erg34tdfdg",
+"album": "B",
+"title": "B",
+"artist": "Science Friday and WNYC Studios",
+"genre": "genre",
+"duration": 5739820,
+"artUri": "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg",
+"playable": true,
+"displayTitle": "",
+"displaySubtitle": "",
+"displayDescription": "",
+"rating": 5,
+"extras": {
+"url": "https://s3.amazonaws.com/scifri-episodes/scifri20181123-episode.mp3"
+}
+},
+{
+"id": "44yrtgrgt45udfgf",
+"album": "B",
+"title": "Be",
+"artist": "Science Friday and WNYC Studios",
+"genre": "genre",
+"duration": 2856950,
+"artUri": "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg",
+"playable": true,
+"displayTitle": "displayTitle",
+"displaySubtitle": "displaySubtitle",
+"displayDescription": "displayDescription",
+"rating": 5,
+"extras": {
+"url": "https://s3.amazonaws.com/scifri-segments/scifri201711241.mp3"
+}
+},
+{
+"id": "fht68ergfgh",
+"album": "C",
+"title": "C",
+"artist": "Science Friday and WNYC Studios",
+"genre": "genre",
+"duration": 1791883,
+"artUri": "https://media.wnyc.org/i/1400/1400/l/80/1/ScienceFriday_WNYCStudios_1400.jpg",
+"playable": true,
+"displayTitle": "",
+"displaySubtitle": "",
+"displayDescription": "",
+"rating": 5,
+"extras": {
+"url": "https://s3.amazonaws.com/scifri-segments/scifri202011274.mp3"
+}
+}
+],
+"statusText": "OK"
+}
